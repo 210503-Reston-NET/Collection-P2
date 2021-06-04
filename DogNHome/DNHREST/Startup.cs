@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore.Design;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -35,7 +35,9 @@ namespace DNHREST
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "DNHREST", Version = "v1" });
             });
             
-            //services.AddDbContext<DNHDBContext>(options => options.UseNpgsql(Configuration.GetConnectionString("CollectionDB")));
+            services.AddDbContext<DNHDBContext>(
+                options => options.UseNpgsql(Configuration.GetConnectionString("CollectionDB"))
+                );
 
         }
 

@@ -34,6 +34,10 @@ namespace DNHDL
                 .HasKey(user => user.UserName);
             modelBuilder.Entity<ListedDog>()
                 .HasKey(LDog => new { LDog.ListID, LDog.DogID });
+            modelBuilder.Entity<DogList>()
+                .HasKey(list => list.ListID);
+            modelBuilder.Entity<Dog>()
+                .HasKey(dog => dog.DogID);
 
         }
     }
