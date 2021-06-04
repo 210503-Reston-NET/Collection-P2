@@ -16,7 +16,7 @@ variables:
 steps:
 - task: SonarCloudPrepare@1
   inputs:
-    SonarCloud: 'BearlyCampingSonarCloud'
+    SonarCloud: 'Collection P-2'
     organization: '210503-reston-net'
     scannerMode: 'MSBuild'
     projectKey: '210503-Reston-NET_Fisher-Robert-P1'
