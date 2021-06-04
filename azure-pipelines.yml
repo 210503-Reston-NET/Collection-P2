@@ -1,0 +1,66 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- main
+
+pool: Default
+
+variables:
+  solution: '**/DogNHome/*.sln'
+  buildPlatform: 'Any CPU'
+  buildConfiguration: 'Release'
+
+steps:
+- task: SonarCloudPrepare@1
+  inputs:
+    SonarCloud: 'Collection-P2'
+    organization: '210503-reston-net'
+    scannerMode: 'MSBuild'
+    projectKey: '210503-Reston-NET_Fisher-Robert-P1'
+    projectName: 'DogNHome'
+- task: DotNetCoreCLI@2
+  displayName: Restore Project deps
+  inputs:
+    command: 'restore'
+    projects: $(solution)
+    feedsToUse: 'select'
+
+- task: DotNetCoreCLI@2
+  displayName: Build Project Solution
+  inputs:
+    command: 'build'
+    projects: $(solution)
+
+- task: DotNetCoreCLI@2
+  displayName: Test Project Solution
+  inputs:
+    command: 'test'
+    projects: '**/DogNHome/DNHTest/*.csproj'
+    arguments: --configuration $(buildConfiguration) --collect "Code Coverage
+- task: PublishCodeCoverageResults@1
+  inputs:
+    codeCoverageTool: 'Cobertura'
+    summaryFileLocation: '**/Cobertura/Configure.xml'
+- task: SonarCloudAnalyze@1
+  displayName: Run Code Analysis
+- task: SonarCloudPublish@1
+  displayName: Publish Code Analysis
+- task: DotNetCoreCLI@2
+  displayName: Publish Project
+  inputs:
+    command: 'publish'
+    publishWebProjects: false
+    zipAfterPublish: true
+    projects: '**/DogNHome/DNHREST/*.csproj'
+  
+- task: AzureRmWebAppDeployment@4
+  displayName: Connet App Services
+  inputs:
+    ConnectionType: 'AzureRM'
+    azureSubscription: 'Azure subscription 1(c9d4b655-c981-4696-93d6-bc06f9189051)'
+    appType: 'webApp'
+    WebAppName: 'DogNHome'
+    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
