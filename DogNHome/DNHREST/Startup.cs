@@ -34,6 +34,7 @@ namespace DNHREST
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "DNHREST", Version = "v1" });
             });
+            
             //services.AddDbContext<DNHDBContext>(options => options.UseNpgsql(Configuration.GetConnectionString("CollectionDB")));
 
         }

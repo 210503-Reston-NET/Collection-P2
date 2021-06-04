@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
+using DNHModels;
 
 namespace DNHDL
 {
@@ -15,8 +16,24 @@ namespace DNHDL
 
         }
         // Insert DBSets here for data models
+        public DbSet<Dog> Dogs { get; set; }
+        public DbSet<ListedDog> DogLists { get; set; }
+        public DbSet<DogList> ListedDogs { get; set; }
+        public DbSet<User> Users { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Dog>()
+                .Property(dog => dog.DogID)
+                .ValueGeneratedOnAdd();
+            modelBuilder.Entity<DogList>()
+                .Property(list => list.ListID)
+                .ValueGeneratedOnAdd();
+
+
+            modelBuilder.Entity<User>()
+                .HasKey(user => user.UserName);
+            modelBuilder.Entity<ListedDog>()
+                .HasKey(LDog => new { LDog.ListID, LDog.DogID });
 
         }
     }

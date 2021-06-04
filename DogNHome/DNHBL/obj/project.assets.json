@@ -1486,6 +1486,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
+          "DNHModels": "1.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.6"
         },
         "compile": {
@@ -1493,6 +1494,16 @@
         },
         "runtime": {
           "bin/placeholder/DNHDL.dll": {}
+        }
+      },
+      "DNHModels/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/DNHModels.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DNHModels.dll": {}
         }
       }
     }
@@ -5711,6 +5722,11 @@
       "type": "project",
       "path": "../DNHDL/DNHDL.csproj",
       "msbuildProject": "../DNHDL/DNHDL.csproj"
+    },
+    "DNHModels/1.0.0": {
+      "type": "project",
+      "path": "../DNHModels/DNHModels.csproj",
+      "msbuildProject": "../DNHModels/DNHModels.csproj"
     }
   },
   "projectFileDependencyGroups": {

@@ -1,0 +1,12 @@
+C:\Users\Robbie\Revature\Git-Clone\Collection-P2\DogNHome\DNHModels\bin\Debug\net5.0\DNHModels.deps.json
+C:\Users\Robbie\Revature\Git-Clone\Collection-P2\DogNHome\DNHModels\bin\Debug\net5.0\DNHModels.dll
+C:\Users\Robbie\Revature\Git-Clone\Collection-P2\DogNHome\DNHModels\bin\Debug\net5.0\ref\DNHModels.dll
+C:\Users\Robbie\Revature\Git-Clone\Collection-P2\DogNHome\DNHModels\bin\Debug\net5.0\DNHModels.pdb
+C:\Users\Robbie\Revature\Git-Clone\Collection-P2\DogNHome\DNHModels\obj\Debug\net5.0\DNHModels.csprojAssemblyReference.cache
+C:\Users\Robbie\Revature\Git-Clone\Collection-P2\DogNHome\DNHModels\obj\Debug\net5.0\DNHModels.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Robbie\Revature\Git-Clone\Collection-P2\DogNHome\DNHModels\obj\Debug\net5.0\DNHModels.AssemblyInfoInputs.cache
+C:\Users\Robbie\Revature\Git-Clone\Collection-P2\DogNHome\DNHModels\obj\Debug\net5.0\DNHModels.AssemblyInfo.cs
+C:\Users\Robbie\Revature\Git-Clone\Collection-P2\DogNHome\DNHModels\obj\Debug\net5.0\DNHModels.csproj.CoreCompileInputs.cache
+C:\Users\Robbie\Revature\Git-Clone\Collection-P2\DogNHome\DNHModels\obj\Debug\net5.0\DNHModels.dll
+C:\Users\Robbie\Revature\Git-Clone\Collection-P2\DogNHome\DNHModels\obj\Debug\net5.0\ref\DNHModels.dll
+C:\Users\Robbie\Revature\Git-Clone\Collection-P2\DogNHome\DNHModels\obj\Debug\net5.0\DNHModels.pdb
