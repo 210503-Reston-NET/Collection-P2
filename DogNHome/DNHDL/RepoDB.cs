@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Model = DNHModels;
 using Microsoft.EntityFrameworkCore;
 
-
+//Still need to do DogList, Listed Dogs, and List of Dogs by List ID
 namespace DNHDL
 {
     public class RepoDB : IRepository
@@ -47,6 +47,14 @@ namespace DNHDL
         public async Task<User> GetUserByIdAsync(string id)
         {
             return await _context.Users.FindAsync(id);
+        }
+
+        public async Task<List<User>> GetAllUsersAsync()
+        {
+            return await _context.Users.AsNoTracking()
+            .Select(
+                user => user
+            ).ToListAsync();
         }
 
         public async Task<User> GetUserAsync(User user)
@@ -98,6 +106,14 @@ namespace DNHDL
             Dog found = await _context.Dogs.AsNoTracking().FirstOrDefaultAsync(dg => dg.DogID == dog.DogID);
             if (found == null) return null;
             return new Dog();
+        }
+        public async Task<List<Dog>> GetAllDogsForList(int ListId)
+        {
+            //Still need to add something here
+            return await _context.Dogs.AsNoTracking()
+            .Select(
+                dog => dog
+            ).ToListAsync();
         }
 
         //Done with Dog functions & starting with Likes
