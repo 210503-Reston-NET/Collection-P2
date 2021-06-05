@@ -18,8 +18,8 @@ namespace DNHDL
         }
         // Insert DBSets here for data models
         public DbSet<Dog> Dogs { get; set; }
-        public DbSet<ListedDog> DogLists { get; set; }
-        public DbSet<DogList> ListedDogs { get; set; }
+        public DbSet<ListedDog> ListedDogs { get; set; }
+        public DbSet<DogList> DogLists { get; set; }
         public DbSet<User> Users { get; set; }
 
         public DbSet<Like> Likes { get; set; }

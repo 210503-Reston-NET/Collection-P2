@@ -22,10 +22,10 @@ namespace DNHBL
         {
             return await _repo.GetAllDogsAsync();
         }
-        public async Task<List<Dog>> GetAllDogsForList(int ListID)
+       /* public async Task<List<Dog>> GetAllDogsForList(int ListID)
         {
             return _repo.GetAllDogsForList(ListId);
-        }
+        }*/
         public async Task<Dog> GetDogByID(int dogID)
         {
             return await _repo.GetDogByIdAsync(dogID);
@@ -59,7 +59,7 @@ namespace DNHBL
             return await _repo.UpdateDogAsync(dog);
         }
 
-        List<Task<DogList>> GetAllDogLists()
+        /*List<Task<DogList>> GetAllDogLists()
         {
 
         }
@@ -85,7 +85,7 @@ namespace DNHBL
         Task<DogList> UpdateDogList(DogList list)
         {
 
-        }
+        }*/
   
         public async Task<List<User>> GetAllUsers()
         {
