@@ -24,8 +24,14 @@ namespace DNHBL
         }
        /* public async Task<List<Dog>> GetAllDogsForList(int ListID)
         {
+<<<<<<< HEAD
+            //return _repo.GetAllDogsForList(ListId);
+            throw new NotImplementedException();
+        }
+=======
             return _repo.GetAllDogsForList(ListId);
         }*/
+>>>>>>> 3bed42796b6ffd8a970ceb5fdd252797dd52d91b
         public async Task<Dog> GetDogByID(int dogID)
         {
             return await _repo.GetDogByIdAsync(dogID);
@@ -58,6 +64,8 @@ namespace DNHBL
         {
             return await _repo.UpdateDogAsync(dog);
         }
+<<<<<<< HEAD
+=======
 
         /*List<Task<DogList>> GetAllDogLists()
         {
@@ -86,6 +94,7 @@ namespace DNHBL
         {
 
         }*/
+>>>>>>> 3bed42796b6ffd8a970ceb5fdd252797dd52d91b
   
         public async Task<List<User>> GetAllUsers()
         {
@@ -107,6 +116,51 @@ namespace DNHBL
         public async Task<User> UpdateUser(User user)
         {
             return await _repo.UpdateUserAsync(user);
+        }
+
+        List<Task<Dog>> IBussiness.GetAllDogs()
+        {
+            throw new NotImplementedException();
+        }
+
+        List<Task<Dog>> IBussiness.GetAllDogsForList(int ListID)
+        {
+            throw new NotImplementedException();
+        }
+
+        List<Task<DogList>> IBussiness.GetAllDogLists()
+        {
+            throw new NotImplementedException();
+        }
+
+        List<Task<DogList>> IBussiness.GetDogListsFor(string UserName)
+        {
+            throw new NotImplementedException();
+        }
+
+        Task<DogList> IBussiness.GetDogListByID(int ListID)
+        {
+            throw new NotImplementedException();
+        }
+
+        Task<DogList> IBussiness.AddNewDogList(DogList list)
+        {
+            throw new NotImplementedException();
+        }
+
+        Task<DogList> IBussiness.RemoveDogList(int dogID)
+        {
+            throw new NotImplementedException();
+        }
+
+        Task<DogList> IBussiness.UpdateDogList(DogList list)
+        {
+            throw new NotImplementedException();
+        }
+
+        List<Task<User>> IBussiness.GetAllUsers()
+        {
+            throw new NotImplementedException();
         }
     }
 }
