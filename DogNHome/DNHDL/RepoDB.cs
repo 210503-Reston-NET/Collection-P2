@@ -59,9 +59,7 @@ namespace DNHDL
 
         public async Task<User> GetUserAsync(User user)
         {
-            //find me a restaurant from the db that is equal to the input restaurant
             User found = await _context.Users.AsNoTracking().FirstOrDefaultAsync(use => use.UserName == user.UserName);
-            // we get the results and return null if nothing is found, otherwise return a Model.Restaurant that was found
             if (found == null) return null;
             return new User();
         }
@@ -303,6 +301,7 @@ namespace DNHDL
             return new Preference();
         }
 
+<<<<<<< HEAD
         //Done with Preferences
 
         public async Task<ListedDog> GetListedDog(ListedDog listDog)
@@ -310,6 +309,35 @@ namespace DNHDL
             //return await _context.ListedDogs.FirstOrDefault(
             //lDog => lDog.DogID == listDog.DogID);
             return new ListedDog();
+=======
+        //Done with Preferences and continue with ListedDog
+      
+        public async Task<DogList> AddDogListasync(DogList dogList)
+        {
+            await _context.DogLists.AddAsync(
+                dogList
+                );
+            await _context.SaveChangesAsync();
+            return dogList;
+        }
+      
+
+        public async Task<DogList> GetDogListAsync(DogList dogList)
+        {
+            DogList found = await _context.DogLists.AsNoTracking().FirstOrDefaultAsync(dgl => dgl.ListID == dogList.ListID);
+            if (found == null) return null;
+            return new DogList();
+        }
+
+        //Finished with DogList and Continuing with ListedDog
+        public async Task<ListedDog> AddListedDogasync(ListedDog listDog)
+        {
+            await _context.ListedDogs.AddAsync(
+                listDog
+                );
+            await _context.SaveChangesAsync();
+            return listDog;
+>>>>>>> 3bed42796b6ffd8a970ceb5fdd252797dd52d91b
         }
     }
 }

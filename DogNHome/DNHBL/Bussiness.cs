@@ -22,11 +22,16 @@ namespace DNHBL
         {
             return await _repo.GetAllDogsAsync();
         }
-        public async Task<List<Dog>> GetAllDogsForList(int ListID)
+       /* public async Task<List<Dog>> GetAllDogsForList(int ListID)
         {
+<<<<<<< HEAD
             //return _repo.GetAllDogsForList(ListId);
             throw new NotImplementedException();
         }
+=======
+            return _repo.GetAllDogsForList(ListId);
+        }*/
+>>>>>>> 3bed42796b6ffd8a970ceb5fdd252797dd52d91b
         public async Task<Dog> GetDogByID(int dogID)
         {
             return await _repo.GetDogByIdAsync(dogID);
@@ -59,6 +64,37 @@ namespace DNHBL
         {
             return await _repo.UpdateDogAsync(dog);
         }
+<<<<<<< HEAD
+=======
+
+        /*List<Task<DogList>> GetAllDogLists()
+        {
+
+        }
+        List<Task<DogList>> GetDogListsFor(string UserName)
+        {
+
+        }
+
+        Task<DogList> GetDogListByID(int ListID)
+        {        
+           
+        }
+
+        Task<DogList> AddNewDogList(DogList list)
+        {
+
+        }
+        Task<DogList> RemoveDogList(int dogID)
+        {
+
+        }
+  
+        Task<DogList> UpdateDogList(DogList list)
+        {
+
+        }*/
+>>>>>>> 3bed42796b6ffd8a970ceb5fdd252797dd52d91b
   
         public async Task<List<User>> GetAllUsers()
         {
