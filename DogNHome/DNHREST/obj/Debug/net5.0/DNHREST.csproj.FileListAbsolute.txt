@@ -8,7 +8,6 @@ C:\Users\Robbie\Revature\Git-Clone\Collection-P2\DogNHome\DNHREST\obj\Debug\net5
 C:\Users\Robbie\Revature\Git-Clone\Collection-P2\DogNHome\DNHREST\obj\Debug\net5.0\DNHREST.RazorAssemblyInfo.cache
 C:\Users\Robbie\Revature\Git-Clone\Collection-P2\DogNHome\DNHREST\obj\Debug\net5.0\DNHREST.RazorAssemblyInfo.cs
 C:\Users\Robbie\Revature\Git-Clone\Collection-P2\DogNHome\DNHREST\bin\Debug\net5.0\appsettings.Development.json
-C:\Users\Robbie\Revature\Git-Clone\Collection-P2\DogNHome\DNHREST\bin\Debug\net5.0\appsettings.json
 C:\Users\Robbie\Revature\Git-Clone\Collection-P2\DogNHome\DNHREST\bin\Debug\net5.0\DNHREST.exe
 C:\Users\Robbie\Revature\Git-Clone\Collection-P2\DogNHome\DNHREST\bin\Debug\net5.0\DNHREST.deps.json
 C:\Users\Robbie\Revature\Git-Clone\Collection-P2\DogNHome\DNHREST\bin\Debug\net5.0\DNHREST.runtimeconfig.json
@@ -77,3 +76,4 @@ C:\Users\Robbie\Revature\Git-Clone\Collection-P2\DogNHome\DNHREST\obj\Debug\net5
 C:\Users\Robbie\Revature\Git-Clone\Collection-P2\DogNHome\DNHREST\obj\Debug\net5.0\ref\DNHREST.dll
 C:\Users\Robbie\Revature\Git-Clone\Collection-P2\DogNHome\DNHREST\obj\Debug\net5.0\DNHREST.pdb
 C:\Users\Robbie\Revature\Git-Clone\Collection-P2\DogNHome\DNHREST\obj\Debug\net5.0\DNHREST.genruntimeconfig.cache
+C:\Users\Robbie\Revature\Git-Clone\Collection-P2\DogNHome\DNHREST\bin\Debug\net5.0\appsettings.json

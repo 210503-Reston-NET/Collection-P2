@@ -73,15 +73,39 @@ namespace DNHBL
         /// <summary>
         /// Removes given DogList Object from the Database
         /// </summary>
-        /// <param name="list">DogList Object to be Removed</param>
+        /// <param name="dogID">Primary Key for the expected Dog</param>
         /// <returns></returns>
-        Task<DogList> RemoveDogList(DogList list);
+        Task<DogList> RemoveDogList(int dogID);
         /// <summary>
         /// Updates the given DogList Object in the Database
         /// </summary>
         /// <param name="list">new DogList Object to be updated</param>
         /// <returns></returns>
         Task<DogList> UpdateDogList(DogList list);
+        /// <summary>
+        /// Returns a list of all Users subscribed to web app
+        /// </summary>
+        /// <returns></returns>
+        List<Task<User>> GetAllUsers();
+        /// <summary>
+        /// Returns a UserObject with the given UserName
+        /// </summary>
+        /// <param name="Username">Primary Key for the expected User</param>
+        /// <returns></returns>
+        Task<User> GetUser(string Username);
+        /// <summary>
+        /// Removes a User from the Database with the given UserName 
+        /// </summary>
+        /// <param name="Username"></param>
+        /// <returns></returns>
+        Task<User> RemoveUser(string Username);
+        /// <summary>
+        /// Updates the given User Object in the Database
+        /// </summary>
+        /// <param name="user">User Object to be updated</param>
+        /// <returns></returns>
+        Task<User> UpdateUser(User user);
+
 
     }
 }
