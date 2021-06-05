@@ -304,5 +304,12 @@ namespace DNHDL
         }
 
         //Done with Preferences
+
+        public async Task<ListedDog> GetListedDog(ListedDog listDog)
+        {
+            //return await _context.ListedDogs.FirstOrDefault(
+            //lDog => lDog.DogID == listDog.DogID);
+            return new ListedDog();
+        }
     }
 }
