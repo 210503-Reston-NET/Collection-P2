@@ -160,3 +160,8 @@ C:\Users\CesarsPc\Desktop\Revature Training Notes\DogNHome-P2\DogNHome\DNHREST\o
 C:\Users\CesarsPc\Desktop\Revature Training Notes\DogNHome-P2\DogNHome\DNHREST\obj\Debug\net5.0\DNHREST.Views.pdb
 C:\Users\CesarsPc\Desktop\Revature Training Notes\DogNHome-P2\DogNHome\DNHREST\obj\Debug\net5.0\DNHREST.csproj.CopyComplete
 C:\Users\CesarsPc\Desktop\Revature Training Notes\DogNHome-P2\DogNHome\DNHREST\obj\Debug\net5.0\DNHREST.genruntimeconfig.cache
+C:\Users\Robbie\Revature\Git-Clone\Collection-P2\DogNHome\DNHREST\bin\Debug\net5.0\DocumentFormat.OpenXml.dll
+C:\Users\Robbie\Revature\Git-Clone\Collection-P2\DogNHome\DNHREST\bin\Debug\net5.0\Elasticsearch.Net.dll
+C:\Users\Robbie\Revature\Git-Clone\Collection-P2\DogNHome\DNHREST\bin\Debug\net5.0\Nest.dll
+C:\Users\Robbie\Revature\Git-Clone\Collection-P2\DogNHome\DNHREST\bin\Debug\net5.0\System.IO.Packaging.dll
+C:\Users\Robbie\Revature\Git-Clone\Collection-P2\DogNHome\DNHREST\bin\Debug\net5.0\ZendeskApi_v2.dll

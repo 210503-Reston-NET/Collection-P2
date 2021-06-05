@@ -1,28 +1,21 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\CesarsPc\\Desktop\\Revature Training Notes\\DogNHome-P2\\DogNHome\\DNHREST\\DNHREST.csproj": {}
+    "C:\\Users\\Robbie\\Revature\\Git-Clone\\Collection-P2\\DogNHome\\DNHREST\\DNHREST.csproj": {}
   },
   "projects": {
-    "C:\\Users\\CesarsPc\\Desktop\\Revature Training Notes\\DogNHome-P2\\DogNHome\\DNHBL\\DNHBL.csproj": {
+    "C:\\Users\\Robbie\\Revature\\Git-Clone\\Collection-P2\\DogNHome\\DNHBL\\DNHBL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\CesarsPc\\Desktop\\Revature Training Notes\\DogNHome-P2\\DogNHome\\DNHBL\\DNHBL.csproj",
+        "projectUniqueName": "C:\\Users\\Robbie\\Revature\\Git-Clone\\Collection-P2\\DogNHome\\DNHBL\\DNHBL.csproj",
         "projectName": "DNHBL",
-        "projectPath": "C:\\Users\\CesarsPc\\Desktop\\Revature Training Notes\\DogNHome-P2\\DogNHome\\DNHBL\\DNHBL.csproj",
-        "packagesPath": "C:\\Users\\CesarsPc\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\CesarsPc\\Desktop\\Revature Training Notes\\DogNHome-P2\\DogNHome\\DNHBL\\obj\\",
+        "projectPath": "C:\\Users\\Robbie\\Revature\\Git-Clone\\Collection-P2\\DogNHome\\DNHBL\\DNHBL.csproj",
+        "packagesPath": "C:\\Users\\Robbie\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Robbie\\Revature\\Git-Clone\\Collection-P2\\DogNHome\\DNHBL\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\CesarsPc\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\Robbie\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -35,8 +28,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\CesarsPc\\Desktop\\Revature Training Notes\\DogNHome-P2\\DogNHome\\DNHDL\\DNHDL.csproj": {
-                "projectPath": "C:\\Users\\CesarsPc\\Desktop\\Revature Training Notes\\DogNHome-P2\\DogNHome\\DNHDL\\DNHDL.csproj"
+              "C:\\Users\\Robbie\\Revature\\Git-Clone\\Collection-P2\\DogNHome\\DNHDL\\DNHDL.csproj": {
+                "projectPath": "C:\\Users\\Robbie\\Revature\\Git-Clone\\Collection-P2\\DogNHome\\DNHDL\\DNHDL.csproj"
               }
             }
           }
@@ -65,29 +58,22 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\CesarsPc\\Desktop\\Revature Training Notes\\DogNHome-P2\\DogNHome\\DNHDL\\DNHDL.csproj": {
+    "C:\\Users\\Robbie\\Revature\\Git-Clone\\Collection-P2\\DogNHome\\DNHDL\\DNHDL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\CesarsPc\\Desktop\\Revature Training Notes\\DogNHome-P2\\DogNHome\\DNHDL\\DNHDL.csproj",
+        "projectUniqueName": "C:\\Users\\Robbie\\Revature\\Git-Clone\\Collection-P2\\DogNHome\\DNHDL\\DNHDL.csproj",
         "projectName": "DNHDL",
-        "projectPath": "C:\\Users\\CesarsPc\\Desktop\\Revature Training Notes\\DogNHome-P2\\DogNHome\\DNHDL\\DNHDL.csproj",
-        "packagesPath": "C:\\Users\\CesarsPc\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\CesarsPc\\Desktop\\Revature Training Notes\\DogNHome-P2\\DogNHome\\DNHDL\\obj\\",
+        "projectPath": "C:\\Users\\Robbie\\Revature\\Git-Clone\\Collection-P2\\DogNHome\\DNHDL\\DNHDL.csproj",
+        "packagesPath": "C:\\Users\\Robbie\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Robbie\\Revature\\Git-Clone\\Collection-P2\\DogNHome\\DNHDL\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\CesarsPc\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\Robbie\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -100,8 +86,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\CesarsPc\\Desktop\\Revature Training Notes\\DogNHome-P2\\DogNHome\\DNHModels\\DNHModels.csproj": {
-                "projectPath": "C:\\Users\\CesarsPc\\Desktop\\Revature Training Notes\\DogNHome-P2\\DogNHome\\DNHModels\\DNHModels.csproj"
+              "C:\\Users\\Robbie\\Revature\\Git-Clone\\Collection-P2\\DogNHome\\DNHModels\\DNHModels.csproj": {
+                "projectPath": "C:\\Users\\Robbie\\Revature\\Git-Clone\\Collection-P2\\DogNHome\\DNHModels\\DNHModels.csproj"
               }
             }
           }
@@ -164,29 +150,22 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\CesarsPc\\Desktop\\Revature Training Notes\\DogNHome-P2\\DogNHome\\DNHModels\\DNHModels.csproj": {
+    "C:\\Users\\Robbie\\Revature\\Git-Clone\\Collection-P2\\DogNHome\\DNHModels\\DNHModels.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\CesarsPc\\Desktop\\Revature Training Notes\\DogNHome-P2\\DogNHome\\DNHModels\\DNHModels.csproj",
+        "projectUniqueName": "C:\\Users\\Robbie\\Revature\\Git-Clone\\Collection-P2\\DogNHome\\DNHModels\\DNHModels.csproj",
         "projectName": "DNHModels",
-        "projectPath": "C:\\Users\\CesarsPc\\Desktop\\Revature Training Notes\\DogNHome-P2\\DogNHome\\DNHModels\\DNHModels.csproj",
-        "packagesPath": "C:\\Users\\CesarsPc\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\CesarsPc\\Desktop\\Revature Training Notes\\DogNHome-P2\\DogNHome\\DNHModels\\obj\\",
+        "projectPath": "C:\\Users\\Robbie\\Revature\\Git-Clone\\Collection-P2\\DogNHome\\DNHModels\\DNHModels.csproj",
+        "packagesPath": "C:\\Users\\Robbie\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Robbie\\Revature\\Git-Clone\\Collection-P2\\DogNHome\\DNHModels\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\CesarsPc\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\Robbie\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -225,29 +204,22 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\CesarsPc\\Desktop\\Revature Training Notes\\DogNHome-P2\\DogNHome\\DNHREST\\DNHREST.csproj": {
+    "C:\\Users\\Robbie\\Revature\\Git-Clone\\Collection-P2\\DogNHome\\DNHREST\\DNHREST.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\CesarsPc\\Desktop\\Revature Training Notes\\DogNHome-P2\\DogNHome\\DNHREST\\DNHREST.csproj",
+        "projectUniqueName": "C:\\Users\\Robbie\\Revature\\Git-Clone\\Collection-P2\\DogNHome\\DNHREST\\DNHREST.csproj",
         "projectName": "DNHREST",
-        "projectPath": "C:\\Users\\CesarsPc\\Desktop\\Revature Training Notes\\DogNHome-P2\\DogNHome\\DNHREST\\DNHREST.csproj",
-        "packagesPath": "C:\\Users\\CesarsPc\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\CesarsPc\\Desktop\\Revature Training Notes\\DogNHome-P2\\DogNHome\\DNHREST\\obj\\",
+        "projectPath": "C:\\Users\\Robbie\\Revature\\Git-Clone\\Collection-P2\\DogNHome\\DNHREST\\DNHREST.csproj",
+        "packagesPath": "C:\\Users\\Robbie\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Robbie\\Revature\\Git-Clone\\Collection-P2\\DogNHome\\DNHREST\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\CesarsPc\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\Robbie\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -260,11 +232,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\CesarsPc\\Desktop\\Revature Training Notes\\DogNHome-P2\\DogNHome\\DNHBL\\DNHBL.csproj": {
-                "projectPath": "C:\\Users\\CesarsPc\\Desktop\\Revature Training Notes\\DogNHome-P2\\DogNHome\\DNHBL\\DNHBL.csproj"
+              "C:\\Users\\Robbie\\Revature\\Git-Clone\\Collection-P2\\DogNHome\\DNHBL\\DNHBL.csproj": {
+                "projectPath": "C:\\Users\\Robbie\\Revature\\Git-Clone\\Collection-P2\\DogNHome\\DNHBL\\DNHBL.csproj"
               },
-              "C:\\Users\\CesarsPc\\Desktop\\Revature Training Notes\\DogNHome-P2\\DogNHome\\DNHDL\\DNHDL.csproj": {
-                "projectPath": "C:\\Users\\CesarsPc\\Desktop\\Revature Training Notes\\DogNHome-P2\\DogNHome\\DNHDL\\DNHDL.csproj"
+              "C:\\Users\\Robbie\\Revature\\Git-Clone\\Collection-P2\\DogNHome\\DNHDL\\DNHDL.csproj": {
+                "projectPath": "C:\\Users\\Robbie\\Revature\\Git-Clone\\Collection-P2\\DogNHome\\DNHDL\\DNHDL.csproj"
               }
             }
           }
@@ -316,7 +288,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }

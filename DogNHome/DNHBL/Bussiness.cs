@@ -24,7 +24,8 @@ namespace DNHBL
         }
         public async Task<List<Dog>> GetAllDogsForList(int ListID)
         {
-            return _repo.GetAllDogsForList(ListId);
+            //return _repo.GetAllDogsForList(ListId);
+            throw new NotImplementedException();
         }
         public async Task<Dog> GetDogByID(int dogID)
         {
@@ -58,34 +59,6 @@ namespace DNHBL
         {
             return await _repo.UpdateDogAsync(dog);
         }
-
-        List<Task<DogList>> GetAllDogLists()
-        {
-
-        }
-        List<Task<DogList>> GetDogListsFor(string UserName)
-        {
-
-        }
-
-        Task<DogList> GetDogListByID(int ListID)
-        {        
-           
-        }
-
-        Task<DogList> AddNewDogList(DogList list)
-        {
-
-        }
-        Task<DogList> RemoveDogList(int dogID)
-        {
-
-        }
-  
-        Task<DogList> UpdateDogList(DogList list)
-        {
-
-        }
   
         public async Task<List<User>> GetAllUsers()
         {
@@ -107,6 +80,51 @@ namespace DNHBL
         public async Task<User> UpdateUser(User user)
         {
             return await _repo.UpdateUserAsync(user);
+        }
+
+        List<Task<Dog>> IBussiness.GetAllDogs()
+        {
+            throw new NotImplementedException();
+        }
+
+        List<Task<Dog>> IBussiness.GetAllDogsForList(int ListID)
+        {
+            throw new NotImplementedException();
+        }
+
+        List<Task<DogList>> IBussiness.GetAllDogLists()
+        {
+            throw new NotImplementedException();
+        }
+
+        List<Task<DogList>> IBussiness.GetDogListsFor(string UserName)
+        {
+            throw new NotImplementedException();
+        }
+
+        Task<DogList> IBussiness.GetDogListByID(int ListID)
+        {
+            throw new NotImplementedException();
+        }
+
+        Task<DogList> IBussiness.AddNewDogList(DogList list)
+        {
+            throw new NotImplementedException();
+        }
+
+        Task<DogList> IBussiness.RemoveDogList(int dogID)
+        {
+            throw new NotImplementedException();
+        }
+
+        Task<DogList> IBussiness.UpdateDogList(DogList list)
+        {
+            throw new NotImplementedException();
+        }
+
+        List<Task<User>> IBussiness.GetAllUsers()
+        {
+            throw new NotImplementedException();
         }
     }
 }
