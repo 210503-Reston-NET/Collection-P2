@@ -44,7 +44,7 @@ namespace DNHDL
             await _context.SaveChangesAsync();
             return user;
         }
-        public async Task<User> GetUserByIdAsync(int id)
+        public async Task<User> GetUserByIdAsync(string id)
         {
             return await _context.Users.FindAsync(id);
         }

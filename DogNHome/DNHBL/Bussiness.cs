@@ -27,14 +27,18 @@ namespace DNHBL
         {
 
         }
-        Task<Dog> GetDogByID(int dogID)
+        public async Task<Dog> GetDogByID(int dogID)
         {
-
+            return await _repo.GetDogByIdAsync(dogID);
         }
 
-        Task<Dog> AddDog(Dog dog)
+        public async Task<Dog> AddDog(Dog dog)
         {
-
+            if (await _repo.GetDogAsync(dog) != null)
+            {
+                throw new Exception("Restaurant already exists :<");
+            }
+            return await _repo.AddDogAsync(dog);
         }
 
         public async Task<Dog> RemoveDog(Dog dog)
@@ -44,16 +48,16 @@ namespace DNHBL
             else throw new Exception("Restaurant does not exist. Must've been deleted already :>");
         }
 
-        Task<Dog> RemoveDogByID(int dogID)
+        public async Task<Dog> RemoveDogByID(int dogID)
         {
-
-
+            Dog toBeDeleted = await _repo.GetDogByIdAsync(dogID);
+            if (toBeDeleted != null) return await _repo.DeleteDogAsync(toBeDeleted);
+            else throw new Exception("Restaurant does not exist. Must've been deleted already :>");
         }
 
-        Task<Dog> UpdateDog(Dog dog)
+        public async Task<Dog> UpdateDog(Dog dog)
         {
-
-
+            return await _repo.UpdateDogAsync(dog);
         }
 
         List<Task<DogList>> GetAllDogLists()
@@ -70,18 +74,40 @@ namespace DNHBL
            
         }
 
-Task<DogList> AddNewDogList(DogList list);
-    
-        Task<DogList> RemoveDogList(int dogID);
+        Task<DogList> AddNewDogList(DogList list)
+        {
+
+        }
+        Task<DogList> RemoveDogList(int dogID)
+        {
+
+        }
   
-        Task<DogList> UpdateDogList(DogList list);
+        Task<DogList> UpdateDogList(DogList list)
+        {
+
+        }
   
-        List<Task<User>> GetAllUsers();
+        List<Task<User>> GetAllUsers()
+        {
+
+        }
    
-        Task<User> GetUser(string Username);
+        public async Task<User> GetUser(string Username)
+        {
+            return await _repo.GetUserByIdAsync(Username);
+        }
  
-        Task<User> RemoveUser(string Username);
+        public async Task<User> RemoveUser(string Username)
+        {
+            User toBeDeleted = await _repo.GetUserByIdAsync(Username);
+            if (toBeDeleted != null) return await _repo.DeleteUserAsync(toBeDeleted);
+            else throw new Exception("Restaurant does not exist. Must've been deleted already :>");
+        }
         
-        Task<User> UpdateUser(User user);
+        public async Task<User> UpdateUser(User user)
+        {
+            return await _repo.UpdateUserAsync(user);
+        }
     }
 }

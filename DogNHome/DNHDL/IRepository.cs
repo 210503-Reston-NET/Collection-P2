@@ -13,7 +13,7 @@ namespace DNHDL
         Task<User> AddUserAsync(User user);
         Task<User> DeleteUserAsync(User user);
         Task<User> UpdateUserAsync(User user);
-        Task<User> GetUserByIdAsync(int id);
+        Task<User> GetUserByIdAsync(string id);
         Task<User> GetUserAsync(User user);
         //Dog
         Task<Dog> AddDogAsync(Dog dog);
