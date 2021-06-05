@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 
 namespace DNHModels
 {
-    class Likes
+    public class Like
     {
         public string UserName { get; set; }
         public int DogID { get; set; }
+        public Like()
+        { }
     }
 }
