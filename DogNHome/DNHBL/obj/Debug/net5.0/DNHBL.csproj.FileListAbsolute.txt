@@ -15,3 +15,20 @@ C:\Users\Robbie\Revature\Git-Clone\Collection-P2\DogNHome\DNHBL\obj\Debug\net5.0
 C:\Users\Robbie\Revature\Git-Clone\Collection-P2\DogNHome\DNHBL\obj\Debug\net5.0\DNHBL.dll
 C:\Users\Robbie\Revature\Git-Clone\Collection-P2\DogNHome\DNHBL\obj\Debug\net5.0\ref\DNHBL.dll
 C:\Users\Robbie\Revature\Git-Clone\Collection-P2\DogNHome\DNHBL\obj\Debug\net5.0\DNHBL.pdb
+C:\Users\CesarsPc\Desktop\Revature Training Notes\DogNHome-P2\DogNHome\DNHBL\bin\Debug\net5.0\DNHBL.deps.json
+C:\Users\CesarsPc\Desktop\Revature Training Notes\DogNHome-P2\DogNHome\DNHBL\bin\Debug\net5.0\DNHBL.dll
+C:\Users\CesarsPc\Desktop\Revature Training Notes\DogNHome-P2\DogNHome\DNHBL\bin\Debug\net5.0\ref\DNHBL.dll
+C:\Users\CesarsPc\Desktop\Revature Training Notes\DogNHome-P2\DogNHome\DNHBL\bin\Debug\net5.0\DNHBL.pdb
+C:\Users\CesarsPc\Desktop\Revature Training Notes\DogNHome-P2\DogNHome\DNHBL\bin\Debug\net5.0\DNHDL.dll
+C:\Users\CesarsPc\Desktop\Revature Training Notes\DogNHome-P2\DogNHome\DNHBL\bin\Debug\net5.0\DNHModels.dll
+C:\Users\CesarsPc\Desktop\Revature Training Notes\DogNHome-P2\DogNHome\DNHBL\bin\Debug\net5.0\DNHDL.pdb
+C:\Users\CesarsPc\Desktop\Revature Training Notes\DogNHome-P2\DogNHome\DNHBL\bin\Debug\net5.0\DNHModels.pdb
+C:\Users\CesarsPc\Desktop\Revature Training Notes\DogNHome-P2\DogNHome\DNHBL\obj\Debug\net5.0\DNHBL.csprojAssemblyReference.cache
+C:\Users\CesarsPc\Desktop\Revature Training Notes\DogNHome-P2\DogNHome\DNHBL\obj\Debug\net5.0\DNHBL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\CesarsPc\Desktop\Revature Training Notes\DogNHome-P2\DogNHome\DNHBL\obj\Debug\net5.0\DNHBL.AssemblyInfoInputs.cache
+C:\Users\CesarsPc\Desktop\Revature Training Notes\DogNHome-P2\DogNHome\DNHBL\obj\Debug\net5.0\DNHBL.AssemblyInfo.cs
+C:\Users\CesarsPc\Desktop\Revature Training Notes\DogNHome-P2\DogNHome\DNHBL\obj\Debug\net5.0\DNHBL.csproj.CoreCompileInputs.cache
+C:\Users\CesarsPc\Desktop\Revature Training Notes\DogNHome-P2\DogNHome\DNHBL\obj\Debug\net5.0\DNHBL.csproj.CopyComplete
+C:\Users\CesarsPc\Desktop\Revature Training Notes\DogNHome-P2\DogNHome\DNHBL\obj\Debug\net5.0\DNHBL.dll
+C:\Users\CesarsPc\Desktop\Revature Training Notes\DogNHome-P2\DogNHome\DNHBL\obj\Debug\net5.0\ref\DNHBL.dll
+C:\Users\CesarsPc\Desktop\Revature Training Notes\DogNHome-P2\DogNHome\DNHBL\obj\Debug\net5.0\DNHBL.pdb

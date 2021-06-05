@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DNHModels
 {
-    class Comments
+    public class Comments
     {
         public int CommentID { get; set; }
         public int PostID { get; set; }

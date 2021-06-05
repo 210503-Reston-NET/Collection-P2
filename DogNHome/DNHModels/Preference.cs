@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DNHModels
 {
-    class Preference
+    public class Preference
     {
         public string UserName { get; set; }
         public int TagID { get; set; }

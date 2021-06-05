@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DNHModels
 {
-    class Posts
+    public class Posts
     {
         public int PostID { get; set; }
         public string Topic { get; set; }

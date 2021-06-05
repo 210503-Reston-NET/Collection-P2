@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DNHModels
 {
-    class Tags
+    public class Tags
     {
         public int TagID { get; set; }
         public string Description { get; set; }

@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using DNHModels;
 
+
 namespace DNHDL
 {
     public class DNHDBContext : DbContext
@@ -17,17 +18,20 @@ namespace DNHDL
         }
         // Insert DBSets here for data models
         public DbSet<Dog> Dogs { get; set; }
-        public DbSet<ListedDog> DogLists { get; set; }
-        public DbSet<DogList> ListedDogs { get; set; }
+        public DbSet<ListedDog> ListedDogs { get; set; }
+        public DbSet<DogList> DogLists { get; set; }
         public DbSet<User> Users { get; set; }
+
+        public DbSet<Like> Likes { get; set; }
+        public DbSet<Comments> Comments { get; set; }
+        public DbSet<Forum> Forums { get; set; }
+        public DbSet<Posts> Posts { get; set; }
+        public DbSet<Preference> Preferences { get; set; }
+        public DbSet<Tags> Tags { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Dog>()
-                .Property(dog => dog.DogID)
-                .ValueGeneratedOnAdd();
-            modelBuilder.Entity<DogList>()
-                .Property(list => list.ListID)
-                .ValueGeneratedOnAdd();
+            
 
 
             modelBuilder.Entity<User>()
@@ -39,6 +43,7 @@ namespace DNHDL
             modelBuilder.Entity<Dog>()
                 .HasKey(dog => dog.DogID);
 
+           
         }
     }
 }

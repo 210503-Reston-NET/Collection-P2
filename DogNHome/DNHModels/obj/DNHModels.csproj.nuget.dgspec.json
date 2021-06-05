@@ -1,21 +1,28 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Robbie\\Revature\\Git-Clone\\Collection-P2\\DogNHome\\DNHModels\\DNHModels.csproj": {}
+    "C:\\Users\\CesarsPc\\Desktop\\Revature Training Notes\\DogNHome-P2\\DogNHome\\DNHModels\\DNHModels.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Robbie\\Revature\\Git-Clone\\Collection-P2\\DogNHome\\DNHModels\\DNHModels.csproj": {
+    "C:\\Users\\CesarsPc\\Desktop\\Revature Training Notes\\DogNHome-P2\\DogNHome\\DNHModels\\DNHModels.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Robbie\\Revature\\Git-Clone\\Collection-P2\\DogNHome\\DNHModels\\DNHModels.csproj",
+        "projectUniqueName": "C:\\Users\\CesarsPc\\Desktop\\Revature Training Notes\\DogNHome-P2\\DogNHome\\DNHModels\\DNHModels.csproj",
         "projectName": "DNHModels",
-        "projectPath": "C:\\Users\\Robbie\\Revature\\Git-Clone\\Collection-P2\\DogNHome\\DNHModels\\DNHModels.csproj",
-        "packagesPath": "C:\\Users\\Robbie\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Robbie\\Revature\\Git-Clone\\Collection-P2\\DogNHome\\DNHModels\\obj\\",
+        "projectPath": "C:\\Users\\CesarsPc\\Desktop\\Revature Training Notes\\DogNHome-P2\\DogNHome\\DNHModels\\DNHModels.csproj",
+        "packagesPath": "C:\\Users\\CesarsPc\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\CesarsPc\\Desktop\\Revature Training Notes\\DogNHome-P2\\DogNHome\\DNHModels\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Robbie\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\CesarsPc\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -54,7 +61,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     }
