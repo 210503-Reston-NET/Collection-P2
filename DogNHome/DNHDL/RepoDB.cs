@@ -61,7 +61,7 @@ namespace DNHDL
         {
             User found = await _context.Users.AsNoTracking().FirstOrDefaultAsync(use => use.UserName == user.UserName);
             if (found == null) return null;
-            return new User();
+            return new User(found.UserName, found.Password, found.FirstName, found.LastName, found.Address);
         }
 
         //Done with User functions & starting with Dog 
@@ -103,14 +103,14 @@ namespace DNHDL
         {
             Dog found = await _context.Dogs.AsNoTracking().FirstOrDefaultAsync(dg => dg.DogID == dog.DogID);
             if (found == null) return null;
-            return new Dog();
+            return new Dog(found.DogID, found.APIID);
         }
-        public async Task<List<Dog>> GetAllDogsForList(int ListId)
+        public async Task<List<Dog>> GetAllDogsForList(int ListId) //Check my logic here please
         {
             //Still need to add something here
             return await _context.Dogs.AsNoTracking()
             .Select(
-                dog => dog
+                ListId => ListId
             ).ToListAsync();
         }
 
@@ -142,7 +142,7 @@ namespace DNHDL
         {
             Like found = await _context.Likes.AsNoTracking().FirstOrDefaultAsync(lk => lk.DogID == like.DogID);
             if (found == null) return null;
-            return new Like();
+            return new Like(found.UserName,found.DogID);
         }
 
         //Done with Like functions & starting with Tags
@@ -156,7 +156,7 @@ namespace DNHDL
         {
             Tags found = await _context.Tags.AsNoTracking().FirstOrDefaultAsync(tag => tag.TagID == tags.TagID);
             if (found == null) return null;
-            return new Tags();
+            return new Tags(found.TagID, found.Description);
         }
         //Done with Tags & starting with Forums
 
@@ -197,7 +197,7 @@ namespace DNHDL
         {
             Forum found = await _context.Forums.AsNoTracking().FirstOrDefaultAsync(foru => foru.ForumID == forum.ForumID);  
             if (found == null) return null;
-            return new Forum();
+            return new Forum(found.ForumID,found.Topic,found.Description);
         }
 
         //Done with Forums & starting with Posts
@@ -237,7 +237,7 @@ namespace DNHDL
         {
             Posts found = await _context.Posts.AsNoTracking().FirstOrDefaultAsync(post => post.PostID == posts.PostID);
             if (found == null) return null;
-            return new Posts();
+            return new Posts(found.PostID,found.Topic,found.UserCreator,found.ForumID);
         }
 
         //Done with Posts & starting with Comments
@@ -279,7 +279,7 @@ namespace DNHDL
         {
             Comments found = await _context.Comments.AsNoTracking().FirstOrDefaultAsync(comm => comm.PostID == comments.PostID);
             if (found == null) return null;
-            return new Comments();
+            return new Comments(found.CommentID, found.PostID, found.UserName, found.Created, found.Message);
         }
         //Done with Comments & starting with Preference
 
@@ -298,7 +298,7 @@ namespace DNHDL
         {
             Preference found = await _context.Preferences.AsNoTracking().FirstOrDefaultAsync(pref => pref.TagID == preference.TagID);
             if (found == null) return null;
-            return new Preference();
+            return new Preference(found.UserName,found.TagID);
         }
 
         //Done with Preferences and continue with ListedDog
@@ -311,13 +311,44 @@ namespace DNHDL
             await _context.SaveChangesAsync();
             return dogList;
         }
-      
+        public async Task<DogList> DeleteDogListAsync(DogList dogList)
+        {
+            DogList toBeDeleted = _context.DogLists.AsNoTracking().First(dgl => dgl.ListID == dogList.ListID);
+            _context.DogLists.Remove(toBeDeleted);
+            await _context.SaveChangesAsync();
+            return dogList;
+        }
+        public async Task<DogList> UpdateDogListAsync(DogList dogList)
+        {
+            _context.DogLists.Update(dogList);
+            await _context.SaveChangesAsync();
+            return dogList;
+        }
+        public async Task<DogList> GetDogListByIdAsync(int id)
+        {
+            return await _context.DogLists.FindAsync(id);
+        }
+        public async Task<List<DogList>> GetAllDogListsAsync()
+        {
+            return await _context.DogLists.AsNoTracking()
+            .Select(
+                dogList => dogList
+            ).ToListAsync();
+        }
 
         public async Task<DogList> GetDogListAsync(DogList dogList)
         {
             DogList found = await _context.DogLists.AsNoTracking().FirstOrDefaultAsync(dgl => dgl.ListID == dogList.ListID);
             if (found == null) return null;
-            return new DogList();
+            return new DogList(found.ListID, found.Title, found.Created, found.UserName);
+        }
+
+        public async Task<List<DogList>> GetDogListForAsync(string Username) //Check my logic here please
+        {
+            return await _context.DogLists.AsNoTracking()
+            .Select(
+                Username => Username
+            ).ToListAsync();
         }
 
         //Finished with DogList and Continuing with ListedDog
@@ -328,6 +359,37 @@ namespace DNHDL
                 );
             await _context.SaveChangesAsync();
             return listDog;
+        }
+        public async Task<ListedDog> DeleteListedDogAsync(ListedDog listedDog)
+        {
+            ListedDog toBeDeleted = _context.ListedDogs.AsNoTracking().First(ldg => ldg.ListID == listedDog.ListID);
+            _context.ListedDogs.Remove(toBeDeleted);
+            await _context.SaveChangesAsync();
+            return listedDog;
+        }
+        public async Task<ListedDog> UpdateListedDogAsync(ListedDog listedDog)
+        {
+            _context.ListedDogs.Update(listedDog);
+            await _context.SaveChangesAsync();
+            return listedDog;
+        }
+        public async Task<ListedDog> GetListedDogByIdAsync(int id)
+        {
+            return await _context.ListedDogs.FindAsync(id);
+        }
+        public async Task<List<ListedDog>> GetAllListedDogsAsync()
+        {
+            return await _context.ListedDogs.AsNoTracking()
+            .Select(
+                listedDog => listedDog
+            ).ToListAsync();
+        }
+
+        public async Task<ListedDog> GetListedDogAsync(ListedDog listedDog)
+        {
+            ListedDog found = await _context.ListedDogs.AsNoTracking().FirstOrDefaultAsync(ldg => ldg.ListID == listedDog.ListID);
+            if (found == null) return null;
+            return new ListedDog(found.DogID, found.ListID);
         }
     }
 }

@@ -8,9 +8,16 @@ namespace DNHModels
 {
     public class Like
     {
-        public string UserName { get; set; }
-        public int DogID { get; set; }
+        public Like(string userName, int dogID)
+        {
+            UserName = userName;
+            DogID = dogID;
+        }
         public Like()
         { }
+
+        public string UserName { get; set; }
+        public int DogID { get; set; }
+        
     }
 }

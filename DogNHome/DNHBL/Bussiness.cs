@@ -22,10 +22,10 @@ namespace DNHBL
         {
             return await _repo.GetAllDogsAsync();
         }
-       /* public async Task<List<Dog>> GetAllDogsForList(int ListID)
+        public async Task<List<Dog>> GetAllDogsForList(int ListID)
         {
-            return _repo.GetAllDogsForList(ListId);
-        }*/
+            return await _repo.GetAllDogsForList(ListID);
+        }
         public async Task<Dog> GetDogByID(int dogID)
         {
             return await _repo.GetDogByIdAsync(dogID);
@@ -59,33 +59,39 @@ namespace DNHBL
             return await _repo.UpdateDogAsync(dog);
         }
 
-        /*List<Task<DogList>> GetAllDogLists()
+        public async Task<List<DogList>> GetAllDogLists()
         {
-
+            return await _repo.GetAllDogListsAsync();
         }
-        List<Task<DogList>> GetDogListsFor(string UserName)
+        public async Task<List<DogList>> GetDogListsFor(string UserName)
         {
-
-        }
-
-        Task<DogList> GetDogListByID(int ListID)
-        {        
-           
+            return await _repo.GetDogListForAsync(UserName);
         }
 
-        Task<DogList> AddNewDogList(DogList list)
+        public async Task<DogList> GetDogListByID(int ListID)
         {
-
+            return await _repo.GetDogListByIdAsync(ListID);
         }
-        Task<DogList> RemoveDogList(int dogID)
-        {
 
+        public async Task<DogList> AddNewDogList(DogList list)
+        {
+            if (await _repo.GetDogListAsync(list) != null)
+            {
+                throw new Exception("Restaurant already exists :<");
+            }
+            return await _repo.AddDogListasync(list) ;
         }
-  
-        Task<DogList> UpdateDogList(DogList list)
+        public async Task<DogList> RemoveDogList(int dogID)
         {
+            DogList toBeDeleted = await _repo.GetDogListByIdAsync(dogID);
+            if (toBeDeleted != null) return await _repo.DeleteDogListAsync(toBeDeleted);
+            else throw new Exception("Restaurant does not exist. Must've been deleted already :>");
+        }
 
-        }*/
+        public async Task<DogList> UpdateDogList(DogList list)
+        {
+            return await _repo.UpdateDogListAsync(list);
+        }
   
         public async Task<List<User>> GetAllUsers()
         {
