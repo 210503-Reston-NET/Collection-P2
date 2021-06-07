@@ -300,7 +300,6 @@ namespace DNHDL
             if (found == null) return null;
             return new Preference(found.UserName,found.TagID);
         }
-
         //Done with Preferences and continue with ListedDog
       
         public async Task<DogList> AddDogListasync(DogList dogList)
