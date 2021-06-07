@@ -8,6 +8,17 @@ namespace DNHModels
 {
     public class Preference
     {
+        public Preference(string userName, int tagID)
+        {
+            UserName = userName;
+            TagID = tagID;
+        }
+
+        public Preference()
+        {
+
+        }
+
         public string UserName { get; set; }
         public int TagID { get; set; }
     }

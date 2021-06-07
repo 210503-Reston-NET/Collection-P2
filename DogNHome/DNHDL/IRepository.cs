@@ -23,6 +23,7 @@ namespace DNHDL
         Task<Dog> GetDogByIdAsync(int id);
         Task<List<Dog>> GetAllDogsAsync();
         Task<Dog> GetDogAsync(Dog dog);
+        Task<List<Dog>> GetAllDogsForList(int ListId);
         //Likes
         Task<Like> AddLikesAsync(Like like);
         Task<Like> UpdateLikeAsync(Like like);
@@ -56,5 +57,26 @@ namespace DNHDL
         Task<Preference> GetPreferenceByIdAsync(int id);
         Task<List<Preference>> GetAllPreferencesAsync();
         Task<Preference> GetPreferenceAsync(Preference preference);
+        //DogList
+        Task<DogList> AddDogListasync(DogList dogList);
+
+        Task<DogList> DeleteDogListAsync(DogList dogList);
+        Task<DogList> UpdateDogListAsync(DogList dogList);
+        Task<DogList> GetDogListByIdAsync(int id);
+        Task<List<DogList>> GetAllDogListsAsync();
+        Task<DogList> GetDogListAsync(DogList dogList);
+        Task<List<DogList>> GetDogListForAsync(string Username);
+        //ListedDog
+        Task<ListedDog> AddListedDogasync(ListedDog listDog);
+        Task<ListedDog> DeleteListedDogAsync(ListedDog listedDog);
+        Task<ListedDog> UpdateListedDogAsync(ListedDog listedDog);
+        Task<ListedDog> GetListedDogByIdAsync(int id);
+        Task<List<ListedDog>> GetAllListedDogsAsync();  
+        Task<ListedDog> GetListedDogAsync(ListedDog listedDog);
+
+
+
+
+
     }
 }

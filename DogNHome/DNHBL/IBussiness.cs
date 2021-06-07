@@ -16,7 +16,7 @@ namespace DNHBL
         /// Returns a complete list of all Dogs for a given listID
         /// </summary>
         /// <returns></returns>
-        //Task<List<Dog>> GetAllDogsForList(int ListID);
+        Task<List<Dog>> GetAllDogsForList(int ListID);
         /// <summary>
         /// Returns the Dog object for a referenced dog and its API Key
         /// </summary>
@@ -51,37 +51,37 @@ namespace DNHBL
         /// Returns a complete list of Dog Lists from Database. primarily for Development
         /// </summary>
         /// <returns></returns>
-        //Task<List<DogList>> GetAllDogLists();
+        Task<List<DogList>> GetAllDogLists();
         /// <summary>
         /// Returns all DogList Objects from Database for given User
         /// </summary>
         /// <param name="UserName">Unique Username</param>
         /// <returns></returns>
-        //Task<List<DogList>> GetDogListsFor(string UserName);
+        Task<List<DogList>> GetDogListsFor(string UserName);
         /// <summary>
         /// Returns a single DogList Object for the given ListID
         /// </summary>
         /// <param name="ListID">Primary Key for the expected DogList</param>
         /// <returns></returns>
-        //Task<DogList> GetDogListByID(int ListID);
+        Task<DogList> GetDogListByID(int ListID);
         /// <summary>
         /// Adds a new List to the Database for a related User
         /// </summary>
         /// <param name="list">List Object to be added</param>
         /// <returns></returns>
-        //Task<DogList> AddNewDogList(DogList list);
+        Task<DogList> AddNewDogList(DogList list);
         /// <summary>
         /// Removes given DogList Object from the Database
         /// </summary>
         /// <param name="dogID">Primary Key for the expected Dog</param>
         /// <returns></returns>
-        //Task<DogList> RemoveDogList(int dogID);
+        Task<DogList> RemoveDogList(int dogID);
         /// <summary>
         /// Updates the given DogList Object in the Database
         /// </summary>
         /// <param name="list">new DogList Object to be updated</param>
         /// <returns></returns>
-        //Task<DogList> UpdateDogList(DogList list);
+        Task<DogList> UpdateDogList(DogList list);
         /// <summary>
         /// Returns a list of all Users subscribed to web app
         /// </summary>

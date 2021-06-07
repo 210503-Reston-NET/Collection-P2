@@ -34,6 +34,14 @@ namespace DNHREST.Controllers
             return Ok(_BL.GetDogByID(id));
         }
 
+        // PUT api/<DogController>
+        [HttpPut]
+        public IActionResult AddDog(Dog dog)
+        {
+            _BL.AddDog(dog);
+            return NoContent();
+        }
+
         // POST api/<DogController>
         [HttpPost]
         public IActionResult UpdateDog([FromBody] Dog dog)
@@ -46,7 +54,7 @@ namespace DNHREST.Controllers
         [HttpDelete("{id}")]
         public IActionResult DeleteDog(int id)
         {
-            //_BL.RemoveDog(id);
+            _BL.RemoveDogByID(id);
             return NoContent();
         }
     }
