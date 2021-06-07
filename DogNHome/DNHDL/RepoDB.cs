@@ -300,16 +300,6 @@ namespace DNHDL
             if (found == null) return null;
             return new Preference();
         }
-
-<<<<<<< HEAD
-        //Done with Preferences
-
-        public async Task<ListedDog> GetListedDog(ListedDog listDog)
-        {
-            //return await _context.ListedDogs.FirstOrDefault(
-            //lDog => lDog.DogID == listDog.DogID);
-            return new ListedDog();
-=======
         //Done with Preferences and continue with ListedDog
       
         public async Task<DogList> AddDogListasync(DogList dogList)
@@ -337,7 +327,6 @@ namespace DNHDL
                 );
             await _context.SaveChangesAsync();
             return listDog;
->>>>>>> 3bed42796b6ffd8a970ceb5fdd252797dd52d91b
         }
     }
 }
