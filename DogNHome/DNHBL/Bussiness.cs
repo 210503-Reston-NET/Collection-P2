@@ -22,16 +22,12 @@ namespace DNHBL
         {
             return await _repo.GetAllDogsAsync();
         }
-       /* public async Task<List<Dog>> GetAllDogsForList(int ListID)
+        public async Task<List<Dog>> GetAllDogsForList(int ListID)
         {
-<<<<<<< HEAD
-            //return _repo.GetAllDogsForList(ListId);
-            throw new NotImplementedException();
+
+            return await _repo.GetAllDogsForList(ListID);
         }
-=======
-            return _repo.GetAllDogsForList(ListId);
-        }*/
->>>>>>> 3bed42796b6ffd8a970ceb5fdd252797dd52d91b
+
         public async Task<Dog> GetDogByID(int dogID)
         {
             return await _repo.GetDogByIdAsync(dogID);
@@ -64,37 +60,41 @@ namespace DNHBL
         {
             return await _repo.UpdateDogAsync(dog);
         }
-<<<<<<< HEAD
-=======
 
-        /*List<Task<DogList>> GetAllDogLists()
+        public async Task<List<DogList>> GetAllDogLists()
         {
-
+            return await _repo.GetAllDogListsAsync();
         }
-        List<Task<DogList>> GetDogListsFor(string UserName)
+        public async Task<List<DogList>> GetDogListsFor(string UserName)
         {
-
+            return await _repo.GetDogListForAsync(UserName);
         }
 
-        Task<DogList> GetDogListByID(int ListID)
-        {        
-           
+        public async Task<DogList> GetDogListByID(int ListID)
+        {
+            return await _repo.GetDogListByIdAsync(ListID);
         }
 
-        Task<DogList> AddNewDogList(DogList list)
+        public async Task<DogList> AddNewDogList(DogList list)
         {
-
+            if (await _repo.GetDogListAsync(list) != null)
+            {
+                throw new Exception("Restaurant already exists :<");
+            }
+            return await _repo.AddDogListasync(list) ;
         }
-        Task<DogList> RemoveDogList(int dogID)
+        public async Task<DogList> RemoveDogList(int dogID)
         {
-
+            DogList toBeDeleted = await _repo.GetDogListByIdAsync(dogID);
+            if (toBeDeleted != null) return await _repo.DeleteDogListAsync(toBeDeleted);
+            else throw new Exception("Restaurant does not exist. Must've been deleted already :>");
         }
-  
-        Task<DogList> UpdateDogList(DogList list)
-        {
 
-        }*/
->>>>>>> 3bed42796b6ffd8a970ceb5fdd252797dd52d91b
+        public async Task<DogList> UpdateDogList(DogList list)
+        {
+            return await _repo.UpdateDogListAsync(list);
+        }
+
   
         public async Task<List<User>> GetAllUsers()
         {
@@ -118,49 +118,5 @@ namespace DNHBL
             return await _repo.UpdateUserAsync(user);
         }
 
-        List<Task<Dog>> IBussiness.GetAllDogs()
-        {
-            throw new NotImplementedException();
-        }
-
-        List<Task<Dog>> IBussiness.GetAllDogsForList(int ListID)
-        {
-            throw new NotImplementedException();
-        }
-
-        List<Task<DogList>> IBussiness.GetAllDogLists()
-        {
-            throw new NotImplementedException();
-        }
-
-        List<Task<DogList>> IBussiness.GetDogListsFor(string UserName)
-        {
-            throw new NotImplementedException();
-        }
-
-        Task<DogList> IBussiness.GetDogListByID(int ListID)
-        {
-            throw new NotImplementedException();
-        }
-
-        Task<DogList> IBussiness.AddNewDogList(DogList list)
-        {
-            throw new NotImplementedException();
-        }
-
-        Task<DogList> IBussiness.RemoveDogList(int dogID)
-        {
-            throw new NotImplementedException();
-        }
-
-        Task<DogList> IBussiness.UpdateDogList(DogList list)
-        {
-            throw new NotImplementedException();
-        }
-
-        List<Task<User>> IBussiness.GetAllUsers()
-        {
-            throw new NotImplementedException();
-        }
     }
 }
