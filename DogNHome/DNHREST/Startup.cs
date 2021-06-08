@@ -13,6 +13,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using DNHDL;
+using DNHBL;
 
 namespace DNHREST
 {
@@ -38,6 +39,17 @@ namespace DNHREST
             services.AddDbContext<DNHDBContext>(
                 options => options.UseNpgsql(Configuration.GetConnectionString("CollectionDB"))
                 );
+            services.AddScoped<IBussiness, Bussiness>();
+            services.AddScoped<IRepository, RepoDB>();
+            services.AddCors(options =>
+            {
+                options.AddDefaultPolicy(builder =>
+                {
+                    builder.WithOrigins("http://127.0.0.1:5500", "http://127.0.0.1:5501", "https://dognhome.azurewebsites.net")
+                    .AllowAnyMethod()
+                    .AllowAnyHeader();
+                });
+            });
 
         }
 
@@ -54,6 +66,8 @@ namespace DNHREST
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseCors();
 
             app.UseAuthorization();
 
