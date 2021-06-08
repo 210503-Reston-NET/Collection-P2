@@ -105,6 +105,12 @@ namespace DNHBL
         /// <param name="user">User Object to be updated</param>
         /// <returns></returns>
         Task<User> UpdateUser(User user);
+        /// <summary>
+        /// Creates a user in the Database, based off of the user object passed
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
+        Task<User> AddUser(User user);
 
 
     }
