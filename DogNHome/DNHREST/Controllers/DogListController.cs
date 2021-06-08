@@ -24,14 +24,14 @@ namespace DNHREST.Controllers
         [HttpGet]
         public IActionResult GetDogLists()
         {
-            return Ok(_BL.GetAllDogLists());
+            return Ok(_BL.GetAllDogLists().Result);
         }
 
         // GET api/<DogController>/5
         [HttpGet("{id}")]
         public IActionResult GetDogList(int id)
         {
-            return Ok(_BL.GetDogListByID(id));
+            return Ok(_BL.GetDogListByID(id).Result);
         }
 
         // PUT api/<DogController>
