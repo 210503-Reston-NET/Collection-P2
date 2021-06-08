@@ -44,10 +44,10 @@ steps:
   inputs:
     codeCoverageTool: 'Cobertura'
     summaryFileLocation: '**/Cobertura/Configure.xml'
- - task: SonarCloudAnalyze@1
-displayName: Run Code Analysis
- - task: SonarCloudPublish@1
-displayName: Publish Code Analysis
+- task: SonarCloudAnalyze@1
+  displayName: Run Code Analysis
+- task: SonarCloudPublish@1
+  displayName: Publish Code Analysis
 - task: DotNetCoreCLI@2
   displayName: Publish Project
   inputs:
