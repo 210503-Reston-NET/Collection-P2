@@ -118,5 +118,13 @@ namespace DNHBL
             return await _repo.UpdateUserAsync(user);
         }
 
+        public async Task<User> AddUser(User user)
+        {
+            if (await _repo.GetUserAsync(user) != null)
+            {
+                throw new Exception("Looks like you already have an account!");
+            }
+            return await _repo.AddUserAsync(user);
+        }
     }
 }

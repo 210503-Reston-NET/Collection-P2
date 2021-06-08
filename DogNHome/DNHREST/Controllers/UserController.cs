@@ -12,49 +12,49 @@ namespace DNHREST.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class DogListController : ControllerBase
+    public class UserController : ControllerBase
     {
         private readonly IBussiness _BL;
 
-        public DogListController (IBussiness BL)
+        public UserController (IBussiness BL)
         {
             _BL = BL;
         }
         // GET: api/<DogController>
         [HttpGet]
-        public IActionResult GetDogLists()
+        public IActionResult GetUsers()
         {
-            return Ok(_BL.GetAllDogLists());
+            return Ok(_BL.GetAllUsers());
         }
 
         // GET api/<DogController>/5
         [HttpGet("{id}")]
-        public IActionResult GetDogList(int id)
+        public IActionResult GetUser(string id)
         {
-            return Ok(_BL.GetDogListByID(id));
+            return Ok(_BL.GetUser(id));
         }
 
         // PUT api/<DogController>
         [HttpPut]
-        public IActionResult AddDogList(DogList dogList)
+        public IActionResult AddUser(User user)
         {
-            _BL.AddNewDogList(dogList);
+            _BL.AddUser(user);
             return NoContent();
         }
 
         // POST api/<DogController>
         [HttpPost]
-        public IActionResult UpdateDogList([FromBody] DogList dogList)
+        public IActionResult UpdateUser([FromBody] User user)
         {
-            _BL.UpdateDogList(dogList);
+            _BL.UpdateUser(user);
             return NoContent();
         }
 
         // DELETE api/<DogController>/5
         [HttpDelete("{id}")]
-        public IActionResult DeleteDogList(int id)
+        public IActionResult DeleteUser(string id)
         {
-            _BL.RemoveDogList(id);
+            _BL.RemoveUser(id);
             return NoContent();
         }
     }
