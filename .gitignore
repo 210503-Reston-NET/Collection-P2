@@ -1,4 +1,7 @@
 appsettings.json
+**/bin
+**/obj
+**/.vs
 # Created by https://www.toptal.com/developers/gitignore/api/macos,visualstudiocode,visualstudio,csharp,angular,dotnetcore
 # Edit at https://www.toptal.com/developers/gitignore?templates=macos,visualstudiocode,visualstudio,csharp,angular,dotnetcore
 

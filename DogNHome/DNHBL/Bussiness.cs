@@ -118,6 +118,7 @@ namespace DNHBL
             return await _repo.UpdateUserAsync(user);
         }
 
+<<<<<<< HEAD
         public async Task<User> AddUser(User user)
         {
             if (await _repo.GetUserAsync(user) != null)
@@ -347,5 +348,7 @@ namespace DNHBL
             //return await _repo.UpdateTag(tag);
             throw new NotImplementedException(); // Not implemented in RepoDB
         }
+=======
+>>>>>>> 58031aa951ea0fd979654c95a5fd05d62e8c8ef8
     }
 }
