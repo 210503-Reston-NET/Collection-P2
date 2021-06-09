@@ -45,7 +45,7 @@ namespace DNHREST
             {
                 options.AddDefaultPolicy(builder =>
                 {
-                    builder.WithOrigins("http://127.0.0.1:5500", "http://127.0.0.1:5501", "https://dognhome.azurewebsites.net")
+                    builder.WithOrigins("http://127.0.0.1:5500", "http://127.0.0.1:5501", "https://dognhome.azurewebsites.net", "https://localhost:44393")
                     .AllowAnyMethod()
                     .AllowAnyHeader();
                 });
