@@ -33,12 +33,14 @@ namespace DNHREST.Controllers
         {
             return Ok(_BL.GetListedDogsForDog(dogId).Result);
         }
+        /*
         // GET api/<DogController>/5
         [HttpGet("{id}")]
         public IActionResult GetListedDogForListID(int listId)
         {
             return Ok(_BL.GetListedDogsForList(listId).Result);
         }
+        */
 
         // PUT api/<DogController>
         [HttpPut]
