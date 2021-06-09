@@ -13,8 +13,8 @@ namespace DNHModels
     {
         public ListedDog(int dogID, int listID)
         {
-            DogID = dogID;
-            ListID = listID;
+            this.DogID = dogID;
+            this.ListID = listID;
         }
         public ListedDog()
         {

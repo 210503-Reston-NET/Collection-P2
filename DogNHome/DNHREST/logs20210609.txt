@@ -1,0 +1,9 @@
+2021-06-09 16:53:10.067 -05:00 [DBG] Getting all dogs from the database.
+2021-06-09 16:54:48.605 -05:00 [INF] App is now running
+2021-06-09 16:55:22.070 -05:00 [INF] App is now running
+2021-06-09 16:56:05.005 -05:00 [DBG] Getting all dogs from the database.
+2021-06-09 16:57:27.897 -05:00 [INF] App is now running
+2021-06-09 16:57:53.315 -05:00 [DBG] Getting all dogs from the database.
+2021-06-09 16:58:14.424 -05:00 [DBG] Getting 3 from the database.
+2021-06-09 17:00:07.036 -05:00 [INF] App is now running
+2021-06-09 17:00:18.080 -05:00 [DBG] Getting all dogs from the database.

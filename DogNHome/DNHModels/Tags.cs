@@ -10,8 +10,8 @@ namespace DNHModels
     {
         public Tags(int tagID, string description)
         {
-            TagID = tagID;
-            Description = description;
+            this.TagID = tagID;
+            this.Description = description;
         }
 
         public Tags()

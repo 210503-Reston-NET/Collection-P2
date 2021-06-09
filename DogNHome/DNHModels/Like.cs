@@ -10,8 +10,8 @@ namespace DNHModels
     {
         public Like(string userName, int dogID)
         {
-            UserName = userName;
-            DogID = dogID;
+            this.UserName = userName;
+            this.DogID = dogID;
         }
         public Like()
         { }

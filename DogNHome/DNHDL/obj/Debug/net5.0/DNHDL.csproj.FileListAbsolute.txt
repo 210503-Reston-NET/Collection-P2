@@ -1,29 +1,3 @@
-C:\Users\Robbie\Revature\Git-Clone\Collection-P2\DogNHome\DNHDL\bin\Debug\net5.0\DNHDL.deps.json
-C:\Users\Robbie\Revature\Git-Clone\Collection-P2\DogNHome\DNHDL\bin\Debug\net5.0\DNHDL.runtimeconfig.json
-C:\Users\Robbie\Revature\Git-Clone\Collection-P2\DogNHome\DNHDL\bin\Debug\net5.0\DNHDL.runtimeconfig.dev.json
-C:\Users\Robbie\Revature\Git-Clone\Collection-P2\DogNHome\DNHDL\bin\Debug\net5.0\DNHDL.dll
-C:\Users\Robbie\Revature\Git-Clone\Collection-P2\DogNHome\DNHDL\bin\Debug\net5.0\ref\DNHDL.dll
-C:\Users\Robbie\Revature\Git-Clone\Collection-P2\DogNHome\DNHDL\bin\Debug\net5.0\DNHDL.pdb
-C:\Users\Robbie\Revature\Git-Clone\Collection-P2\DogNHome\DNHDL\bin\Debug\net5.0\DNHModels.dll
-C:\Users\Robbie\Revature\Git-Clone\Collection-P2\DogNHome\DNHDL\bin\Debug\net5.0\DNHModels.pdb
-C:\Users\Robbie\Revature\Git-Clone\Collection-P2\DogNHome\DNHDL\obj\Debug\net5.0\DNHDL.csprojAssemblyReference.cache
-C:\Users\Robbie\Revature\Git-Clone\Collection-P2\DogNHome\DNHDL\obj\Debug\net5.0\DNHDL.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Robbie\Revature\Git-Clone\Collection-P2\DogNHome\DNHDL\obj\Debug\net5.0\DNHDL.AssemblyInfoInputs.cache
-C:\Users\Robbie\Revature\Git-Clone\Collection-P2\DogNHome\DNHDL\obj\Debug\net5.0\DNHDL.AssemblyInfo.cs
-C:\Users\Robbie\Revature\Git-Clone\Collection-P2\DogNHome\DNHDL\obj\Debug\net5.0\DNHDL.csproj.CoreCompileInputs.cache
-C:\Users\Robbie\Revature\Git-Clone\Collection-P2\DogNHome\DNHDL\obj\Debug\net5.0\DNHDL.csproj.CopyComplete
-C:\Users\Robbie\Revature\Git-Clone\Collection-P2\DogNHome\DNHDL\obj\Debug\net5.0\DNHDL.dll
-C:\Users\Robbie\Revature\Git-Clone\Collection-P2\DogNHome\DNHDL\obj\Debug\net5.0\ref\DNHDL.dll
-C:\Users\Robbie\Revature\Git-Clone\Collection-P2\DogNHome\DNHDL\obj\Debug\net5.0\DNHDL.pdb
-C:\Users\Robbie\Revature\Git-Clone\Collection-P2\DogNHome\DNHDL\obj\Debug\net5.0\DNHDL.genruntimeconfig.cache
-C:\Users\CesarsPc\Desktop\Revature Training Notes\DogNHome-P2\DogNHome\DNHDL\obj\Debug\net5.0\DNHDL.csprojAssemblyReference.cache
-C:\Users\CesarsPc\Desktop\Revature Training Notes\DogNHome-P2\DogNHome\DNHDL\obj\Debug\net5.0\DNHDL.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\CesarsPc\Desktop\Revature Training Notes\DogNHome-P2\DogNHome\DNHDL\obj\Debug\net5.0\DNHDL.AssemblyInfoInputs.cache
-C:\Users\CesarsPc\Desktop\Revature Training Notes\DogNHome-P2\DogNHome\DNHDL\obj\Debug\net5.0\DNHDL.AssemblyInfo.cs
-C:\Users\CesarsPc\Desktop\Revature Training Notes\DogNHome-P2\DogNHome\DNHDL\obj\Debug\net5.0\DNHDL.csproj.CoreCompileInputs.cache
-C:\Users\CesarsPc\Desktop\Revature Training Notes\DogNHome-P2\DogNHome\DNHDL\obj\Debug\net5.0\DNHDL.dll
-C:\Users\CesarsPc\Desktop\Revature Training Notes\DogNHome-P2\DogNHome\DNHDL\obj\Debug\net5.0\ref\DNHDL.dll
-C:\Users\CesarsPc\Desktop\Revature Training Notes\DogNHome-P2\DogNHome\DNHDL\obj\Debug\net5.0\DNHDL.pdb
 C:\Users\CesarsPc\Desktop\Revature Training Notes\DogNHome-P2\DogNHome\DNHDL\bin\Debug\net5.0\DNHDL.deps.json
 C:\Users\CesarsPc\Desktop\Revature Training Notes\DogNHome-P2\DogNHome\DNHDL\bin\Debug\net5.0\DNHDL.runtimeconfig.json
 C:\Users\CesarsPc\Desktop\Revature Training Notes\DogNHome-P2\DogNHome\DNHDL\bin\Debug\net5.0\DNHDL.runtimeconfig.dev.json
@@ -32,5 +6,13 @@ C:\Users\CesarsPc\Desktop\Revature Training Notes\DogNHome-P2\DogNHome\DNHDL\bin
 C:\Users\CesarsPc\Desktop\Revature Training Notes\DogNHome-P2\DogNHome\DNHDL\bin\Debug\net5.0\DNHDL.pdb
 C:\Users\CesarsPc\Desktop\Revature Training Notes\DogNHome-P2\DogNHome\DNHDL\bin\Debug\net5.0\DNHModels.dll
 C:\Users\CesarsPc\Desktop\Revature Training Notes\DogNHome-P2\DogNHome\DNHDL\bin\Debug\net5.0\DNHModels.pdb
+C:\Users\CesarsPc\Desktop\Revature Training Notes\DogNHome-P2\DogNHome\DNHDL\obj\Debug\net5.0\DNHDL.csprojAssemblyReference.cache
+C:\Users\CesarsPc\Desktop\Revature Training Notes\DogNHome-P2\DogNHome\DNHDL\obj\Debug\net5.0\DNHDL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\CesarsPc\Desktop\Revature Training Notes\DogNHome-P2\DogNHome\DNHDL\obj\Debug\net5.0\DNHDL.AssemblyInfoInputs.cache
+C:\Users\CesarsPc\Desktop\Revature Training Notes\DogNHome-P2\DogNHome\DNHDL\obj\Debug\net5.0\DNHDL.AssemblyInfo.cs
+C:\Users\CesarsPc\Desktop\Revature Training Notes\DogNHome-P2\DogNHome\DNHDL\obj\Debug\net5.0\DNHDL.csproj.CoreCompileInputs.cache
 C:\Users\CesarsPc\Desktop\Revature Training Notes\DogNHome-P2\DogNHome\DNHDL\obj\Debug\net5.0\DNHDL.csproj.CopyComplete
+C:\Users\CesarsPc\Desktop\Revature Training Notes\DogNHome-P2\DogNHome\DNHDL\obj\Debug\net5.0\DNHDL.dll
+C:\Users\CesarsPc\Desktop\Revature Training Notes\DogNHome-P2\DogNHome\DNHDL\obj\Debug\net5.0\ref\DNHDL.dll
+C:\Users\CesarsPc\Desktop\Revature Training Notes\DogNHome-P2\DogNHome\DNHDL\obj\Debug\net5.0\DNHDL.pdb
 C:\Users\CesarsPc\Desktop\Revature Training Notes\DogNHome-P2\DogNHome\DNHDL\obj\Debug\net5.0\DNHDL.genruntimeconfig.cache

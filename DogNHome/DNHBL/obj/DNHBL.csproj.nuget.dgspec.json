@@ -37,6 +37,9 @@
             "projectReferences": {
               "C:\\Users\\CesarsPc\\Desktop\\Revature Training Notes\\DogNHome-P2\\DogNHome\\DNHDL\\DNHDL.csproj": {
                 "projectPath": "C:\\Users\\CesarsPc\\Desktop\\Revature Training Notes\\DogNHome-P2\\DogNHome\\DNHDL\\DNHDL.csproj"
+              },
+              "C:\\Users\\CesarsPc\\Desktop\\Revature Training Notes\\DogNHome-P2\\DogNHome\\DNHModels\\DNHModels.csproj": {
+                "projectPath": "C:\\Users\\CesarsPc\\Desktop\\Revature Training Notes\\DogNHome-P2\\DogNHome\\DNHModels\\DNHModels.csproj"
               }
             }
           }
@@ -124,17 +127,17 @@
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[5.0.6, )"
+              "version": "[5.0.7, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[5.0.6, )"
+              "version": "[5.0.7, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[5.0.6, )"
+              "version": "[5.0.7, )"
             },
             "NEST": {
               "target": "Package",
@@ -143,6 +146,10 @@
             "Npgsql.EntityFrameworkCore.PostgreSQL": {
               "target": "Package",
               "version": "[5.0.6, )"
+            },
+            "Serilog": {
+              "target": "Package",
+              "version": "[2.10.0, )"
             },
             "ZendeskApi_v2": {
               "target": "Package",

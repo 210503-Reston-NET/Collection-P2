@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DNHDL\DNHDL.csproj" />
+    <ProjectReference Include="..\DNHModels\DNHModels.csproj" />
   </ItemGroup>
 
 </Project>

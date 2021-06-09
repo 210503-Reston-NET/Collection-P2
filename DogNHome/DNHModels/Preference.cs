@@ -10,8 +10,8 @@ namespace DNHModels
     {
         public Preference(string userName, int tagID)
         {
-            UserName = userName;
-            TagID = tagID;
+            this.UserName = userName;
+            this.TagID = tagID;
         }
 
         public Preference()

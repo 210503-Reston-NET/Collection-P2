@@ -37,6 +37,9 @@
             "projectReferences": {
               "C:\\Users\\CesarsPc\\Desktop\\Revature Training Notes\\DogNHome-P2\\DogNHome\\DNHDL\\DNHDL.csproj": {
                 "projectPath": "C:\\Users\\CesarsPc\\Desktop\\Revature Training Notes\\DogNHome-P2\\DogNHome\\DNHDL\\DNHDL.csproj"
+              },
+              "C:\\Users\\CesarsPc\\Desktop\\Revature Training Notes\\DogNHome-P2\\DogNHome\\DNHModels\\DNHModels.csproj": {
+                "projectPath": "C:\\Users\\CesarsPc\\Desktop\\Revature Training Notes\\DogNHome-P2\\DogNHome\\DNHModels\\DNHModels.csproj"
               }
             }
           }
@@ -124,17 +127,17 @@
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[5.0.6, )"
+              "version": "[5.0.7, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[5.0.6, )"
+              "version": "[5.0.7, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[5.0.6, )"
+              "version": "[5.0.7, )"
             },
             "NEST": {
               "target": "Package",
@@ -143,6 +146,10 @@
             "Npgsql.EntityFrameworkCore.PostgreSQL": {
               "target": "Package",
               "version": "[5.0.6, )"
+            },
+            "Serilog": {
+              "target": "Package",
+              "version": "[2.10.0, )"
             },
             "ZendeskApi_v2": {
               "target": "Package",
@@ -281,17 +288,29 @@
           "dependencies": {
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[5.0.6, )"
+              "version": "[6.0.0-preview.4.21253.1, )"
             },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[5.0.6, )"
+              "version": "[6.0.0-preview.4.21253.1, )"
             },
             "Npgsql.EntityFrameworkCore.PostgreSQL": {
               "target": "Package",
-              "version": "[5.0.6, )"
+              "version": "[6.0.0-preview4, )"
+            },
+            "Serilog": {
+              "target": "Package",
+              "version": "[2.10.1-dev-01308, )"
+            },
+            "Serilog.Sinks.Console": {
+              "target": "Package",
+              "version": "[4.0.0-dev-00839, )"
+            },
+            "Serilog.Sinks.File": {
+              "target": "Package",
+              "version": "[5.0.0-dev-00909, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
