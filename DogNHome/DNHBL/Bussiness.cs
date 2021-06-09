@@ -185,7 +185,7 @@ namespace DNHBL
             return await _repo.UpdatePostsAsync(post);
         }
 
-        public async Task<List<Forum>> GetAllForums(Forum forum)
+        public async Task<List<Forum>> GetAllForums()
         {
             return await _repo.GetAllForumsAsync();
         }
