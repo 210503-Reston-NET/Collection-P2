@@ -19,7 +19,7 @@ steps:
     SonarCloud: 'Collection-P2'
     organization: '210503-reston-net'
     scannerMode: 'MSBuild'
-    projectKey: '210503-Reston-NET_Robert-Fisher-P1'
+    projectKey: '210503-Reston-NET_Fisher-Robert-P1'
     projectName: 'DogNHome'
 - task: DotNetCoreCLI@2
   displayName: Restore Project deps
@@ -44,10 +44,10 @@ steps:
   inputs:
     codeCoverageTool: 'Cobertura'
     summaryFileLocation: '**/Cobertura/Configure.xml'
-#- task: SonarCloudAnalyze@1
-#  displayName: Run Code Analysis
-#- task: SonarCloudPublish@1
-#  displayName: Publish Code Analysis
+- task: SonarCloudAnalyze@1
+  displayName: Run Code Analysis
+- task: SonarCloudPublish@1
+  displayName: Publish Code Analysis
 - task: DotNetCoreCLI@2
   displayName: Publish Project
   inputs:
