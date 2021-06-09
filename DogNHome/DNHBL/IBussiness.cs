@@ -168,7 +168,7 @@ namespace DNHBL
         /// Returns all Forums in Database
         /// </summary>
         /// <returns></returns>
-        Task<List<Forum>> GetAllForums(Forum forum);
+        Task<List<Forum>> GetAllForums();
         /// <summary>
         /// Returns a Forum Object with the given ForumID
         /// </summary>

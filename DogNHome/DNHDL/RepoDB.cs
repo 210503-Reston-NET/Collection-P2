@@ -103,7 +103,7 @@ namespace DNHDL
         {
             Dog found = await _context.Dogs.AsNoTracking().FirstOrDefaultAsync(dg => dg.DogID == dog.DogID);
             if (found == null) return null;
-            return new Dog(found.DogID, found.APIID);
+            return found;
         }
         public async Task<List<Dog>> GetAllDogsForList(int ListId) //Check my logic here please
         {
