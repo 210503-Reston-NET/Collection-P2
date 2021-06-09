@@ -10,10 +10,10 @@ namespace DNHModels
     {
         public Posts(int postID, string topic, string userCreator, int forumID)
         {
-            PostID = postID;
-            Topic = topic;
-            UserCreator = userCreator;
-            ForumID = forumID;
+            this.PostID = postID;
+            this.Topic = topic;
+            this.UserCreator = userCreator;
+            this.ForumID = forumID;
         }
         public Posts()
         {

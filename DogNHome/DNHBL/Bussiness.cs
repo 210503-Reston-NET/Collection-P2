@@ -81,7 +81,7 @@ namespace DNHBL
             {
                 throw new Exception("DogList already exists");
             }
-            return await _repo.AddDogListasync(list) ;
+            return await _repo.AddDogListasync(list);
         }
         public async Task<DogList> RemoveDogList(int dogID)
         {
@@ -118,6 +118,10 @@ namespace DNHBL
             return await _repo.UpdateUserAsync(user);
         }
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> a26fbdfdfc5cf5ae3c0b829578317ed93e083138
         public async Task<User> AddUser(User user)
         {
             if (await _repo.GetUserAsync(user) != null)
@@ -326,7 +330,12 @@ namespace DNHBL
 
         public async Task<Tags> GetTag(int tagID)
         {
+<<<<<<< HEAD
+            throw new NotImplementedException();
+           //return await _repo.GetTagsAsync(tagID); // ??? is this for all tags, if so, why do we pass an int
+=======
             return await _repo.GetTagsAsync(tagID); // ??? is this for all tags, if so, why do we pass an int
+>>>>>>> a26fbdfdfc5cf5ae3c0b829578317ed93e083138
         }
 
         public async Task<Tags> AddTag(Tags tag)
@@ -346,5 +355,10 @@ namespace DNHBL
             //return await _repo.UpdateTag(tag);
             throw new NotImplementedException(); // Not implemented in RepoDB
         }
+<<<<<<< HEAD
+=======
+>>>>>>> 58031aa951ea0fd979654c95a5fd05d62e8c8ef8
+=======
+>>>>>>> a26fbdfdfc5cf5ae3c0b829578317ed93e083138
     }
 }

@@ -10,9 +10,9 @@ namespace DNHModels
     {
         public Forum(int forumID, string topic, string description)
         {
-            ForumID = forumID;
-            Topic = topic;
-            Description = description;
+            this.ForumID = forumID;
+            this.Topic = topic;
+            this.Description = description;
         }
 
         public Forum()
