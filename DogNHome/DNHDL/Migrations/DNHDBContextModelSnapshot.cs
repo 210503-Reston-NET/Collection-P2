@@ -19,6 +19,30 @@ namespace DNHDL.Migrations
                 .HasAnnotation("ProductVersion", "5.0.6")
                 .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
+            modelBuilder.Entity("DNHModels.Comments", b =>
+                {
+                    b.Property<int>("CommentID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+
+                    b.Property<DateTime>("Created")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<string>("Message")
+                        .HasColumnType("text");
+
+                    b.Property<int>("PostID")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("UserName")
+                        .HasColumnType("text");
+
+                    b.HasKey("CommentID");
+
+                    b.ToTable("Comments");
+                });
+
             modelBuilder.Entity("DNHModels.Dog", b =>
                 {
                     b.Property<int>("DogID")
@@ -52,7 +76,38 @@ namespace DNHDL.Migrations
 
                     b.HasKey("ListID");
 
-                    b.ToTable("ListedDogs");
+                    b.ToTable("DogLists");
+                });
+
+            modelBuilder.Entity("DNHModels.Forum", b =>
+                {
+                    b.Property<int>("ForumID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+
+                    b.Property<string>("Description")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Topic")
+                        .HasColumnType("text");
+
+                    b.HasKey("ForumID");
+
+                    b.ToTable("Forums");
+                });
+
+            modelBuilder.Entity("DNHModels.Like", b =>
+                {
+                    b.Property<int>("DogID")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("UserName")
+                        .HasColumnType("text");
+
+                    b.HasKey("DogID", "UserName");
+
+                    b.ToTable("Likes");
                 });
 
             modelBuilder.Entity("DNHModels.ListedDog", b =>
@@ -65,7 +120,56 @@ namespace DNHDL.Migrations
 
                     b.HasKey("ListID", "DogID");
 
-                    b.ToTable("DogLists");
+                    b.ToTable("ListedDogs");
+                });
+
+            modelBuilder.Entity("DNHModels.Posts", b =>
+                {
+                    b.Property<int>("PostID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+
+                    b.Property<int>("ForumID")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("Topic")
+                        .HasColumnType("text");
+
+                    b.Property<string>("UserCreator")
+                        .HasColumnType("text");
+
+                    b.HasKey("PostID");
+
+                    b.ToTable("Posts");
+                });
+
+            modelBuilder.Entity("DNHModels.Preference", b =>
+                {
+                    b.Property<int>("TagID")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("UserName")
+                        .HasColumnType("text");
+
+                    b.HasKey("TagID", "UserName");
+
+                    b.ToTable("Preferences");
+                });
+
+            modelBuilder.Entity("DNHModels.Tags", b =>
+                {
+                    b.Property<int>("TagID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+
+                    b.Property<string>("Description")
+                        .HasColumnType("text");
+
+                    b.HasKey("TagID");
+
+                    b.ToTable("Tags");
                 });
 
             modelBuilder.Entity("DNHModels.User", b =>

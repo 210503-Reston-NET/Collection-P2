@@ -11,6 +11,16 @@ namespace DNHModels
     /// </summary>
     public class Dog
     {
+        public Dog(int dogID, int apiID)
+        {
+            this.DogID = dogID;
+            this.APIID = apiID;
+        }
+        public Dog()
+        {
+
+        }
+
         public int DogID { get; set; }
         // ID that references a specific dog in the dog adoption API
         public int APIID { get; set; }
