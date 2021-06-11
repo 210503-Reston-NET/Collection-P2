@@ -39,7 +39,7 @@ namespace DNHREST.Controllers
         public IActionResult AddForum([FromBody] Forum forum)
         {
             
-            return Created("api/Forum", _BL.AddForum(forum));
+            return Ok(_BL.AddForum(forum));
         }
 
         // POST api/<DogController>
