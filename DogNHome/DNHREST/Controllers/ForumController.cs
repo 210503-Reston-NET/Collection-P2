@@ -38,8 +38,15 @@ namespace DNHREST.Controllers
         [HttpPost]
         public IActionResult AddForum([FromBody] Forum forum)
         {
-            
-            return Ok(_BL.AddForum(forum));
+            _BL.AddForum(forum);
+            return NoContent();
+            /*
+             * {
+             *  forumID: number,
+             *  Topic: string,
+             *  description: string
+             * }
+             */
         }
 
         // POST api/<DogController>

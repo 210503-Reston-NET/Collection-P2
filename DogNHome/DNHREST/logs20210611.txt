@@ -1,0 +1,112 @@
+2021-06-11 16:01:26.212 -04:00 [INF] App is now running
+2021-06-11 16:01:38.335 -04:00 [DBG] Getting all Forums from the database
+2021-06-11 16:03:27.754 -04:00 [DBG] Getting all Forums from the database
+2021-06-11 16:04:34.690 -04:00 [DBG] Getting all Forums from the database
+2021-06-11 16:05:00.015 -04:00 [INF] App is now running
+2021-06-11 16:05:08.596 -04:00 [DBG] Getting all Forums from the database
+2021-06-11 16:06:10.645 -04:00 [INF] App is now running
+2021-06-11 16:08:56.661 -04:00 [INF] App is now running
+2021-06-11 16:09:56.100 -04:00 [INF] App is now running
+2021-06-11 16:10:08.307 -04:00 [DBG] Adding Forums into the database: 0
+2021-06-11 16:10:35.373 -04:00 [DBG] Getting all Forums from the database
+2021-06-11 16:12:09.287 -04:00 [INF] App is now running
+2021-06-11 16:12:17.673 -04:00 [DBG] Getting all Forums from the database
+2021-06-11 16:13:08.808 -04:00 [ERR] Forum does not exist!
+2021-06-11 16:13:08.974 -04:00 [DBG] Adding Forums into the database: 0
+2021-06-11 16:14:30.845 -04:00 [INF] App is now running
+2021-06-11 16:14:44.817 -04:00 [DBG] Adding Forums into the database: 0
+2021-06-11 16:14:56.699 -04:00 [DBG] Getting all Forums from the database
+2021-06-11 16:15:23.981 -04:00 [DBG] Adding Forums into the database: 0
+2021-06-11 16:15:27.120 -04:00 [DBG] Adding Forums into the database: 0
+2021-06-11 16:15:28.383 -04:00 [DBG] Adding Forums into the database: 0
+2021-06-11 16:15:29.162 -04:00 [DBG] Adding Forums into the database: 0
+2021-06-11 16:15:32.263 -04:00 [DBG] Getting all Forums from the database
+2021-06-11 16:15:48.851 -04:00 [INF] App is now running
+2021-06-11 16:15:59.208 -04:00 [DBG] Getting all Forums from the database
+2021-06-11 16:16:06.220 -04:00 [DBG] Getting all Forums from the database
+2021-06-11 16:16:10.355 -04:00 [DBG] Getting all Forums from the database
+2021-06-11 16:16:11.201 -04:00 [DBG] Getting all Forums from the database
+2021-06-11 16:16:11.760 -04:00 [DBG] Getting all Forums from the database
+2021-06-11 16:16:12.031 -04:00 [DBG] Getting all Forums from the database
+2021-06-11 16:16:12.242 -04:00 [DBG] Getting all Forums from the database
+2021-06-11 16:16:12.532 -04:00 [DBG] Getting all Forums from the database
+2021-06-11 16:16:12.820 -04:00 [DBG] Getting all Forums from the database
+2021-06-11 16:16:13.004 -04:00 [DBG] Getting all Forums from the database
+2021-06-11 16:16:13.186 -04:00 [DBG] Getting all Forums from the database
+2021-06-11 16:16:13.456 -04:00 [DBG] Getting all Forums from the database
+2021-06-11 16:16:13.642 -04:00 [DBG] Getting all Forums from the database
+2021-06-11 16:16:13.818 -04:00 [DBG] Getting all Forums from the database
+2021-06-11 16:16:13.990 -04:00 [DBG] Getting all Forums from the database
+2021-06-11 16:16:14.165 -04:00 [DBG] Getting all Forums from the database
+2021-06-11 16:16:14.366 -04:00 [DBG] Getting all Forums from the database
+2021-06-11 16:16:14.660 -04:00 [DBG] Getting all Forums from the database
+2021-06-11 16:16:14.835 -04:00 [DBG] Getting all Forums from the database
+2021-06-11 16:16:15.007 -04:00 [DBG] Getting all Forums from the database
+2021-06-11 16:16:15.179 -04:00 [DBG] Getting all Forums from the database
+2021-06-11 16:16:15.344 -04:00 [DBG] Getting all Forums from the database
+2021-06-11 16:16:15.521 -04:00 [DBG] Getting all Forums from the database
+2021-06-11 16:16:15.693 -04:00 [DBG] Getting all Forums from the database
+2021-06-11 16:16:16.039 -04:00 [DBG] Getting all Forums from the database
+2021-06-11 16:16:16.225 -04:00 [DBG] Getting all Forums from the database
+2021-06-11 16:16:16.386 -04:00 [DBG] Getting all Forums from the database
+2021-06-11 16:16:16.559 -04:00 [DBG] Getting all Forums from the database
+2021-06-11 16:16:16.746 -04:00 [DBG] Getting all Forums from the database
+2021-06-11 16:16:16.917 -04:00 [DBG] Getting all Forums from the database
+2021-06-11 16:16:17.118 -04:00 [DBG] Getting all Forums from the database
+2021-06-11 16:16:17.307 -04:00 [DBG] Getting all Forums from the database
+2021-06-11 16:16:17.619 -04:00 [DBG] Getting all Forums from the database
+2021-06-11 16:16:17.809 -04:00 [DBG] Getting all Forums from the database
+2021-06-11 16:16:17.988 -04:00 [DBG] Getting all Forums from the database
+2021-06-11 16:16:18.268 -04:00 [DBG] Getting all Forums from the database
+2021-06-11 16:16:18.454 -04:00 [DBG] Getting all Forums from the database
+2021-06-11 16:16:18.623 -04:00 [DBG] Getting all Forums from the database
+2021-06-11 16:16:18.790 -04:00 [DBG] Getting all Forums from the database
+2021-06-11 16:16:18.954 -04:00 [DBG] Getting all Forums from the database
+2021-06-11 16:16:19.237 -04:00 [DBG] Getting all Forums from the database
+2021-06-11 16:16:19.423 -04:00 [DBG] Getting all Forums from the database
+2021-06-11 16:16:19.602 -04:00 [DBG] Getting all Forums from the database
+2021-06-11 16:16:19.767 -04:00 [DBG] Getting all Forums from the database
+2021-06-11 16:16:20.059 -04:00 [DBG] Getting all Forums from the database
+2021-06-11 16:16:20.230 -04:00 [DBG] Getting all Forums from the database
+2021-06-11 16:16:20.397 -04:00 [DBG] Getting all Forums from the database
+2021-06-11 16:16:20.565 -04:00 [DBG] Getting all Forums from the database
+2021-06-11 16:16:20.746 -04:00 [DBG] Getting all Forums from the database
+2021-06-11 16:16:20.914 -04:00 [DBG] Getting all Forums from the database
+2021-06-11 16:16:21.093 -04:00 [DBG] Getting all Forums from the database
+2021-06-11 16:16:30.070 -04:00 [DBG] Adding Forums into the database: 0
+2021-06-11 16:16:32.910 -04:00 [DBG] Adding Forums into the database: 0
+2021-06-11 16:16:34.221 -04:00 [DBG] Adding Forums into the database: 0
+2021-06-11 16:16:42.018 -04:00 [DBG] Getting Forums from the database by ID: 16
+2021-06-11 16:17:25.139 -04:00 [DBG] Getting Forums from the database by ID: 16
+2021-06-11 16:17:53.777 -04:00 [DBG] Getting all Forums from the database
+2021-06-11 16:17:57.542 -04:00 [DBG] Getting all Forums from the database
+2021-06-11 16:18:16.429 -04:00 [INF] App is now running
+2021-06-11 16:19:13.875 -04:00 [DBG] Getting all Forums from the database
+2021-06-11 16:19:24.489 -04:00 [DBG] Adding Forums into the database: 0
+2021-06-11 16:19:38.868 -04:00 [INF] App is now running
+2021-06-11 16:19:47.464 -04:00 [DBG] Getting all Forums from the database
+2021-06-11 16:20:36.497 -04:00 [DBG] Adding Forums into the database: 1
+2021-06-11 16:20:57.196 -04:00 [DBG] Getting all Forums from the database
+2021-06-11 16:21:50.791 -04:00 [DBG] Getting all Forums from the database
+2021-06-11 16:22:08.041 -04:00 [INF] App is now running
+2021-06-11 16:22:19.767 -04:00 [DBG] Getting all Forums from the database
+2021-06-11 16:22:47.266 -04:00 [DBG] Getting all Forums from the database
+2021-06-11 16:22:56.239 -04:00 [INF] App is now running
+2021-06-11 16:23:06.339 -04:00 [DBG] Getting all Forums from the database
+2021-06-11 16:23:45.829 -04:00 [DBG] Getting all dogs from the database.
+2021-06-11 16:24:09.777 -04:00 [DBG] Getting all dogs from the database.
+2021-06-11 16:24:26.172 -04:00 [DBG] Getting all dogs from the database.
+2021-06-11 16:25:42.119 -04:00 [INF] App is now running
+2021-06-11 16:31:37.087 -04:00 [INF] App is now running
+2021-06-11 16:33:04.839 -04:00 [DBG] Getting all Forums from the database
+2021-06-11 16:34:24.688 -04:00 [DBG] Getting all Forums from the database
+2021-06-11 16:34:26.285 -04:00 [DBG] Getting all Forums from the database
+2021-06-11 16:34:33.039 -04:00 [DBG] Getting all Forums from the database
+2021-06-11 16:35:09.078 -04:00 [DBG] Getting all Forums from the database
+2021-06-11 16:35:47.740 -04:00 [DBG] Getting all Forums from the database
+2021-06-11 16:41:08.132 -04:00 [INF] App is now running
+2021-06-11 16:41:54.130 -04:00 [DBG] Getting all Forums from the database
+2021-06-11 16:42:22.526 -04:00 [DBG] Getting all dogs from the database.
+2021-06-11 16:43:13.486 -04:00 [DBG] Getting all dogs from the database.
+2021-06-11 16:43:53.139 -04:00 [DBG] Getting all Forums from the database
+2021-06-11 16:44:25.505 -04:00 [INF] App is now running
