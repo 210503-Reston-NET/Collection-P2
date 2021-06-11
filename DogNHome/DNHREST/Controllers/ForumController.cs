@@ -35,7 +35,7 @@ namespace DNHREST.Controllers
         }
 
         // PUT api/<DogController>
-        [HttpPut]
+        [HttpPost]
         public IActionResult AddForum(Forum forum)
         {
             _BL.AddForum(forum);
@@ -43,7 +43,7 @@ namespace DNHREST.Controllers
         }
 
         // POST api/<DogController>
-        [HttpPost]
+        [HttpPut]
         public IActionResult UpdateForum([FromBody] Forum forum)
         {
             _BL.UpdateForum(forum);
