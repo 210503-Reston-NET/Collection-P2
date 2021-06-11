@@ -197,8 +197,10 @@ namespace DNHBL
 
         public async Task<Forum> AddForum(Forum forum)
         {
+            /*
             if (await _repo.GetForumAsync(forum) != null)
                 throw new Exception("This forum already exists.");
+            */
             return await _repo.AddForumAsync(forum);
         }
 

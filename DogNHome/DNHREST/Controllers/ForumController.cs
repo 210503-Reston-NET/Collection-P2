@@ -39,7 +39,7 @@ namespace DNHREST.Controllers
         public IActionResult AddForum([FromBody] Forum forum)
         {
             
-            return Created("api/Forum" , _BL.AddForum(forum));
+            return Created("api/Forum", _BL.AddForum(forum));
         }
 
         // POST api/<DogController>
@@ -52,7 +52,7 @@ namespace DNHREST.Controllers
 
         // DELETE api/<DogController>/5
         [HttpDelete("{id}")]
-        public IActionResult DeleteForum(Forum forum)
+        public IActionResult DeleteForum([FromBody] Forum forum)
         {
             _BL.RemoveForum(forum);
             return NoContent();
