@@ -75,4 +75,11 @@ namespace DNHDL
 
         }
     }
+    /*
+     * StreamJsonRpc.ConnectionLostException : The JSON-RPC connection with the remote party was lost before the request could complete.
+   at async StreamJsonRpc.JsonRpc.InvokeCoreAsync(<Unknown Parameters>)
+   at async StreamJsonRpc.JsonRpc.InvokeCoreAsync[TResult](<Unknown Parameters>)
+   at async Microsoft.CodeAnalysis.Remote.BrokeredServiceConnection`1.TryInvokeAsync[TService](<Unknown Parameters>)
+   at Microsoft.VisualStudio.Telemetry.WindowsErrorReporting.WatsonReport.GetClrWatsonExceptionInfo(Exception exceptionObject)
+     */
 }

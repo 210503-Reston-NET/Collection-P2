@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Robbie\\Revature\\Git-Clone\\Collection-P2\\DogNHome\\DNHDL\\DNHDL.csproj": {}
+    "C:\\Users\\Robbie\\Revature\\Git-Clone\\DogNHome-P2\\DogNHome\\DNHDL\\DNHDL.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Robbie\\Revature\\Git-Clone\\Collection-P2\\DogNHome\\DNHDL\\DNHDL.csproj": {
+    "C:\\Users\\Robbie\\Revature\\Git-Clone\\DogNHome-P2\\DogNHome\\DNHDL\\DNHDL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Robbie\\Revature\\Git-Clone\\Collection-P2\\DogNHome\\DNHDL\\DNHDL.csproj",
+        "projectUniqueName": "C:\\Users\\Robbie\\Revature\\Git-Clone\\DogNHome-P2\\DogNHome\\DNHDL\\DNHDL.csproj",
         "projectName": "DNHDL",
-        "projectPath": "C:\\Users\\Robbie\\Revature\\Git-Clone\\Collection-P2\\DogNHome\\DNHDL\\DNHDL.csproj",
+        "projectPath": "C:\\Users\\Robbie\\Revature\\Git-Clone\\DogNHome-P2\\DogNHome\\DNHDL\\DNHDL.csproj",
         "packagesPath": "C:\\Users\\Robbie\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Robbie\\Revature\\Git-Clone\\Collection-P2\\DogNHome\\DNHDL\\obj\\",
+        "outputPath": "C:\\Users\\Robbie\\Revature\\Git-Clone\\DogNHome-P2\\DogNHome\\DNHDL\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Robbie\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,8 +28,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\Robbie\\Revature\\Git-Clone\\Collection-P2\\DogNHome\\DNHModels\\DNHModels.csproj": {
-                "projectPath": "C:\\Users\\Robbie\\Revature\\Git-Clone\\Collection-P2\\DogNHome\\DNHModels\\DNHModels.csproj"
+              "C:\\Users\\Robbie\\Revature\\Git-Clone\\DogNHome-P2\\DogNHome\\DNHModels\\DNHModels.csproj": {
+                "projectPath": "C:\\Users\\Robbie\\Revature\\Git-Clone\\DogNHome-P2\\DogNHome\\DNHModels\\DNHModels.csproj"
               }
             }
           }
@@ -100,14 +100,14 @@
         }
       }
     },
-    "C:\\Users\\Robbie\\Revature\\Git-Clone\\Collection-P2\\DogNHome\\DNHModels\\DNHModels.csproj": {
+    "C:\\Users\\Robbie\\Revature\\Git-Clone\\DogNHome-P2\\DogNHome\\DNHModels\\DNHModels.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Robbie\\Revature\\Git-Clone\\Collection-P2\\DogNHome\\DNHModels\\DNHModels.csproj",
+        "projectUniqueName": "C:\\Users\\Robbie\\Revature\\Git-Clone\\DogNHome-P2\\DogNHome\\DNHModels\\DNHModels.csproj",
         "projectName": "DNHModels",
-        "projectPath": "C:\\Users\\Robbie\\Revature\\Git-Clone\\Collection-P2\\DogNHome\\DNHModels\\DNHModels.csproj",
+        "projectPath": "C:\\Users\\Robbie\\Revature\\Git-Clone\\DogNHome-P2\\DogNHome\\DNHModels\\DNHModels.csproj",
         "packagesPath": "C:\\Users\\Robbie\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Robbie\\Revature\\Git-Clone\\Collection-P2\\DogNHome\\DNHModels\\obj\\",
+        "outputPath": "C:\\Users\\Robbie\\Revature\\Git-Clone\\DogNHome-P2\\DogNHome\\DNHModels\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Robbie\\AppData\\Roaming\\NuGet\\NuGet.Config",
