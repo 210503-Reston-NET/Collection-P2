@@ -31,7 +31,7 @@ namespace DNHREST.Controllers
         [HttpGet("{id}")]
         public IActionResult GetPost(int id)
         {
-            return Ok(_BL.GetPost(id).Result);
+            return Ok(_BL.GetPostForForumWithID(id).Result);
         }
 
         // PUT api/<DogController>

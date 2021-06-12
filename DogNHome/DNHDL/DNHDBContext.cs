@@ -61,8 +61,6 @@ namespace DNHDL
                 .HasKey(dog => dog.DogID);
             modelBuilder.Entity<Like>()
                 .HasKey(like => new { like.DogID, like.UserName});
-            modelBuilder.Entity<Comments>()
-                .HasKey(comm => comm.CommentID);
             modelBuilder.Entity<Forum>()
                 .HasKey(forum => forum.ForumID);
             modelBuilder.Entity<Posts>()

@@ -110,3 +110,18 @@
 2021-06-11 16:43:13.486 -04:00 [DBG] Getting all dogs from the database.
 2021-06-11 16:43:53.139 -04:00 [DBG] Getting all Forums from the database
 2021-06-11 16:44:25.505 -04:00 [INF] App is now running
+2021-06-11 19:56:42.464 -04:00 [INF] App is now running
+2021-06-11 19:56:58.469 -04:00 [DBG] Getting all Forums from the database
+2021-06-11 19:57:47.968 -04:00 [DBG] Getting all Forums from the database
+2021-06-11 20:07:35.506 -04:00 [INF] App is now running
+2021-06-11 20:07:44.237 -04:00 [DBG] Getting all Forums from the database
+2021-06-11 20:48:23.222 -04:00 [DBG] Getting all Forums from the database
+2021-06-11 20:48:45.140 -04:00 [DBG] Getting all Forums from the database
+2021-06-11 20:49:05.375 -04:00 [INF] App is now running
+2021-06-11 20:49:33.040 -04:00 [DBG] Getting all Forums from the database
+2021-06-11 21:30:18.425 -04:00 [INF] App is now running
+2021-06-11 21:31:14.013 -04:00 [DBG] Getting Forums from the database by ID: 1
+2021-06-11 21:31:26.803 -04:00 [INF] App is now running
+2021-06-11 21:31:59.810 -04:00 [DBG] Getting Forums from the database by ID: 1
+2021-06-11 21:32:25.086 -04:00 [DBG] Getting all Forums from the database
+2021-06-11 21:33:05.207 -04:00 [DBG] Getting all Forums from the database

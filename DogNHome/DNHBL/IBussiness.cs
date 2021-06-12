@@ -155,6 +155,12 @@ namespace DNHBL
         /// <returns></returns>
         Task<Posts> AddPost(Posts post);
         /// <summary>
+        /// Returns a Post Object with the given forumID
+        /// </summary>
+        /// <param name="id">forumID</param>
+        /// <returns></returns>
+        Task<Posts> GetPostForForumWithID(int id);
+        /// <summary>
         /// Removes a Post from the Database for the given Post 
         /// </summary>
         /// <returns></returns>
