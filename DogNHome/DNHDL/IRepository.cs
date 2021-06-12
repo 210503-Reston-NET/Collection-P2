@@ -65,7 +65,7 @@ namespace DNHDL
         Task<Preference> DeletePreferenceAsync(Preference preference);
         Task<Preference> UpdatePreferenceAsync(Preference preference);
         Task<List<Preference>> GetPreferenceByIdAsync(int id);
-        Task<List<Preference>> GetPreferencesFor(string userName);
+        Task<List<Preference>> GetPreferenceForAsync(string userName);
         Task<List<Preference>> GetAllPreferencesAsync();
         Task<Preference> GetPreferenceAsync(Preference preference);
         //DogList

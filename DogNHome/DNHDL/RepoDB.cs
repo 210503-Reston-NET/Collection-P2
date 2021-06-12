@@ -459,8 +459,15 @@ namespace DNHDL
             Log.Debug("Getting preference from the database: {0}", preference.TagID);
             return new Preference(found.UserName,found.TagID);
         }
+
+        public async Task<List<Preference>> GetPreferenceForAsync(string userName)
+        {
+            return await _context.Preferences.Select(pref => pref)
+                .Where(pref => pref.UserName == userName)
+                .ToListAsync();
+        }
         //Done with Preferences and continue with ListedDog
-      
+
         public async Task<DogList> AddDogListasync(DogList dogList)
         {
             await _context.DogLists.AddAsync(
@@ -555,7 +562,7 @@ namespace DNHDL
         {
             Log.Debug("Removing ListedDog from the database by ID: {0}", id);
             return await _context.ListedDogs.Select(dog => dog)
-                .Where(dog => dog.List == id)
+                .Where(dog => dog.ListID == id)
                 .ToListAsync();
         }
         public async Task<List<ListedDog>> GetAllListedDogsAsync()
