@@ -276,7 +276,7 @@ namespace DNHBL
         /// Returns a Dog that is referenced in a list with the given dogID and listID
         /// </summary>
         /// <returns></returns>
-        Task<ListedDog> GetListedDog(int dogID, int listID);
+        Task<ListedDog> GetListedDog(ListedDog dog);
         /// <summary>
         /// adds a Fog referenced in a list to the Database, based off of the ListedDog object passed
         /// </summary>
