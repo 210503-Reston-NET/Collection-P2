@@ -24,37 +24,37 @@ namespace DNHREST.Controllers
         [HttpGet]
         public IActionResult GetUsers()
         {
-            return Ok(_BL.GetAllUsers().Result);
+            return Ok(await _BL.GetAllUsers());
         }
 
         // GET api/<DogController>/5
         [HttpGet("{id}")]
-        public IActionResult GetUser(string id)
+        public async Task<IActionResult> GetUser(string id)
         {
-            return Ok(_BL.GetUser(id).Result);
+            return Ok(await _BL.GetUser(id));
         }
 
         // PUT api/<DogController>
-        [HttpPut]
-        public IActionResult AddUser(User user)
+        [HttpPost]
+        public async Task<IActionResult> AddUser(User user)
         {
-            _BL.AddUser(user);
+            await _BL.AddUser(user);
             return NoContent();
         }
 
         // POST api/<DogController>
-        [HttpPost]
-        public IActionResult UpdateUser([FromBody] User user)
+        [HttpPut]
+        public async Task<IActionResult> UpdateUser([FromBody] User user)
         {
-            _BL.UpdateUser(user);
+            await _BL.UpdateUser(user);
             return NoContent();
         }
 
         // DELETE api/<DogController>/5
         [HttpDelete("{id}")]
-        public IActionResult DeleteUser(string id)
+        public async Task<IActionResult> DeleteUser(string id)
         {
-            _BL.RemoveUser(id);
+            await _BL.RemoveUser(id);
             return NoContent();
         }
     }

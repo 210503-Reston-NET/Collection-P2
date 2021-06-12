@@ -24,5 +24,10 @@ namespace DNHModels
         public string Topic { get; set; }
         public string UserCreator { get; set; }
         public int ForumID { get; set; }
+
+        public override string ToString()
+        {
+            return "PostID: " + this.PostID + " Topic: " + this.Topic + "  ForumID " + this.ForumID + " User: " + this.UserCreator;
+        }
     }
 }

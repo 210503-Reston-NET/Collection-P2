@@ -22,40 +22,39 @@ namespace DNHREST.Controllers
         }
         // GET: api/<DogController>
         [HttpGet]
-        public IActionResult GetDogs()
+        public async Task<IActionResult> GetDogs()
         {
-            return Ok(_BL.GetAllDogs().Result);
+            return Ok(await _BL.GetAllDogs());
         }
 
         // GET api/<DogController>/5
         [HttpGet("{id}")]
-        public IActionResult GetDog(int id)
+        public async Task<IActionResult> GetDog(int id)
         {
-            Task<Dog> dog = _BL.GetDogByID(id);
-            return Ok(dog.Result);
+            return Ok(await _BL.GetDogByID(id));
         }
 
         // PUT api/<DogController>
-        [HttpPut]
-        public IActionResult AddDog(Dog dog)
+        [HttpPost]
+        public async Task<IActionResult> AddDog(Dog dog)
         {
-            _BL.AddDog(dog);
+            await _BL.AddDog(dog);
             return NoContent();
         }
 
         // POST api/<DogController>
-        [HttpPost]
-        public IActionResult UpdateDog([FromBody] Dog dog)
+        [HttpPut]
+        public async Task<IActionResult> UpdateDog([FromBody] Dog dog)
         {
-            _BL.UpdateDog(dog);
+            await _BL.UpdateDog(dog);
             return NoContent();
         }
 
         // DELETE api/<DogController>/5
         [HttpDelete("{id}")]
-        public IActionResult DeleteDog(int id)
+        public async Task<IActionResult> DeleteDog(int id)
         {
-            _BL.RemoveDogByID(id);
+            await _BL.RemoveDogByID(id);
             return NoContent();
         }
     }

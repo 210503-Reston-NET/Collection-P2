@@ -22,39 +22,39 @@ namespace DNHREST.Controllers
         }
         // GET: api/<DogController>
         [HttpGet]
-        public IActionResult GetTags()
+        public async Task<IActionResult> GetTags()
         {
-            return Ok(_BL.GetAllTags().Result);
+            return Ok(await _BL.GetAllTags());
         }
 
         // GET api/<DogController>/5
         [HttpGet("{id}")]
-        public IActionResult GetTag(int id)
+        public async Task<IActionResult> GetTag(int id)
         {
-            return Ok(_BL.GetTag(id).Result);
+            return Ok(await _BL.GetTag(id));
         }
 
         // PUT api/<DogController>
-        [HttpPut]
-        public IActionResult AddTag(Tags tag)
+        [HttpPost]
+        public async Task<IActionResult> AddTag(Tags tag)
         {
-            _BL.AddTag(tag);
+            await _BL.AddTag(tag);
             return NoContent();
         }
 
         // POST api/<DogController>
-        [HttpPost]
-        public IActionResult UpdateTag([FromBody] Tags tag)
+        [HttpPut]
+        public async Task<IActionResult> UpdateTag([FromBody] Tags tag)
         {
-            _BL.UpdateTag(tag);
+            await _BL.UpdateTag(tag);
             return NoContent();
         }
 
         // DELETE api/<DogController>/5
         [HttpDelete("{id}")]
-        public IActionResult DeleteTag(Tags tag)
+        public async Task<IActionResult> DeleteTag(Tags tag)
         {
-            _BL.RemoveTag(tag);
+            await _BL.RemoveTag(tag);
             return NoContent();
         }
     }

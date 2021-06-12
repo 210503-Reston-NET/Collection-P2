@@ -22,39 +22,39 @@ namespace DNHREST.Controllers
         }
         // GET: api/<DogController>
         [HttpGet]
-        public IActionResult GetAllComments()
+        public async Task<IActionResult> GetAllComments()
         {
-            return Ok(_BL.GetAllComments().Result);
+            return Ok(await _BL.GetAllComments());
         }
 
         // GET api/<DogController>/5
         [HttpGet("{id}")]
-        public IActionResult GetComment(int id)
+        public async Task<IActionResult> GetComment(int id)
         {
-            return Ok(_BL.GetComment(id).Result);
+            return Ok(await _BL.GetComment(id));
         }
 
         // PUT api/<DogController>
-        [HttpPut]
-        public IActionResult AddForum(Comments comm)
+        [HttpPost]
+        public async Task<IActionResult> AddForum(Comments comm)
         {
-            _BL.AddComment(comm);
+            await _BL.AddComment(comm);
             return NoContent();
         }
 
         // POST api/<DogController>
-        [HttpPost]
-        public IActionResult UpdateComment([FromBody] Comments comm)
+        [HttpPut]
+        public async Task<IActionResult> UpdateComment([FromBody] Comments comm)
         {
-            _BL.UpdateComment(comm);
+            await _BL.UpdateComment(comm);
             return NoContent();
         }
 
         // DELETE api/<DogController>/5
         [HttpDelete("{id}")]
-        public IActionResult DeleteComment(Comments comm)
+        public async Task<IActionResult> DeleteComment(Comments comm)
         {
-            _BL.RemoveComments(comm);
+            await _BL.RemoveComments(comm);
             return NoContent();
         }
     }

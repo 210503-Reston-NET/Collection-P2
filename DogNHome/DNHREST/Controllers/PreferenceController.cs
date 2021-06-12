@@ -22,37 +22,37 @@ namespace DNHREST.Controllers
         }
         // GET: api/<DogController>
         [HttpGet]
-        public IActionResult GetPreferences()
+        public async Task<IActionResult> GetPreferences()
         {
-            return Ok(_BL.GetAllPreferences().Result);
+            return Ok(await _BL.GetAllPreferences());
         }
 
         // GET api/<DogController>/5
         [HttpGet("{userName}")]
-        public IActionResult GetPreferenceForUser(string userName)
+        public async Task<IActionResult> GetPreferenceForUser(string userName)
         {
-            return Ok(_BL.GetPreferencesFor(userName).Result);
+            return Ok(await _BL.GetPreferencesFor(userName));
         }
         // GET api/<DogController>/5
         [HttpGet("{tagID}")]
-        public IActionResult GetPreferenceForTag(int tagID)
+        public async Task<IActionResult> GetPreferenceForTag(int tagID)
         {
-            return Ok(_BL.GetRelatedPreferences(tagID).Result);
+            return Ok(await _BL.GetRelatedPreferences(tagID));
         }
 
         // PUT api/<DogController>
-        [HttpPut]
-        public IActionResult AddForum(Preference pref)
+        [HttpPost]
+        public async Task<IActionResult> AddForum(Preference pref)
         {
-            _BL.AddPreference(pref);
+            await _BL.AddPreference(pref);
             return NoContent();
         }
 
         // POST api/<DogController>
-        [HttpPost]
-        public IActionResult UpdateForum([FromBody] Preference Pref)
+        [HttpPut]
+        public async Task<IActionResult> UpdateForum([FromBody] Preference Pref)
         {
-            _BL.UpdatePreference(Pref);
+            await _BL.UpdatePreference(Pref);
             return NoContent();
         }
 
@@ -60,7 +60,7 @@ namespace DNHREST.Controllers
         [HttpDelete("{id}")]
         public IActionResult DeleteForum(Preference pref)
         {
-            _BL.RemovePreference(pref);
+            await _BL.RemovePreference(pref);
             return NoContent();
         }
     }

@@ -22,39 +22,40 @@ namespace DNHREST.Controllers
         }
         // GET: api/<DogController>
         [HttpGet]
-        public IActionResult GetPosts()
+        public async Task<IActionResult> GetPosts()
         {
-            return Ok(_BL.GetAllPosts().Result);
+            return Ok(await _BL.GetAllPosts());
         }
 
         // GET api/<DogController>/5
         [HttpGet("{id}")]
-        public IActionResult GetPost(int id)
+        public async Task<IActionResult> GetPost(int id)
         {
-            return Ok(_BL.GetPostForForumWithID(id).Result);
+            return Ok(await _BL.GetPostForForumWithID(id));
         }
 
         // PUT api/<DogController>
-        [HttpPut]
-        public IActionResult AddPost(Posts post)
+        [HttpPost]
+        public async Task<IActionResult> AddPost(Posts post)
         {
-            _BL.AddPost(post);
+            Console.WriteLine(post.PostID + "  " + post.Topic + "   " + post.ForumID + "  " + post.UserCreator);
+            await _BL.AddPost(post);
             return NoContent();
         }
 
         // POST api/<DogController>
-        [HttpPost]
-        public IActionResult UpdatePost([FromBody] Posts post)
+        [HttpPut]
+        public async Task<IActionResult> UpdatePost([FromBody] Posts post)
         {
-            _BL.UpdatePost(post);
+            await _BL.UpdatePost(post);
             return NoContent();
         }
 
         // DELETE api/<DogController>/5
         [HttpDelete("{id}")]
-        public IActionResult DeletePost(Posts post)
+        public async Task<IActionResult> DeletePost(Posts post)
         {
-            _BL.RemovePost(post);
+            await _BL.RemovePost(post);
             return NoContent();
         }
     }

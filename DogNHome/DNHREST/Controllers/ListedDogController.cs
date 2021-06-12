@@ -22,16 +22,16 @@ namespace DNHREST.Controllers
         }
         // GET: api/<DogController>
         [HttpGet]
-        public IActionResult GetDogLists()
+        public async Task<IActionResult> GetDogLists()
         {
-            return Ok(_BL.GetAllListedDogs().Result);
+            return Ok(await _BL.GetAllListedDogs());
         }
 
         // GET api/<DogController>/5
         [HttpGet("{id}")]
-        public IActionResult GetListedDogForDogID(int dogId)
+        public async Task<IActionResult> GetListedDogForDogID(int dogId)
         {
-            return Ok(_BL.GetListedDogsForDog(dogId).Result);
+            return Ok(await _BL.GetListedDogsForDog(dogId));
         }
         /*
         // GET api/<DogController>/5
@@ -43,26 +43,26 @@ namespace DNHREST.Controllers
         */
 
         // PUT api/<DogController>
-        [HttpPut]
-        public IActionResult AddListedDog(ListedDog listedDog)
+        [HttpPost]
+        public async Task<IActionResult> AddListedDog(ListedDog listedDog)
         {
-            _BL.AddListedDog(listedDog);
+            await _BL.AddListedDog(listedDog);
             return NoContent();
         }
 
         // POST api/<DogController>
-        [HttpPost]
-        public IActionResult UpdateListedDog([FromBody] ListedDog dog)
+        [HttpPut]
+        public async Task<IActionResult> UpdateListedDog([FromBody] ListedDog dog)
         {
-            _BL.UpdateListedDog(dog);
+            await _BL.UpdateListedDog(dog);
             return NoContent();
         }
 
         // DELETE api/<DogController>/5
         [HttpDelete]
-        public IActionResult DeleteListedDog([FromBody] ListedDog dog)
+        public async Task<IActionResult> DeleteListedDog([FromBody] ListedDog dog)
         {
-            _BL.RemoveListedDog(dog);
+            await _BL.RemoveListedDog(dog);
             return NoContent();
         }
     }

@@ -6,6 +6,7 @@ using Model = DNHModels;
 using Microsoft.EntityFrameworkCore;
 
 using Serilog;
+using System;
 
 //Still need to do DogList, Listed Dogs, and List of Dogs by List ID
 namespace DNHDL
@@ -143,14 +144,14 @@ namespace DNHDL
 
 
 
-        public async Task<Like> AddLikesAsync(Like likes)
+        public async Task<Like> AddLikesAsync(Like like)
         {
             await _context.Likes.AddAsync(
-                likes
+                like
                 );
             await _context.SaveChangesAsync();
-            Log.Debug("Adding likes to the database: {0}", likes.UserName);
-            return likes;
+            Log.Debug("Adding likes to the database: {0}", like.UserName);
+            return like;
 
         }
         public async Task<Like> DeleteLikeAsync(Like like)
@@ -297,12 +298,19 @@ namespace DNHDL
         //Done with Forums & starting with Posts
         public async Task<Posts> AddPostsAsync(Posts posts)
         {
-            await _context.Posts.AddAsync(
-                posts
-                );
-            await _context.SaveChangesAsync();
-            Log.Debug("Adding Posts into the database: {0}", posts.PostID);
-            return posts;
+            try
+            {
+                await _context.Posts.AddAsync(
+                    posts
+                    );
+                await _context.SaveChangesAsync();
+                Log.Debug("Adding Posts into the database: {0}", posts.PostID);
+                return posts;
+            } catch (Exception e)
+            {
+                Log.Error("Failed to Add Post: " + posts + "\n" + e.Message);
+                return null;
+            }
         }
         public async Task<Posts> DeletePostsAsync(Posts posts)
         {
@@ -331,11 +339,18 @@ namespace DNHDL
         }
         public async Task<List<Posts>> GetAllPostsAsync()
         {
-            Log.Debug("Getting all Posts from the database."); 
-            return await _context.Posts.AsNoTracking()
-            .Select(
-                posts => posts
-            ).ToListAsync();
+            try
+            {
+                Log.Debug("Getting all Posts from the database.");
+                return await _context.Posts.AsNoTracking()
+                .Select(
+                    posts => posts
+                ).ToListAsync();
+            } catch(Exception e)
+            {
+                Log.Error("Failed to retrieve all Posts \n" + e.Message);
+                return null;
+            }
         }
         public async Task<Posts> GetPostsAsync(Posts posts)
         {

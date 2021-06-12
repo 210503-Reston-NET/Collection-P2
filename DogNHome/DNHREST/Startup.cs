@@ -12,6 +12,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Newtonsoft;
 using DNHDL;
 using DNHBL;
 
@@ -45,11 +46,15 @@ namespace DNHREST
             {
                 options.AddDefaultPolicy(builder =>
                 {
-                    builder.WithOrigins("http://127.0.0.1:5500", "http://127.0.0.1:5501", "https://dognhome.azurewebsites.net", "http://localhost:4200")
+                    builder.WithOrigins("http://127.0.0.1:5500", "http://127.0.0.1:5501", "https://dognhome.azurewebsites.net", "http://localhost:4200", "https://localhost:44393")
                     .AllowAnyMethod()
                     .AllowAnyHeader();
                 });
             });
+            services.AddControllersWithViews()
+            .AddNewtonsoftJson(options =>
+            options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+);
 
         }
 

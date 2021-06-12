@@ -22,39 +22,39 @@ namespace DNHREST.Controllers
         }
         // GET: api/<DogController>
         [HttpGet]
-        public IActionResult GetAllLikes()
+        public async Task<IActionResult> GetAllLikes()
         {
-            return Ok(_BL.GetAllLikes().Result);
+            return Ok(await _BL.GetAllLikes());
         }
 
         // GET api/<DogController>/5
         [HttpGet("{id}")]
-        public IActionResult GetLike(int Id)
+        public async Task<IActionResult> GetLike(int Id)
         {
-            return Ok(_BL.GetLike(Id).Result);
+            return Ok(await _BL.GetLike(Id));
         }
 
         // PUT api/<DogController>
-        [HttpPut]
-        public IActionResult AddLike(Like like)
+        [HttpPost]
+        public async Task<IActionResult> AddLike(Like like)
         {
-            _BL.AddLike(like);
+            await _BL.AddLike(like);
             return NoContent();
         }
 
         // POST api/<DogController>
-        [HttpPost]
-        public IActionResult UpdateLike([FromBody] Like like)
+        [HttpPut]
+        public async Task<IActionResult> UpdateLike([FromBody] Like like)
         {
-            _BL.UpdateLike(like);
+            await _BL.UpdateLike(like);
             return NoContent();
         }
 
         // DELETE api/<DogController>/5
         [HttpDelete("{id}")]
-        public IActionResult DeleteForum(Like like)
+        public async Task<IActionResult> DeleteForum(Like like)
         {
-            _BL.RemoveLike(like);
+            await _BL.RemoveLike(like);
             return NoContent();
         }
     }

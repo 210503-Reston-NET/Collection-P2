@@ -22,23 +22,23 @@ namespace DNHREST.Controllers
         }
         // GET: api/<DogController>
         [HttpGet]
-        public IActionResult GetForums()
+        public async Task<IActionResult> GetForums()
         {
-            return Ok(_BL.GetAllForums().Result);
+            return Ok(await _BL.GetAllForums());
         }
 
         // GET api/<DogController>/5
         [HttpGet("{id}")]
-        public IActionResult GetForum(int id)
+        public async Task<IActionResult> GetForum(int id)
         {
-            return Ok(_BL.GetForum(id).Result);
+            return Ok(await _BL.GetForum(id));
         }
 
         // PUT api/<DogController>
         [HttpPost]
-        public IActionResult AddForum([FromBody] Forum forum)
+        public async Task<IActionResult> AddForum([FromBody] Forum forum)
         {
-            _BL.AddForum(forum);
+            await _BL.AddForum(forum);
             return NoContent();
             /*
              * {
@@ -51,17 +51,17 @@ namespace DNHREST.Controllers
 
         // POST api/<DogController>
         [HttpPut]
-        public IActionResult UpdateForum([FromBody] Forum forum)
+        public async Task<IActionResult> UpdateForum([FromBody] Forum forum)
         {
-            _BL.UpdateForum(forum);
+            await _BL.UpdateForum(forum);
             return NoContent();
         }
 
         // DELETE api/<DogController>/5
         [HttpDelete("{id}")]
-        public IActionResult DeleteForum([FromBody] Forum forum)
+        public async Task<IActionResult> DeleteForum([FromBody] Forum forum)
         {
-            _BL.RemoveForum(forum);
+            await _BL.RemoveForum(forum);
             return NoContent();
         }
     }

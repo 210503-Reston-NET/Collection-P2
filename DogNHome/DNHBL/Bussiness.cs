@@ -35,10 +35,6 @@ namespace DNHBL
 
         public async Task<Dog> AddDog(Dog dog)
         {
-            if (await _repo.GetDogAsync(dog) != null)
-            {
-                throw new Exception("Dog already exists.");
-            }
             return await _repo.AddDogAsync(dog);
         }
 
@@ -77,10 +73,6 @@ namespace DNHBL
 
         public async Task<DogList> AddNewDogList(DogList list)
         {
-            if (await _repo.GetDogListAsync(list) != null)
-            {
-                throw new Exception("DogList already exists");
-            }
             return await _repo.AddDogListasync(list);
         }
         public async Task<DogList> RemoveDogList(int dogID)
@@ -120,10 +112,7 @@ namespace DNHBL
 
         public async Task<User> AddUser(User user)
         {
-            if (await _repo.GetUserAsync(user) != null)
-            {
-                throw new Exception("Looks like you already have an account!");
-            }
+
             return await _repo.AddUserAsync(user);
         }
 
@@ -139,8 +128,6 @@ namespace DNHBL
 
         public async Task<Comments> AddComment(Comments comment)
         {
-            if (await _repo.GetCommentsByIdAsync(comment.CommentID) != null)
-                throw new Exception("Looks like this comment already exists");
             return await _repo.AddCommentsAsync(comment);
         }
 
@@ -173,8 +160,6 @@ namespace DNHBL
 
         public async Task<Posts> AddPost(Posts post)
         {
-            if ( await _repo.GetPostsByIdAsync(post.PostID) != null)
-                throw new Exception("This post already exists.");
             return await _repo.AddPostsAsync(post);
         }
 
@@ -233,8 +218,6 @@ namespace DNHBL
 
         public async Task<Like> AddLike(Like like)
         {
-            if (await _repo.GetLikeAsync(like) != null)
-                throw new Exception("This Like already exists.");
             return await _repo.AddLikesAsync(like);
         }
 
@@ -309,15 +292,15 @@ namespace DNHBL
 
         public async Task<ListedDog> AddListedDog(ListedDog dog)
         {
-            if (_repo.GetListedDogAsync(dog) != null)
-                throw new Exception("ListedDog already exists!");
             return await _repo.AddListedDogasync(dog);
         }
 
         public async Task<ListedDog> RemoveListedDog(ListedDog dog)
         {
             if (_repo.GetListedDogAsync(dog) != null)
-            return await _repo.DeleteListedDogAsync(dog);
+            {
+                return await _repo.DeleteListedDogAsync(dog);
+            }
             throw new Exception("ListedDog does not exist. We may have already processed this reques!");
         }
 

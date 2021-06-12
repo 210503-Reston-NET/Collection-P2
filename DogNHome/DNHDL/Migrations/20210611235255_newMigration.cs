@@ -22,6 +22,20 @@ namespace DNHDL.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Comments", x => x.CommentID);
+                    table.ForeignKey(
+                        name: "FK_Comments_Users_UserName",
+                        column: x => x.UserName,
+                        principalTable: "Users",
+                        principalColumn: "UserName",
+                        onDelete: ReferentialAction.Cascade
+                        );
+                    table.ForeignKey(
+                        name: "FK_Comments_Posts_UserCreator",
+                        column: x => x.PostID,
+                        principalTable: "Posts",
+                        principalColumn: "PostID",
+                        onDelete: ReferentialAction.Cascade
+                        );
                 });
 
             migrationBuilder.CreateTable(
@@ -37,6 +51,13 @@ namespace DNHDL.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_DogLists", x => x.ListID);
+                    table.ForeignKey(
+                        name: "FK_DogLists_Users_UserName",
+                        column: x => x.UserName,
+                        principalTable: "Users",
+                        principalColumn: "UserName",
+                        onDelete: ReferentialAction.Cascade
+                        );
                 });
 
             migrationBuilder.CreateTable(
@@ -76,6 +97,20 @@ namespace DNHDL.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Likes", x => new { x.DogID, x.UserName });
+                    table.ForeignKey(
+                        name: "FK_Likes_Users_UserName",
+                        column: x => x.UserName,
+                        principalTable: "Users",
+                        principalColumn: "UserName",
+                        onDelete: ReferentialAction.Cascade
+                        );
+                    table.ForeignKey(
+                        name: "FK_Likes_Dogs_DogID",
+                        column: x => x.DogID,
+                        principalTable: "Dogs",
+                        principalColumn: "DogID",
+                        onDelete: ReferentialAction.Cascade
+                        );
                 });
 
             migrationBuilder.CreateTable(
@@ -88,6 +123,20 @@ namespace DNHDL.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_ListedDogs", x => new { x.ListID, x.DogID });
+                    table.ForeignKey(
+                        name: "FK_ListedDogs_Dogs_DogID",
+                        column: x => x.DogID,
+                        principalTable: "Dogs",
+                        principalColumn: "DogID",
+                        onDelete: ReferentialAction.Cascade
+                        );
+                    table.ForeignKey(
+                        name: "FK_ListedDogs_DogLists_ListID",
+                        column: x => x.ListID,
+                        principalTable: "DogLists",
+                        principalColumn: "ListID",
+                        onDelete: ReferentialAction.Cascade
+                        );
                 });
 
             migrationBuilder.CreateTable(
@@ -103,6 +152,13 @@ namespace DNHDL.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Posts", x => x.PostID);
+                    table.ForeignKey(
+                        name: "FK_Posts_Users_UserCreator",
+                        column: x => x.UserCreator,
+                        principalTable: "Users",
+                        principalColumn: "UserName",
+                        onDelete: ReferentialAction.Cascade
+                        );
                 });
 
             migrationBuilder.CreateTable(
@@ -115,6 +171,20 @@ namespace DNHDL.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Preferences", x => new { x.TagID, x.UserName });
+                    table.ForeignKey(
+                        name: "FK_Preferences_Users_UserCreator",
+                        column: x => x.UserName,
+                        principalTable: "Users",
+                        principalColumn: "UserName",
+                        onDelete: ReferentialAction.Cascade
+                        );
+                    table.ForeignKey(
+                        name: "FK_PreferencesTags_TagID",
+                        column: x => x.TagID,
+                        principalTable: "Tags",
+                        principalColumn: "TagID",
+                        onDelete: ReferentialAction.Cascade
+                        );
                 });
 
             migrationBuilder.CreateTable(
