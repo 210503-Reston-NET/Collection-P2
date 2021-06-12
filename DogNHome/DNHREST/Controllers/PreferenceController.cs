@@ -42,7 +42,7 @@ namespace DNHREST.Controllers
 
         // PUT api/<DogController>
         [HttpPost]
-        public async Task<IActionResult> AddForum(Preference pref)
+        public async Task<IActionResult> AddPreference(Preference pref)
         {
             await _BL.AddPreference(pref);
             return NoContent();
@@ -50,7 +50,7 @@ namespace DNHREST.Controllers
 
         // POST api/<DogController>
         [HttpPut]
-        public async Task<IActionResult> UpdateForum([FromBody] Preference Pref)
+        public async Task<IActionResult> UpdatePreference([FromBody] Preference Pref)
         {
             await _BL.UpdatePreference(Pref);
             return NoContent();
@@ -58,7 +58,7 @@ namespace DNHREST.Controllers
 
         // DELETE api/<DogController>/5
         [HttpDelete("{id}")]
-        public IActionResult DeleteForum(Preference pref)
+        public async Task<IActionResult> DeletePreference(Preference pref)
         {
             await _BL.RemovePreference(pref);
             return NoContent();

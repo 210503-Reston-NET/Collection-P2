@@ -437,10 +437,12 @@ namespace DNHDL
             Log.Debug("Updating preference from the database: {0}", preference.TagID);
             return preference;
         }
-        public async Task<Preference> GetPreferenceByIdAsync(int id)
+        public async Task<List<Preference>> GetPreferenceByIdAsync(int id)
         {
             Log.Debug("Getting preference from the database: {0}", id);
-            return await _context.Preferences.FindAsync(id);
+            return await _context.Preferences.Select(pref => pref )
+                .Where(pref => pref.TagID == id)
+                .ToListAsync();
         }
         public async Task<List<Preference>> GetAllPreferencesAsync()
         {
@@ -542,10 +544,19 @@ namespace DNHDL
             Log.Debug("Updating ListedDog from the database: {0}", listedDog.ListID);
             return listedDog;
         }
-        public async Task<ListedDog> GetListedDogByIdAsync(int id)
+        public async Task<List<ListedDog>> GetListedDogByDogIdAsync(int id)
         {
             Log.Debug("Removing ListedDog from the database by ID: {0}", id);
-            return await _context.ListedDogs.FindAsync(id);
+            return await _context.ListedDogs.Select(dog => dog)
+                .Where(dog => dog.DogID == id)
+                .ToListAsync();
+        }
+        public async Task<List<ListedDog>> GetListedDogByListIdAsync(int id)
+        {
+            Log.Debug("Removing ListedDog from the database by ID: {0}", id);
+            return await _context.ListedDogs.Select(dog => dog)
+                .Where(dog => dog.List == id)
+                .ToListAsync();
         }
         public async Task<List<ListedDog>> GetAllListedDogsAsync()
         {

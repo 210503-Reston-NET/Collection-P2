@@ -64,7 +64,8 @@ namespace DNHDL
         Task<Preference> AddPreferenceAsync(Preference preference);
         Task<Preference> DeletePreferenceAsync(Preference preference);
         Task<Preference> UpdatePreferenceAsync(Preference preference);
-        Task<Preference> GetPreferenceByIdAsync(int id);
+        Task<List<Preference>> GetPreferenceByIdAsync(int id);
+        Task<List<Preference>> GetPreferencesFor(string userName);
         Task<List<Preference>> GetAllPreferencesAsync();
         Task<Preference> GetPreferenceAsync(Preference preference);
         //DogList
@@ -80,11 +81,10 @@ namespace DNHDL
         Task<ListedDog> AddListedDogasync(ListedDog listDog);
         Task<ListedDog> DeleteListedDogAsync(ListedDog listedDog);
         Task<ListedDog> UpdateListedDogAsync(ListedDog listedDog);
-        Task<ListedDog> GetListedDogByIdAsync(int id);
+        Task<List<ListedDog>> GetListedDogByDogIdAsync(int id);
+        Task<List<ListedDog>> GetListedDogByListIdAsync(int id);
         Task<List<ListedDog>> GetAllListedDogsAsync();  
         Task<ListedDog> GetListedDogAsync(ListedDog listedDog);
-
-
 
 
 

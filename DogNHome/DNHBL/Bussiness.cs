@@ -244,8 +244,7 @@ namespace DNHBL
 
         public async Task<List<Preference>> GetRelatedPreferences(int tagID)
         {
-            //return await _repo.GetPreferenceByIdAsync(tagID);
-            throw new NotImplementedException();
+            return await _repo.GetPreferenceByIdAsync(tagID);
         }
 
         public async Task<Preference> GetPreference(string userName, int tagID)
@@ -255,19 +254,17 @@ namespace DNHBL
 
         public async Task<Preference> AddPreference(Preference preference)
         {
-            throw new NotImplementedException(); // Not implemented in RepoDB
+            return await _repo.AddPreferenceAsync(preference); // Not implemented in RepoDB
         }
 
         public async Task<Preference> RemovePreference(Preference preference)
         {
-            //return await _repo.DeletePreference(preference);
-            throw new NotImplementedException();
+            return await _repo.DeletePreferenceAsync(preference);
         }
 
         public async Task<Preference> UpdatePreference(Preference preference)
         {
-            //return await _repo.UpdatePreference(preference);
-            throw new NotImplementedException();
+            return await _repo.UpdatePreferenceAsync(preference);
         }
 
         public async Task<List<ListedDog>> GetAllListedDogs()
@@ -277,17 +274,17 @@ namespace DNHBL
 
         public async Task<List<ListedDog>> GetListedDogsForDog(int dogID)
         {
-            throw new NotImplementedException(); // Not implemented in RepoDB
+            return await _repo.GetListedDogByDogIdAsync(dogID);
         }
 
         public async Task<List<ListedDog>> GetListedDogsForList(int listID)
         {
-            throw new NotImplementedException(); // Not implemented in RepoDB
+            return await _repo.GetListedDogByListIdAsync(listID); // Not implemented in RepoDB
         }
 
-        public async Task<ListedDog> GetListedDog(int dogID, int listID)
+        public async Task<ListedDog> GetListedDog(ListedDog dog)
         {
-            return await _repo.GetListedDogByIdAsync(dogID); // ...???? this is a composite key, searching by a single id will return a list
+            return await _repo.GetListedDogAsync(dog); // ...???? this is a composite key, searching by a single id will return a list
         }
 
         public async Task<ListedDog> AddListedDog(ListedDog dog)
@@ -311,31 +308,27 @@ namespace DNHBL
 
         public async Task<List<Tags>> GetAllTags()
         {
-            throw new NotImplementedException(); // Not implemented in RepoDB
+            return await _repo.GetAllTagsAsync();
         }
 
         public async Task<Tags> GetTag(int tagID)
         {
-            throw new NotImplementedException();
-           //return await _repo.GetTagsAsync(tagID); // ??? is this for all tags, if so, why do we pass an int
+           return await _repo.GetTagsByIdAsync(tagID);
         }
 
         public async Task<Tags> AddTag(Tags tag)
         {
-            //return await _repo.AddTag();
-            throw new NotImplementedException(); // Not implemented in RepoDB
+            return await _repo.AddTagsAsync(tag);
         }
 
         public async Task<Tags> RemoveTag(Tags tag)
         {
-            //return _repo.DeleteTag(tag);
-            throw new NotImplementedException(); // Not implemented in RepoDB
+            return await _repo.DeleteTagsAsync(tag);
         } 
 
         public async Task<Tags> UpdateTag(Tags tag)
         {
-            //return await _repo.UpdateTag(tag);
-            throw new NotImplementedException(); // Not implemented in RepoDB
+            return await _repo.UpdateTagsAsync(tag);
         }
     }
 }
