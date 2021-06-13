@@ -36,7 +36,7 @@ namespace DNHREST.Controllers
 
         // PUT api/<DogController>
         [HttpPost]
-        public async Task<IActionResult> AddForum([FromBody] Forum forum)
+        public async Task<IActionResult> AddForum(Forum forum)
         {
             await _BL.AddForum(forum);
             return NoContent();

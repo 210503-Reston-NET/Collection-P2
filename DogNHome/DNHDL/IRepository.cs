@@ -50,7 +50,7 @@ namespace DNHDL
         Task<Posts> DeletePostsAsync(Posts posts);
         Task<Posts> UpdatePostsAsync(Posts posts);
         Task<Posts> GetPostsByIdAsync(int id);
-        Task<Posts> GetPostForForumWithID(int id);
+        Task<List<Posts>> GetPostForForumWithID(int id);
         Task<List<Posts>> GetAllPostsAsync();
         Task<Posts> GetPostsAsync(Posts posts);
         //Comments

@@ -38,7 +38,6 @@ namespace DNHREST.Controllers
         [HttpPost]
         public async Task<IActionResult> AddPost(Posts post)
         {
-            Console.WriteLine(post.PostID + "  " + post.Topic + "   " + post.ForumID + "  " + post.UserCreator);
             await _BL.AddPost(post);
             return NoContent();
         }

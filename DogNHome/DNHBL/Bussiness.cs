@@ -153,7 +153,7 @@ namespace DNHBL
             return await _repo.GetPostsByIdAsync(postID);
         }
 
-        public async Task<Posts> GetPostForForumWithID(int id)
+        public async Task<List<Posts>> GetPostForForumWithID(int id)
         {
             return await _repo.GetPostForForumWithID(id);
         }

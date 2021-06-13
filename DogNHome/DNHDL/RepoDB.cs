@@ -332,10 +332,12 @@ namespace DNHDL
             Log.Debug("Getting Posts from the database by ID: {0}", id);
             return await _context.Posts.FindAsync(id);
         }
-        public async Task<Posts> GetPostForForumWithID(int id)
+        public async Task<List<Posts>> GetPostForForumWithID(int id)
         {
             Log.Debug("Getting Posts from the database by forumID: {0}", id);
-            return await _context.Posts.FirstAsync( post => post.ForumID == id);
+            return await _context.Posts.Select( post => post)
+                .Where(post => post.ForumID == id)
+                .ToListAsync();
         }
         public async Task<List<Posts>> GetAllPostsAsync()
         {

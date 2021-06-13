@@ -159,7 +159,7 @@ namespace DNHBL
         /// </summary>
         /// <param name="id">forumID</param>
         /// <returns></returns>
-        Task<Posts> GetPostForForumWithID(int id);
+        Task<List<Posts>> GetPostForForumWithID(int id);
         /// <summary>
         /// Removes a Post from the Database for the given Post 
         /// </summary>

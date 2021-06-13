@@ -1,0 +1,7 @@
+2021-06-13 00:22:52.210 -04:00 [INF] App is now running
+2021-06-13 00:23:53.960 -04:00 [DBG] Getting all Forums from the database
+2021-06-13 00:24:03.440 -04:00 [DBG] Getting all Posts from the database.
+2021-06-13 00:29:04.533 -04:00 [INF] App is now running
+2021-06-13 00:29:23.902 -04:00 [DBG] Getting Posts from the database by forumID: 4
+2021-06-13 10:40:00.815 -04:00 [INF] App is now running
+2021-06-13 10:40:23.329 -04:00 [DBG] Getting Posts from the database by forumID: 1
