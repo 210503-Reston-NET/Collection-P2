@@ -36,9 +36,9 @@ namespace DNHREST.Controllers
 
         // PUT api/<DogController>
         [HttpPost]
-        public async Task<IActionResult> AddUser(User user)
+        public async Task<IActionResult> AddUser(string uid)
         {
-            await _BL.AddUser(user);
+            await _BL.AddUser(uid);
             return NoContent();
         }
 

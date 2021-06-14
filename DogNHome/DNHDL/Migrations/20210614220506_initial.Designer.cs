@@ -10,8 +10,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace DNHDL.Migrations
 {
     [DbContext(typeof(DNHDBContext))]
-    [Migration("20210611235255_newMigration")]
-    partial class newMigration
+    [Migration("20210614220506_initial")]
+    partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -20,6 +20,30 @@ namespace DNHDL.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 63)
                 .HasAnnotation("ProductVersion", "5.0.7")
                 .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+
+            modelBuilder.Entity("DNHModels.Alert", b =>
+                {
+                    b.Property<int>("AlertID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+
+                    b.Property<string>("AlertType")
+                        .HasColumnType("text");
+
+                    b.Property<string>("AlertValue")
+                        .HasColumnType("text");
+
+                    b.Property<string>("DogID")
+                        .HasColumnType("text");
+
+                    b.Property<string>("UserID")
+                        .HasColumnType("text");
+
+                    b.HasKey("AlertID");
+
+                    b.ToTable("Alert");
+                });
 
             modelBuilder.Entity("DNHModels.Comments", b =>
                 {
@@ -43,21 +67,6 @@ namespace DNHDL.Migrations
                     b.HasKey("CommentID");
 
                     b.ToTable("Comments");
-                });
-
-            modelBuilder.Entity("DNHModels.Dog", b =>
-                {
-                    b.Property<int>("DogID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer")
-                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
-
-                    b.Property<int>("APIID")
-                        .HasColumnType("integer");
-
-                    b.HasKey("DogID");
-
-                    b.ToTable("Dogs");
                 });
 
             modelBuilder.Entity("DNHModels.DogList", b =>
@@ -117,10 +126,10 @@ namespace DNHDL.Migrations
                     b.Property<int>("ListID")
                         .HasColumnType("integer");
 
-                    b.Property<int>("DogID")
-                        .HasColumnType("integer");
+                    b.Property<string>("APIID")
+                        .HasColumnType("text");
 
-                    b.HasKey("ListID", "DogID");
+                    b.HasKey("ListID", "APIID");
 
                     b.ToTable("ListedDogs");
                 });
@@ -176,22 +185,10 @@ namespace DNHDL.Migrations
 
             modelBuilder.Entity("DNHModels.User", b =>
                 {
-                    b.Property<string>("UserName")
+                    b.Property<string>("UserID")
                         .HasColumnType("text");
 
-                    b.Property<string>("Address")
-                        .HasColumnType("text");
-
-                    b.Property<string>("FirstName")
-                        .HasColumnType("text");
-
-                    b.Property<string>("LastName")
-                        .HasColumnType("text");
-
-                    b.Property<string>("Password")
-                        .HasColumnType("text");
-
-                    b.HasKey("UserName");
+                    b.HasKey("UserID");
 
                     b.ToTable("Users");
                 });

@@ -35,18 +35,6 @@ namespace DNHTest
         }
         
         [Fact]
-        public void GetAllDogs()
-        {
-
-            using (var context = new DNHDBContext(options))
-            {
-                IRepository _repo = new RepoDB(context);
-                var results = _repo.GetAllDogsAsync();
-                Assert.Equal(1, results.Result.Count);
-            }
-        }
-        
-        [Fact]
         public void GetAllDogLists()
         {
 
@@ -163,29 +151,6 @@ namespace DNHTest
             }
         }
         [Fact]
-        public void ValidAddDog()
-        {
-            int DogID = 951;
-            int APIID = 753;
-
-            using (var context = new DNHDBContext(options))
-            {
-                IRepository _repo = new RepoDB(context);
-                _repo.AddDogAsync
-                (
-                    new Dog(DogID, APIID)
-                );
-            }
-            using (var assertContext = new DNHDBContext(options))
-            {
-
-                var result = assertContext.Dogs.FirstOrDefault(dg => dg.DogID == DogID );
-                Assert.NotNull(result);
-                Assert.Equal(APIID, result.APIID);
-            }
-        }
-
-        [Fact]
         public void ValidAddDogList()
         {
             int ListID = 35460;
@@ -236,7 +201,7 @@ namespace DNHTest
         public void ValidAddListedDog()
         {
             int ListID = 541;
-            int DogID = 687;
+            string DogID = "687";
 
             using (var context = new DNHDBContext(options))
             {
@@ -251,7 +216,7 @@ namespace DNHTest
 
                 var result = assertContext.ListedDogs.FirstOrDefault(lsd => lsd.ListID == ListID);
                 Assert.NotNull(result);
-                Assert.Equal(DogID, result.DogID);
+                Assert.Equal(DogID, result.APIID);
             }
         }
         [Fact]
@@ -325,26 +290,23 @@ namespace DNHTest
         [Fact]
         public void ValidAddUser()
         {
-            string UserName = "Pepe_Rios";
-            string Password = "2356634";
-            string FirstName = "Pepe";
-            string LastName = "Rios";
-            string Address = "9642 First St.";
+            string UserID = "Pepe_Rios";
+
 
             using (var context = new DNHDBContext(options))
             {
                 IRepository _repo = new RepoDB(context);
                 _repo.AddUserAsync
                 (
-                    new User(UserName, Password, FirstName, LastName, Address)
+                    UserID
                 );
             }
             using (var assertContext = new DNHDBContext(options))
             {
 
-                var result = assertContext.Users.FirstOrDefault(use => use.UserName == UserName);
+                var result = assertContext.Users.FirstOrDefault(use => use.UserID == UserID);
                 Assert.NotNull(result);
-                Assert.Equal(Password, result.Password);
+                Assert.Equal(UserID, result.UserID);
             }
         }
 
@@ -375,28 +337,6 @@ namespace DNHTest
                 var result = assertContext.Comments.FirstOrDefault(comm => comm.CommentID == CommentID);
                 Assert.NotNull(result);
                 Assert.NotEqual(UserName, result.UserName);
-            }
-        }
-        [Fact]
-        public void NotValidAddDog()
-        {
-            int DogID = 123;
-            int APIID = 1111;
-
-            using (var context = new DNHDBContext(options))
-            {
-                IRepository _repo = new RepoDB(context);
-                _repo.AddDogAsync
-                (
-                    new Dog(DogID, APIID)
-                );
-            }
-            using (var assertContext = new DNHDBContext(options))
-            {
-
-                var result = assertContext.Dogs.FirstOrDefault(dg => dg.DogID == DogID);
-                Assert.NotNull(result);
-                Assert.NotEqual(APIID, result.APIID);
             }
         }
         [Fact]
@@ -472,7 +412,7 @@ namespace DNHTest
         public void NotValidAddListedDog()
         {
             int ListID = 963;
-            int DogID = 456;
+            string DogID = "456";
 
             using (var context = new DNHDBContext(options))
             {
@@ -487,7 +427,7 @@ namespace DNHTest
 
                 var result = assertContext.ListedDogs.FirstOrDefault(lsd => lsd.ListID == ListID);
                 Assert.NotNull(result);
-                Assert.NotEqual(DogID, result.DogID);
+                Assert.NotEqual(DogID, result.APIID);
             }
         }
         [Fact]
@@ -561,25 +501,20 @@ namespace DNHTest
         [Fact]
         public void NotValidAddUser()
         {
-            string UserName = "Cesar_19";
-            string Password = "35741968";
-            string FirstName = "Cesar";
-            string LastName = "Morales";
-            string Address = "123 Main St.";
+            string APIID = "123sad3fd";
 
             using (var context = new DNHDBContext(options))
             {
                 IRepository _repo = new RepoDB(context);
                 _repo.AddUserAsync
                 (
-                    new User(UserName, Password, FirstName, LastName, Address)
+                    APIID
                 );
             }
             using (var assertContext = new DNHDBContext(options))
             {
-                var result = assertContext.Users.FirstOrDefault(use => use.UserName == UserName);
+                var result = assertContext.Users.FirstOrDefault(use => use.UserID == APIID);
                 Assert.NotNull(result);
-                Assert.NotEqual(Password, result.Password);
             }
         }
 
@@ -613,14 +548,6 @@ namespace DNHTest
                             Message = "I just lost my dog!"
                         }
 
-                    );
-                context.Dogs.AddRange
-                    (
-                        new Dog
-                        {
-                            DogID = 123,
-                            APIID = 456
-                        }
                     );
                 context.DogLists.AddRange
                     (
@@ -673,7 +600,7 @@ namespace DNHTest
                     (
                         new ListedDog
                         {
-                            DogID = 123,
+                            APIID = "123",
                             ListID = 963,
                             
                         }
@@ -733,19 +660,11 @@ namespace DNHTest
                     (
                         new User
                         {
-                            UserName = "Cesar_19",
-                            Password = "123456789",
-                            FirstName = "Cesar",
-                            LastName = "Morales",
-                            Address = "123 Main St."
+                            UserID = "Cesar_19",
                         },
                         new User
                         {
-                            UserName = "Aros_78",
-                            Password = "987654321",
-                            FirstName = "Aros",
-                            LastName = "McGreen",
-                            Address = "567 Center St."
+                            UserID = "Aros_78",
                         }
                     );
                 context.SaveChanges();

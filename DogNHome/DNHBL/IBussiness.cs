@@ -7,50 +7,7 @@ namespace DNHBL
 {
     public interface IBussiness
     {
-        /// <summary>
-        /// Returns all dogs in Database
-        /// </summary>
-        /// <returns></returns>
-        Task<List<Dog>> GetAllDogs();
-        /// <summary>
-        /// Returns a complete list of all Dogs for a given listID
-        /// </summary>
-        /// <returns></returns>
-        Task<List<Dog>> GetAllDogsForList(int ListID);
-        /// <summary>
-        /// Returns the Dog object for a referenced dog and its API Key
-        /// </summary>
-        /// <param name="dogID"> an incremental Primary Key for local object Dog</param>
-        /// <returns></returns>
-        Task<Dog> GetDogByID(int dogID);
-        /// <summary>
-        /// Adds the given Dog obj to Database
-        /// </summary>
-        /// <param name="dog">Object holding API reference for select Dog</param>
-        /// <returns></returns>
-        Task<Dog> AddDog(Dog dog);
-        /// <summary>
-        /// Removes the given Dog obj from Database
-        /// </summary>
-        /// <param name="dog">Object holding API reference for select Dog</param>
-        /// <returns></returns>
-        Task<Dog> RemoveDog(Dog dog);
-        /// <summary>
-        /// Removes a Dog from Database with given dogID
-        /// </summary>
-        /// <param name="dogID">an incremental Primary Key for local object Dog</param>
-        /// <returns></returns>
-        Task<Dog> RemoveDogByID(int dogID);
-        /// <summary>
-        /// Updates Dog Object with given dog Reference
-        /// </summary>
-        /// <param name="dog"></param>
-        /// <returns></returns>
-        Task<Dog> UpdateDog(Dog dog);
-        /// <summary>
-        /// Returns a complete list of Dog Lists from Database. primarily for Development
-        /// </summary>
-        /// <returns></returns>
+
         Task<List<DogList>> GetAllDogLists();
         /// <summary>
         /// Returns all DogList Objects from Database for given User
@@ -70,6 +27,13 @@ namespace DNHBL
         /// <param name="list">List Object to be added</param>
         /// <returns></returns>
         Task<DogList> AddNewDogList(DogList list);
+        /// <summary>
+        /// Adds an array of listedDogs for a given listID
+        /// </summary>
+        /// <param name="id">The id of the list to be added to</param>
+        /// <param name="dogs">The dogs to be added to given list</param>
+        /// <returns></returns>
+        Task<bool> AddsListOfDogs(int id, string[] dogs);
         /// <summary>
         /// Removes given DogList Object from the Database
         /// </summary>
@@ -110,7 +74,7 @@ namespace DNHBL
         /// </summary>
         /// <param name="user"></param>
         /// <returns></returns>
-        Task<User> AddUser(User user);
+        Task<User> AddUser(string uid);
         /// <summary>
         /// Returns all Comments in Database
         /// </summary>
@@ -266,7 +230,7 @@ namespace DNHBL
         /// Returns all dogs with a given dogID that is also referenced in both a list and the Database
         /// </summary>
         /// <returns></returns>
-        Task<List<ListedDog>> GetListedDogsForDog(int dogID);
+        Task<List<ListedDog>> GetListedDogsForDog(string dogID);
         /// <summary>
         /// Returns all dogs for a given list based off of given listID in Database
         /// </summary>

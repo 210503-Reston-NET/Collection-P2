@@ -11,9 +11,9 @@ namespace DNHModels
     /// </summary>
     public class ListedDog
     {
-        public ListedDog(int dogID, int listID)
+        public ListedDog(string dogID, int listID)
         {
-            this.DogID = dogID;
+            this.APIID = dogID;
             this.ListID = listID;
         }
         public ListedDog()
@@ -21,7 +21,7 @@ namespace DNHModels
 
         }
 
-        public int DogID { get; set; }
+        public string APIID { get; set; }
         public int ListID { get; set; }
     }
 }

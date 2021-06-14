@@ -24,38 +24,41 @@ namespace DNHDL
         /// <summary>
         /// All of the User Functions
         /// </summary>
-        /// <param name="user"></param>
+        /// <param name="uid"></param>
         /// <returns></returns>
-        public async Task<User> AddUserAsync(User user)
+        public async Task<User> AddUserAsync(string uid)
         {
-            
+            User newUser = new User()
+            {
+                UserID = uid,
+            };
             await _context.Users.AddAsync(
-                user
+                newUser
                 );
             await _context.SaveChangesAsync();
-            Log.Debug("Adding {0} {1} to the database.", user.FirstName, user.LastName);
-            return user;
+            Log.Debug("Adding {0} to the database.", uid);
+            return newUser;
         }
         public async Task<User> DeleteUserAsync(User user)
         {
             
-            User toBeDeleted = _context.Users.AsNoTracking().First(use => use.UserName == user.UserName);
+            User toBeDeleted = _context.Users.AsNoTracking().First(use => use.UserID == user.UserID);
             _context.Users.Remove(toBeDeleted);
             await _context.SaveChangesAsync();
-            Log.Debug("Removing {0} {1} from the database.", user.FirstName, user.LastName);
+            Log.Debug("Removing {0} from the database.", user.UserID);
             return user;
         }
         public async Task<User> UpdateUserAsync(User user)
         {
             _context.Users.Update(user);
             await _context.SaveChangesAsync();
-            Log.Debug("Updating {0} {1} in the database.", user.FirstName, user.LastName);
+            Log.Debug("Updating {0} in the database.", user.UserID);
             return user;
         }
-        public async Task<User> GetUserByIdAsync(string id)
+        public async Task<User> GetUserByIdAsync(string uid)
         {
-            Log.Debug("Getting {0} from the database.", id);
-            return await _context.Users.FindAsync(id);
+            Log.Debug("Getting {0} from the database.", uid);
+            return await _context.Users.FirstAsync(use => use.UserID == uid);
         }
 
         public async Task<List<User>> GetAllUsersAsync()
@@ -69,76 +72,15 @@ namespace DNHDL
 
         public async Task<User> GetUserAsync(User user)
         {
-            User found = await _context.Users.AsNoTracking().FirstOrDefaultAsync(use => use.UserName == user.UserName);
+            User found = await _context.Users.AsNoTracking().FirstOrDefaultAsync(use => use.UserID == user.UserID);
             if (found == null)
             {
                 Log.Error("User does not exist!");
                 return null; }
-            Log.Debug("Getting {0} {1} in the database.", user.FirstName, user.LastName);
-            return new User(found.UserName, found.Password, found.FirstName, found.LastName, found.Address);
+            Log.Debug("Getting {0} {1} in the database.", user.UserID);
+            return found;
         }
 
-        //Done with User functions & starting with Dog 
-        public async Task<Dog> AddDogAsync(Dog dog)
-        {
-            Log.Debug("Adding {0} into the database.", dog.DogID);
-            await _context.Dogs.AddAsync(
-                dog
-                );
-            await _context.SaveChangesAsync();
-            
-            return dog;
-
-        }
-        public async Task<Dog> DeleteDogAsync(Dog dog)
-        {
-            Dog toBeDeleted = _context.Dogs.AsNoTracking().First(dg => dg.DogID == dog.DogID);
-            _context.Dogs.Remove(toBeDeleted);
-            await _context.SaveChangesAsync();
-            Log.Debug("Removing {0} from the database.", dog.DogID);
-            return dog;
-        }
-        public async Task<Dog> UpdateDogAsync(Dog dog)
-        {
-            _context.Dogs.Update(dog);
-            await _context.SaveChangesAsync();
-            Log.Debug("Updating {0} from the database.", dog.DogID);
-            return dog;
-        }
-        
-        public async Task<Dog> GetDogByIdAsync(int id)
-        {
-            Log.Debug("Getting {0} from the database.", id);
-            return await _context.Dogs.FindAsync(id);
-        }
-
-        public async Task<List<Dog>> GetAllDogsAsync()
-        {
-            Log.Debug("Getting all dogs from the database.");
-            return await _context.Dogs.AsNoTracking()
-            .Select(
-                dog => dog
-            ).ToListAsync();
-        }
-        public async Task<Dog> GetDogAsync(Dog dog)
-        {
-            Dog found = await _context.Dogs.AsNoTracking().FirstOrDefaultAsync(dg => dg.DogID == dog.DogID);
-            if (found == null) 
-            {
-                Log.Error("Dog does not exist!");
-                return null; }
-            Log.Debug("Getting {0} from the database.", dog.DogID);
-            return new Dog(found.DogID, found.APIID);
-        }
-        public async Task<List<Dog>> GetAllDogsForList(int ListId) //Check my logic here please
-        {
-            //Still need to add something here
-            Log.Debug("Getting Dog from List ID: {0} from the database.", ListId);
-            return await _context.Dogs.AsNoTracking()
-            .Select(
-                ListId => ListId
-            ).ToListAsync();
-        }
 
         //Done with Dog functions & starting with Likes
 
@@ -553,11 +495,11 @@ namespace DNHDL
             Log.Debug("Updating ListedDog from the database: {0}", listedDog.ListID);
             return listedDog;
         }
-        public async Task<List<ListedDog>> GetListedDogByDogIdAsync(int id)
+        public async Task<List<ListedDog>> GetListedDogByDogIdAsync(string id)
         {
             Log.Debug("Removing ListedDog from the database by ID: {0}", id);
             return await _context.ListedDogs.Select(dog => dog)
-                .Where(dog => dog.DogID == id)
+                .Where(dog => dog.APIID == id)
                 .ToListAsync();
         }
         public async Task<List<ListedDog>> GetListedDogByListIdAsync(int id)
@@ -585,7 +527,8 @@ namespace DNHDL
                 return null;
             }
             Log.Debug("Getting ListedDog from the database: {0}", listedDog.ListID);
-            return new ListedDog(found.DogID, found.ListID);
+            return new ListedDog(found.APIID, found.ListID);
         }
+
     }
 }

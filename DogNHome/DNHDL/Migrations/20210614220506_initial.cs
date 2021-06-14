@@ -4,10 +4,26 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace DNHDL.Migrations
 {
-    public partial class newMigration : Migration
+    public partial class initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.CreateTable(
+                name: "Alert",
+                columns: table => new
+                {
+                    AlertID = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    UserID = table.Column<string>(type: "text", nullable: true),
+                    AlertType = table.Column<string>(type: "text", nullable: true),
+                    AlertValue = table.Column<string>(type: "text", nullable: true),
+                    DogID = table.Column<string>(type: "text", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Alert", x => x.AlertID);
+                });
+
             migrationBuilder.CreateTable(
                 name: "Comments",
                 columns: table => new
@@ -22,20 +38,6 @@ namespace DNHDL.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Comments", x => x.CommentID);
-                    table.ForeignKey(
-                        name: "FK_Comments_Users_UserName",
-                        column: x => x.UserName,
-                        principalTable: "Users",
-                        principalColumn: "UserName",
-                        onDelete: ReferentialAction.Cascade
-                        );
-                    table.ForeignKey(
-                        name: "FK_Comments_Posts_UserCreator",
-                        column: x => x.PostID,
-                        principalTable: "Posts",
-                        principalColumn: "PostID",
-                        onDelete: ReferentialAction.Cascade
-                        );
                 });
 
             migrationBuilder.CreateTable(
@@ -51,26 +53,6 @@ namespace DNHDL.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_DogLists", x => x.ListID);
-                    table.ForeignKey(
-                        name: "FK_DogLists_Users_UserName",
-                        column: x => x.UserName,
-                        principalTable: "Users",
-                        principalColumn: "UserName",
-                        onDelete: ReferentialAction.Cascade
-                        );
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Dogs",
-                columns: table => new
-                {
-                    DogID = table.Column<int>(type: "integer", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    APIID = table.Column<int>(type: "integer", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Dogs", x => x.DogID);
                 });
 
             migrationBuilder.CreateTable(
@@ -97,46 +79,18 @@ namespace DNHDL.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Likes", x => new { x.DogID, x.UserName });
-                    table.ForeignKey(
-                        name: "FK_Likes_Users_UserName",
-                        column: x => x.UserName,
-                        principalTable: "Users",
-                        principalColumn: "UserName",
-                        onDelete: ReferentialAction.Cascade
-                        );
-                    table.ForeignKey(
-                        name: "FK_Likes_Dogs_DogID",
-                        column: x => x.DogID,
-                        principalTable: "Dogs",
-                        principalColumn: "DogID",
-                        onDelete: ReferentialAction.Cascade
-                        );
                 });
 
             migrationBuilder.CreateTable(
                 name: "ListedDogs",
                 columns: table => new
                 {
-                    DogID = table.Column<int>(type: "integer", nullable: false),
+                    APIID = table.Column<string>(type: "text", nullable: false),
                     ListID = table.Column<int>(type: "integer", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ListedDogs", x => new { x.ListID, x.DogID });
-                    table.ForeignKey(
-                        name: "FK_ListedDogs_Dogs_DogID",
-                        column: x => x.DogID,
-                        principalTable: "Dogs",
-                        principalColumn: "DogID",
-                        onDelete: ReferentialAction.Cascade
-                        );
-                    table.ForeignKey(
-                        name: "FK_ListedDogs_DogLists_ListID",
-                        column: x => x.ListID,
-                        principalTable: "DogLists",
-                        principalColumn: "ListID",
-                        onDelete: ReferentialAction.Cascade
-                        );
+                    table.PrimaryKey("PK_ListedDogs", x => new { x.ListID, x.APIID });
                 });
 
             migrationBuilder.CreateTable(
@@ -152,13 +106,6 @@ namespace DNHDL.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Posts", x => x.PostID);
-                    table.ForeignKey(
-                        name: "FK_Posts_Users_UserCreator",
-                        column: x => x.UserCreator,
-                        principalTable: "Users",
-                        principalColumn: "UserName",
-                        onDelete: ReferentialAction.Cascade
-                        );
                 });
 
             migrationBuilder.CreateTable(
@@ -171,20 +118,6 @@ namespace DNHDL.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Preferences", x => new { x.TagID, x.UserName });
-                    table.ForeignKey(
-                        name: "FK_Preferences_Users_UserCreator",
-                        column: x => x.UserName,
-                        principalTable: "Users",
-                        principalColumn: "UserName",
-                        onDelete: ReferentialAction.Cascade
-                        );
-                    table.ForeignKey(
-                        name: "FK_PreferencesTags_TagID",
-                        column: x => x.TagID,
-                        principalTable: "Tags",
-                        principalColumn: "TagID",
-                        onDelete: ReferentialAction.Cascade
-                        );
                 });
 
             migrationBuilder.CreateTable(
@@ -204,28 +137,24 @@ namespace DNHDL.Migrations
                 name: "Users",
                 columns: table => new
                 {
-                    UserName = table.Column<string>(type: "text", nullable: false),
-                    Password = table.Column<string>(type: "text", nullable: true),
-                    FirstName = table.Column<string>(type: "text", nullable: true),
-                    LastName = table.Column<string>(type: "text", nullable: true),
-                    Address = table.Column<string>(type: "text", nullable: true)
+                    UserID = table.Column<string>(type: "text", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Users", x => x.UserName);
+                    table.PrimaryKey("PK_Users", x => x.UserID);
                 });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
+                name: "Alert");
+
+            migrationBuilder.DropTable(
                 name: "Comments");
 
             migrationBuilder.DropTable(
                 name: "DogLists");
-
-            migrationBuilder.DropTable(
-                name: "Dogs");
 
             migrationBuilder.DropTable(
                 name: "Forums");

@@ -29,9 +29,9 @@ namespace DNHREST.Controllers
 
         // GET api/<DogController>/5
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetListedDogForDogID(int dogId)
+        public async Task<IActionResult> GetListedDogForDogID(string id)
         {
-            return Ok(await _BL.GetListedDogsForDog(dogId));
+            return Ok(await _BL.GetListedDogsForDog(id));
         }
         /*
         // GET api/<DogController>/5
@@ -47,7 +47,7 @@ namespace DNHREST.Controllers
         public async Task<IActionResult> AddListedDog(ListedDog listedDog)
         {
             await _BL.AddListedDog(listedDog);
-            return NoContent();
+            return Created("api/ListedDog" ,await _BL.AddListedDog(listedDog));
         }
 
         // POST api/<DogController>

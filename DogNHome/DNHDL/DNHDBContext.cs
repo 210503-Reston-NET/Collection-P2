@@ -17,7 +17,6 @@ namespace DNHDL
 
         }
         // Insert DBSets here for data models
-        public DbSet<Dog> Dogs { get; set; }
         public DbSet<DogList> DogLists { get; set; }
         public DbSet<ListedDog> ListedDogs { get; set; }
         public DbSet<User> Users { get; set; }
@@ -27,12 +26,10 @@ namespace DNHDL
         public DbSet<Posts> Posts { get; set; }
         public DbSet<Preference> Preferences { get; set; }
         public DbSet<Tags> Tags { get; set; }
+        public DbSet<Alert> Alert { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Dog>()
-                .Property(dog => dog.DogID)
-                .ValueGeneratedOnAdd();
             modelBuilder.Entity<DogList>()
                 .Property(list => list.ListID)
                 .ValueGeneratedOnAdd();
@@ -48,17 +45,17 @@ namespace DNHDL
             modelBuilder.Entity<Tags>()
                 .Property(tag => tag.TagID)
                 .ValueGeneratedOnAdd();
+            modelBuilder.Entity<Alert>()
+                .Property(alert => alert.AlertID)
+                .ValueGeneratedOnAdd();
 
-
-
+           
             modelBuilder.Entity<User>()
-                .HasKey(user => user.UserName);
+                .HasKey(user => user.UserID);
             modelBuilder.Entity<ListedDog>()
-                .HasKey(LDog => new { LDog.ListID, LDog.DogID });
+                .HasKey(LDog => new { LDog.ListID, LDog.APIID });
             modelBuilder.Entity<DogList>()
                 .HasKey(list => list.ListID);
-            modelBuilder.Entity<Dog>()
-                .HasKey(dog => dog.DogID);
             modelBuilder.Entity<Like>()
                 .HasKey(like => new { like.DogID, like.UserName});
             modelBuilder.Entity<Comments>()

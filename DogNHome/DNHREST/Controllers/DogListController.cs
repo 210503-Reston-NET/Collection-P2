@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using DNHBL;
 using DNHModels;
+using DNHREST.DTO;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -27,7 +28,16 @@ namespace DNHREST.Controllers
             return Ok(await _BL.GetAllDogLists());
         }
 
-        // GET api/<DogController>/5
+
+        [HttpPost("{id}")]
+        // POST BaseURL/DogList/{listId}
+        public async Task<IActionResult> AddDogs(int id, SomeDogs given)
+        {
+            await _BL.AddsListOfDogs(id, given.dogs);
+            return Created("api/DogList",id);
+
+        }
+
         [HttpGet("{id}")]
         public async Task<IActionResult> GetDogList(int id)
         {

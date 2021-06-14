@@ -10,20 +10,13 @@ namespace DNHDL
     public interface IRepository
     {
         //User
-        Task<User> AddUserAsync(User user);
+        Task<User> AddUserAsync(string uid);
         Task<User> DeleteUserAsync(User user);
         Task<User> UpdateUserAsync(User user);
         Task<User> GetUserByIdAsync(string id);
         Task<List<User>> GetAllUsersAsync();
         Task<User> GetUserAsync(User user);
         //Dog
-        Task<Dog> AddDogAsync(Dog dog);
-        Task<Dog> DeleteDogAsync(Dog dog);
-        Task<Dog> UpdateDogAsync(Dog dog);
-        Task<Dog> GetDogByIdAsync(int id);
-        Task<List<Dog>> GetAllDogsAsync();
-        Task<Dog> GetDogAsync(Dog dog);
-        Task<List<Dog>> GetAllDogsForList(int ListId);
         //Likes
         Task<Like> AddLikesAsync(Like like);
         Task<Like> DeleteLikeAsync(Like like);
@@ -81,7 +74,7 @@ namespace DNHDL
         Task<ListedDog> AddListedDogasync(ListedDog listDog);
         Task<ListedDog> DeleteListedDogAsync(ListedDog listedDog);
         Task<ListedDog> UpdateListedDogAsync(ListedDog listedDog);
-        Task<List<ListedDog>> GetListedDogByDogIdAsync(int id);
+        Task<List<ListedDog>> GetListedDogByDogIdAsync(string id);
         Task<List<ListedDog>> GetListedDogByListIdAsync(int id);
         Task<List<ListedDog>> GetAllListedDogsAsync();  
         Task<ListedDog> GetListedDogAsync(ListedDog listedDog);

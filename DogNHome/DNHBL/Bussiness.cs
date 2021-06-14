@@ -17,46 +17,6 @@ namespace DNHBL
             _repo = repo;
         }
 
-
-        public async Task<List<Dog>> GetAllDogs()
-        {
-            return await _repo.GetAllDogsAsync();
-        }
-        public async Task<List<Dog>> GetAllDogsForList(int ListID)
-        {
-
-            return await _repo.GetAllDogsForList(ListID);
-        }
-
-        public async Task<Dog> GetDogByID(int dogID)
-        {
-            return await _repo.GetDogByIdAsync(dogID);
-        }
-
-        public async Task<Dog> AddDog(Dog dog)
-        {
-            return await _repo.AddDogAsync(dog);
-        }
-
-        public async Task<Dog> RemoveDog(Dog dog)
-        {
-            Dog toBeDeleted = await _repo.GetDogAsync(dog);
-            if (toBeDeleted != null) return await _repo.DeleteDogAsync(toBeDeleted);
-            else throw new Exception("Dog does not exist. You may have already processed this request.");
-        }
-
-        public async Task<Dog> RemoveDogByID(int dogID)
-        {
-            Dog toBeDeleted = await _repo.GetDogByIdAsync(dogID);
-            if (toBeDeleted != null) return await _repo.DeleteDogAsync(toBeDeleted);
-            else throw new Exception("Dog does not exist. You may have already processed this request.");
-        }
-
-        public async Task<Dog> UpdateDog(Dog dog)
-        {
-            return await _repo.UpdateDogAsync(dog);
-        }
-
         public async Task<List<DogList>> GetAllDogLists()
         {
             return await _repo.GetAllDogListsAsync();
@@ -110,10 +70,11 @@ namespace DNHBL
             return await _repo.UpdateUserAsync(user);
         }
 
-        public async Task<User> AddUser(User user)
+        public async Task<User> AddUser(string uid)
         {
-
-            return await _repo.AddUserAsync(user);
+            if (await this.GetUser(uid) != null)
+                return null;
+            return await _repo.AddUserAsync(uid);
         }
 
         public async Task<List<Comments>> GetAllComments()
@@ -208,7 +169,7 @@ namespace DNHBL
 
         public async Task<List<Like>> GetAllLikes()
         {
-            throw new NotImplementedException();
+            return await _repo.GetAllLikesAsync();
         }
 
         public async Task<Like> GetLike(int likeID)
@@ -223,7 +184,7 @@ namespace DNHBL
 
         public async Task<Like> RemoveLike(Like like)
         {
-            throw new NotImplementedException();
+            return await _repo.DeleteLikeAsync(like);
         }
 
         public async Task<Like> UpdateLike(Like like)
@@ -236,10 +197,9 @@ namespace DNHBL
             return await _repo.GetAllPreferencesAsync();
         }
 
-        public async  Task<List<Preference>> GetPreferencesFor(string userName)
+        public async  Task<List<Preference>> GetPreferencesFor(string UserID)
         {
-            //return await _repo.GetPreferenceByIdAsync(userName);
-            throw new NotImplementedException();
+            return await _repo.GetPreferenceForAsync(UserID);
         }
 
         public async Task<List<Preference>> GetRelatedPreferences(int tagID)
@@ -254,7 +214,7 @@ namespace DNHBL
 
         public async Task<Preference> AddPreference(Preference preference)
         {
-            return await _repo.AddPreferenceAsync(preference); // Not implemented in RepoDB
+            return await _repo.AddPreferenceAsync(preference); 
         }
 
         public async Task<Preference> RemovePreference(Preference preference)
@@ -272,24 +232,44 @@ namespace DNHBL
             return await _repo.GetAllListedDogsAsync();
         }
 
-        public async Task<List<ListedDog>> GetListedDogsForDog(int dogID)
+        public async Task<List<ListedDog>> GetListedDogsForDog(string dogID)
         {
             return await _repo.GetListedDogByDogIdAsync(dogID);
         }
 
         public async Task<List<ListedDog>> GetListedDogsForList(int listID)
         {
-            return await _repo.GetListedDogByListIdAsync(listID); // Not implemented in RepoDB
+            return await _repo.GetListedDogByListIdAsync(listID); 
         }
 
         public async Task<ListedDog> GetListedDog(ListedDog dog)
         {
-            return await _repo.GetListedDogAsync(dog); // ...???? this is a composite key, searching by a single id will return a list
+            return await _repo.GetListedDogAsync(dog); 
         }
 
         public async Task<ListedDog> AddListedDog(ListedDog dog)
         {
             return await _repo.AddListedDogasync(dog);
+        }
+        public async Task<bool> AddsListOfDogs(int id, string[] dogs)
+        {
+            try
+            {
+                foreach (string apiID in dogs)
+                {
+                    ListedDog toBeAddedDog = new ListedDog()
+                    {
+                        APIID = apiID,
+                        ListID = id
+                    };
+                    await this.AddListedDog(toBeAddedDog);
+                }
+                return true;
+            } catch(Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return false;
+            }
         }
 
         public async Task<ListedDog> RemoveListedDog(ListedDog dog)
