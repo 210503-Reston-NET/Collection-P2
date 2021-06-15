@@ -60,7 +60,7 @@ namespace DNHREST.Controllers
             }
             catch (Exception e)
             {
-                Log.Error("Failed to fullfil request to get Alert for user with ID " + id + " In Alert Controller", e.Message);
+                Log.Error("Failed to fullfil request to get Alert for user with ID " + alert.AlertID + " In Alert Controller", e.Message);
                 return BadRequest();
             }
         }
