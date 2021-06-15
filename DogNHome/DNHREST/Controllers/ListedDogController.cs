@@ -57,7 +57,7 @@ namespace DNHREST.Controllers
             try
             {
                 await _BL.AddListedDog(listedDog);
-                return Created("api/ListedDog", await _BL.AddListedDog(listedDog));
+                return Created("api/ListedDog", listedDog.ListID);
             }
             catch (Exception e)
             {
