@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using DNHBL;
 using DNHModels;
+using Serilog;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -24,38 +25,77 @@ namespace DNHREST.Controllers
         [HttpGet]
         public async Task<IActionResult> GetUsers()
         {
-            return Ok(await _BL.GetAllUsers());
+            try
+            {
+                return Ok(await _BL.GetAllUsers());
+            } catch (Exception e)
+            {
+                Log.Error("Failed to Get all users in UserController", e.Message);
+                return NotFound();
+            }
         }
 
         // GET api/<DogController>/5
         [HttpGet("{id}")]
         public async Task<IActionResult> GetUser(string id)
         {
-            return Ok(await _BL.GetUser(id));
+            try
+            {
+                return Ok(await _BL.GetUser(id));
+            }
+            catch (Exception e)
+            {
+                Log.Error("Failed to Get user with userID: " + id + " in UserController", e.Message);
+                return NotFound();
+            }
         }
 
         // PUT api/<DogController>
         [HttpPost]
         public async Task<IActionResult> AddUser(string uid)
         {
-            await _BL.AddUser(uid);
-            return NoContent();
+            try
+            {
+                await _BL.AddUser(uid);
+                return NoContent();
+            }
+            catch (Exception e)
+            {
+                Log.Error("Failed to add user with userID: " + uid + " in UserController", e.Message);
+                return BadRequest();
+            }
         }
 
         // POST api/<DogController>
         [HttpPut]
         public async Task<IActionResult> UpdateUser([FromBody] User user)
         {
-            await _BL.UpdateUser(user);
-            return NoContent();
+            try
+            {
+                await _BL.UpdateUser(user);
+                return NoContent();
+            }
+            catch (Exception e)
+            {
+                Log.Error("Failed to update user with userID: " + user.UserID + " in UserController", e.Message);
+                return BadRequest();
+            }
         }
 
         // DELETE api/<DogController>/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteUser(string id)
         {
-            await _BL.RemoveUser(id);
-            return NoContent();
+            try
+            {
+                await _BL.RemoveUser(id);
+                return NoContent();
+            }
+            catch (Exception e)
+            {
+                Log.Error("Failed to remove user with userID: " + id + " in UserController", e.Message);
+                return BadRequest();
+            }
         }
     }
 }

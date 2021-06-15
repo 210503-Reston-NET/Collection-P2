@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using DNHBL;
 using DNHModels;
+using Serilog;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -24,38 +25,78 @@ namespace DNHREST.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAllComments()
         {
-            return Ok(await _BL.GetAllComments());
+            try
+            {
+                return Ok(await _BL.GetAllComments());
+            } catch (Exception e)
+            {
+                Log.Error("Failed to gather all comments In CommentController", e.Message);
+                return NotFound();
+            }
         }
 
         // GET api/<DogController>/5
         [HttpGet("{id}")]
         public async Task<IActionResult> GetComment(int id)
         {
-            return Ok(await _BL.GetComment(id));
+            try
+            {
+                return Ok(await _BL.GetComment(id));
+            }
+            catch (Exception e)
+            {
+                Log.Error("Failed to gather comments for ID: " + id + " In CommentController", e.Message);
+                return NotFound();
+            }
+
         }
 
         // PUT api/<DogController>
         [HttpPost]
         public async Task<IActionResult> AddForum(Comments comm)
         {
-            await _BL.AddComment(comm);
-            return NoContent();
+            try
+            {
+                await _BL.AddComment(comm);
+                return NoContent();
+            }
+            catch (Exception e)
+            {
+                Log.Error("Failed to add comments for ID: " + comm.CommentID + " In CommentController", e.Message);
+                return BadRequest();
+            }
         }
 
         // POST api/<DogController>
         [HttpPut]
         public async Task<IActionResult> UpdateComment([FromBody] Comments comm)
         {
-            await _BL.UpdateComment(comm);
-            return NoContent();
+            try
+            {
+                await _BL.UpdateComment(comm);
+                return NoContent();
+            }
+            catch (Exception e)
+            {
+                Log.Error("Failed to Update comments for ID: " + comm.CommentID + " In CommentController", e.Message);
+                return BadRequest();
+            }
         }
 
         // DELETE api/<DogController>/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteComment(Comments comm)
         {
-            await _BL.RemoveComments(comm);
-            return NoContent();
+            try
+            {
+                await _BL.RemoveComments(comm);
+                return NoContent();
+            }
+            catch (Exception e)
+            {
+                Log.Error("Failed to Delete comments for ID: " + comm.CommentID + " In CommentController", e.Message);
+                return BadRequest();
+            }
         }
     }
 }

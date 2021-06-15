@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using DNHBL;
 using DNHModels;
+using Serilog;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -24,38 +25,77 @@ namespace DNHREST.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAllLikes()
         {
-            return Ok(await _BL.GetAllLikes());
+            try
+            {
+                return Ok(await _BL.GetAllLikes());
+            } catch (Exception e)
+            {
+                Log.Error("Failed to get all Like objects in LikeController", e.Message);
+                return NotFound();
+            }
         }
 
         // GET api/<DogController>/5
         [HttpGet("{id}")]
         public async Task<IActionResult> GetLike(int Id)
         {
-            return Ok(await _BL.GetLike(Id));
+            try
+            {
+                return Ok(await _BL.GetLike(Id));
+            }
+            catch (Exception e)
+            {
+                Log.Error("Failed to get Like object with id: " + Id + " in LikeController", e.Message);
+                return NotFound();
+            }
         }
 
         // PUT api/<DogController>
         [HttpPost]
         public async Task<IActionResult> AddLike(Like like)
         {
-            await _BL.AddLike(like);
-            return NoContent();
+            try
+            {
+                await _BL.AddLike(like);
+                return NoContent();
+            }
+            catch (Exception e)
+            {
+                Log.Error("Failed to Add Like object with userID: " + like.UserName + " in LikeController", e.Message);
+                return BadRequest();
+            }
         }
 
         // POST api/<DogController>
         [HttpPut]
         public async Task<IActionResult> UpdateLike([FromBody] Like like)
         {
-            await _BL.UpdateLike(like);
-            return NoContent();
+            try
+            {
+                await _BL.UpdateLike(like);
+                return NoContent();
+            }
+            catch (Exception e)
+            {
+                Log.Error("Failed to update Like object with userID: " + like.UserName + " in LikeController", e.Message);
+                return BadRequest();
+            }
         }
 
         // DELETE api/<DogController>/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteForum(Like like)
         {
-            await _BL.RemoveLike(like);
-            return NoContent();
+            try
+            {
+                await _BL.RemoveLike(like);
+                return NoContent();
+            }
+            catch (Exception e)
+            {
+                Log.Error("Failed to delete Like object with userID: " + like.UserName + " in LikeController", e.Message);
+                return BadRequest();
+            }
         }
     }
 }

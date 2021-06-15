@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using DNHBL;
 using DNHModels;
 using DNHREST.DTO;
+using Serilog;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -25,7 +26,14 @@ namespace DNHREST.Controllers
         [HttpGet]
         public async Task<IActionResult> GetDogLists()
         {
-            return Ok(await _BL.GetAllDogLists());
+            try
+            {
+                return Ok(await _BL.GetAllDogLists());
+            } catch(Exception e)
+            {
+                Log.Error("Failed to get all DogLists in DogListController", e.Message);
+                return NotFound();
+            }
         }
 
 
@@ -33,39 +41,80 @@ namespace DNHREST.Controllers
         // POST BaseURL/DogList/{listId}
         public async Task<IActionResult> AddDogs(int id, SomeDogs given)
         {
-            await _BL.AddsListOfDogs(id, given.dogs);
-            return Created("api/DogList",id);
+            try
+            {
+                await _BL.AddsListOfDogs(id, given.dogs);
+                return Created("api/DogList", id);
+            }
+            catch (Exception e)
+            {
+                Log.Error("Failed to add DogList with ListID " + id + " with multiple dogs in DogListController", e.Message);
+                return BadRequest();
+            }
 
         }
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetDogList(int id)
         {
-            return Ok(await _BL.GetDogListByID(id));
+            try
+            {
+                return Ok(await _BL.GetDogListByID(id));
+            }
+            catch (Exception e)
+            {
+                Log.Error("Failed to get DogList with ListID " + id + " in DogListController", e.Message);
+                return BadRequest();
+            }
         }
 
         // PUT api/<DogController>
         [HttpPost]
         public async Task<IActionResult> AddDogList(DogList dogList)
         {
-            await _BL.AddNewDogList(dogList);
-            return NoContent();
+            try
+            {
+                await _BL.AddNewDogList(dogList);
+                return NoContent();
+            }
+            catch (Exception e)
+            {
+                Log.Error("Failed to get DogList with ListID " + dogList.ListID + " in DogListController", e.Message);
+                return BadRequest();
+            }
+
         }
 
         // POST api/<DogController>
         [HttpPut]
         public async Task<IActionResult> UpdateDogList([FromBody] DogList dogList)
         {
-            await _BL.UpdateDogList(dogList);
-            return NoContent();
+            try
+            {
+                await _BL.UpdateDogList(dogList);
+                return NoContent();
+            }
+            catch (Exception e)
+            {
+                Log.Error("Failed to update DogList with ListID " + dogList.ListID + " in DogListController", e.Message);
+                return BadRequest();
+            }
         }
 
         // DELETE api/<DogController>/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteDogList(int id)
         {
-            await _BL.RemoveDogList(id);
-            return NoContent();
+            try
+            {
+                await _BL.RemoveDogList(id);
+                return NoContent();
+            }
+            catch (Exception e)
+            {
+                Log.Error("Failed to remove DogList with ListID " + id + " in DogListController", e.Message);
+                return BadRequest();
+            }
         }
     }
 }

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using DNHBL;
 using DNHModels;
+using Serilog;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -21,39 +22,79 @@ namespace DNHREST.Controllers
         }
         // GET: api/<AlertController>
         [HttpGet]
-        public IEnumerable<string> Get()
+        public async Task<IActionResult> GetAllAlerts()
         {
-            return new string[] { "value1", "value2" };
+            try
+            {
+                return Ok(await _BL.GetAllAlerts());
+            }
+            catch (Exception e)
+            {
+                Log.Error("Failed to fullfil request to get all Alerts In Alert Controller", e.Message);
+                return NotFound();
+            }
         }
 
         // GET api/<AlertController>/5
         [HttpGet("{id}")]
         public async Task<IActionResult> GetAlert(string id)
         {
-            return Ok(await _BL.GetAlertsForUser(id));
+            try
+            {
+                return Ok(await _BL.GetAlertsForUser(id));
+            } catch (Exception e)
+            {
+                Log.Error("Failed to fullfil request to get Alert for user with ID " + id + " In Alert Controller", e.Message);
+                return NotFound();
+            }
+           
         }
 
         // POST api/<AlertController>
         [HttpPost]
         public async Task<IActionResult> AddAlert([FromBody] Alert alert)
         {
-            return Created("api/Alert", await _BL.AddAlert(alert));
+            try
+            {
+                return Created("api/Alert", await _BL.AddAlert(alert));
+            }
+            catch (Exception e)
+            {
+                Log.Error("Failed to fullfil request to get Alert for user with ID " + id + " In Alert Controller", e.Message);
+                return BadRequest();
+            }
         }
 
         // PUT api/<AlertController>/5
         [HttpPut()]
         public async Task<IActionResult> updateAlert([FromBody] Alert alert)
         {
-            await _BL.UpdateAlert(alert);
-            return NoContent();
+            try
+            {
+                await _BL.UpdateAlert(alert);
+                return NoContent();
+            }
+            catch (Exception e)
+            {
+                Log.Error("Failed to fullfil request to update Alert for user with ID " + alert.AlertID + " In Alert Controller", e.Message);
+                return BadRequest();
+            }
         }
 
         // DELETE api/<AlertController>/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteAlert([FromBody] Alert alert)
         {
-            await _BL.RemoveAlert(alert);
-            return NoContent();
+            try
+            {
+                await _BL.RemoveAlert(alert);
+                return NoContent();
+            }
+            catch (Exception e)
+            {
+                Log.Error("Failed to fullfil request to Remove Alert for user with ID " + alert.AlertID + " In Alert Controller", e.Message);
+                return BadRequest();
+            }
         }
     }
 }
