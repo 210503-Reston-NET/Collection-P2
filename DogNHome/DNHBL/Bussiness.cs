@@ -74,6 +74,15 @@ namespace DNHBL
         {
             if (await this.GetUser(uid) != null)
                 return null;
+            // Create favorite list for new User
+            DogList favoriteList = new DogList()
+            {
+                ListID = 0,
+                Created = DateTime.Now,
+                Title = "Favorite Dogs",
+                UserName = uid
+            };
+            await AddNewDogList(favoriteList);
             return await _repo.AddUserAsync(uid);
         }
 
