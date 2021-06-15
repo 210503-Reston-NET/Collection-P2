@@ -281,6 +281,34 @@ namespace DNHBL
         /// </summary>
         /// <returns></returns>
         Task<Tags> UpdateTag(Tags tag);
+        /// <summary>
+        /// Returns all alerts stored in database
+        /// </summary>
+        Task<List<Alert>> GetAllAlerts();
+        /// <summary>
+        /// Returns the Alert for a given user with id
+        /// </summary>
+        /// <param name="id">UserID used to reference which alerts to retrieve</param>
+        /// <returns></returns>
+        Task<List<Alert>> GetAlertsForUser(string userId);
+        /// <summary>
+        /// Adds the given Alert object to the Database
+        /// </summary>
+        /// <param name="alert"></param>
+        /// <returns></returns>
+        Task<Alert> AddAlert(Alert alert);
+        /// <summary>
+        /// Updates a given alert with the new given alert
+        /// </summary>
+        /// <param name="alert"></param>
+        /// <returns></returns>
+        Task<Alert> UpdateAlert(Alert alert);
+        /// <summary>
+        /// Removes the referenced Alert object from the data base
+        /// </summary>
+        /// <param name="alert"></param>
+        /// <returns></returns>
+        Task<Alert> RemoveAlert(Alert alert);
 
     }
 }

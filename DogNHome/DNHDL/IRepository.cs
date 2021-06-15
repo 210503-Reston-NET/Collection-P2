@@ -79,6 +79,12 @@ namespace DNHDL
         Task<List<ListedDog>> GetAllListedDogsAsync();  
         Task<ListedDog> GetListedDogAsync(ListedDog listedDog);
 
+        // Alerts
+        Task<List<Alert>> GetAllAlertsAsync();
+        Task<List<Alert>> GetAlertsForUserAsync(string userId);
+        Task<Alert> AddAlertAsync(Alert alert);
+        Task<Alert> UpdateAlertAsync(Alert alert);
+        Task<Alert> RemoveAlertAsync(Alert alert);
 
 
     }

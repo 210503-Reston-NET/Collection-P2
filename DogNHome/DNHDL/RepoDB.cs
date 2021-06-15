@@ -529,6 +529,78 @@ namespace DNHDL
             Log.Debug("Getting ListedDog from the database: {0}", listedDog.ListID);
             return new ListedDog(found.APIID, found.ListID);
         }
+        public async Task<List<Alert>> GetAllAlertsAsync()
+        {
+            try
+            {
+                return await _context.Alert.Select(alert => alert).ToListAsync();
+            }
+            catch(Exception e)
+            {
+                Log.Error("Failed to Gather all Alerts!",e.Message);
+                return null;
+            }
+        }
+
+        public async Task<List<Alert>> GetAlertsForUserAsync(string userId)
+        {
+            try
+            {
+                return await _context.Alert.Select(alert => alert)
+                    .Where(alert => alert.UserID == userId)
+                    .ToListAsync();
+            }
+            catch (Exception e)
+            {
+                Log.Error("Failed to Gather all Alerts for user with ID " + userId, e.Message);
+                return null;
+            }
+        }
+
+        public async Task<Alert> AddAlertAsync(Alert alert)
+        {
+            try
+            {
+                await _context.Alert.AddAsync(alert);
+                await _context.SaveChangesAsync();
+                return alert;
+            }
+            catch (Exception e)
+            {
+                Log.Error("Failed to Add Alert with ID " + alert.AlertID, e.Message);
+                return null;
+            }
+        }
+
+        public async Task<Alert> UpdateAlertAsync(Alert alert)
+        {
+            try
+            {
+                _context.Alert.Update(alert);
+                await _context.SaveChangesAsync();
+                return alert;
+            }
+            catch (Exception e)
+            {
+                Log.Error("Failed to Update Alert with ID " + alert.AlertID, e.Message);
+                return null;
+            }
+        }
+
+        public async Task<Alert> RemoveAlertAsync(Alert alert)
+        {
+            try
+            {
+                _context.Alert.Remove(alert);
+                await _context.SaveChangesAsync();
+                return alert;
+            }
+            catch (Exception e)
+            {
+                Log.Error("Failed to Remove Alert with ID " + alert.AlertID, e.Message);
+                return null;
+            }
+        }
 
     }
 }

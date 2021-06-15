@@ -310,5 +310,30 @@ namespace DNHBL
         {
             return await _repo.UpdateTagsAsync(tag);
         }
+
+        public async Task<List<Alert>> GetAllAlerts()
+        {
+            return await _repo.GetAllAlertsAsync();
+        }
+
+        public async Task<List<Alert>> GetAlertsForUser(string userId)
+        {
+            return await _repo.GetAlertsForUserAsync(userId);
+        }
+
+        public async Task<Alert> AddAlert(Alert alert)
+        {
+            return await _repo.AddAlertAsync(alert);
+        }
+
+        public async Task<Alert> UpdateAlert(Alert alert)
+        {
+            return await _repo.UpdateAlertAsync(alert);
+        }
+
+        public async Task<Alert> RemoveAlert(Alert alert)
+        {
+            return await _repo.RemoveAlertAsync(alert);
+        }
     }
 }
