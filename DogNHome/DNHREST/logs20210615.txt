@@ -1,0 +1,29 @@
+2021-06-15 16:33:55.311 -04:00 [INF] App is now running
+2021-06-15 16:35:49.176 -04:00 [DBG] Getting DogList from the database.
+2021-06-15 16:36:10.409 -04:00 [DBG] Getting all ListedDogs from the database.
+2021-06-15 16:54:59.465 -04:00 [INF] App is now running
+2021-06-15 16:55:09.724 -04:00 [DBG] Getting all Posts from the database.
+2021-06-15 16:57:34.751 -04:00 [INF] App is now running
+2021-06-15 16:57:52.163 -04:00 [DBG] Getting all Posts from the database.
+2021-06-15 16:58:18.170 -04:00 [DBG] Adding Posts into the database: 1
+2021-06-15 16:58:25.635 -04:00 [DBG] Getting all Posts from the database.
+2021-06-15 17:32:05.914 -04:00 [INF] App is now running
+2021-06-15 17:32:56.881 -04:00 [DBG] Getting DogList from the database.
+2021-06-15 17:33:05.643 -04:00 [DBG] Getting all ListedDogs from the database.
+2021-06-15 19:17:12.734 -04:00 [INF] App is now running
+2021-06-15 19:17:25.855 -04:00 [DBG] Getting all Forums from the database
+2021-06-15 19:17:54.413 -04:00 [ERR] Failed to add Forums with ID: 0 in ForumController
+2021-06-15 19:20:40.523 -04:00 [ERR] Failed to add Forums with ID: 1 in ForumController
+2021-06-15 19:20:47.218 -04:00 [ERR] Failed to add Forums with ID: 2 in ForumController
+2021-06-15 19:20:53.896 -04:00 [DBG] Adding Forums into the database: 3
+2021-06-15 19:20:58.472 -04:00 [DBG] Getting all Forums from the database
+2021-06-15 19:21:09.083 -04:00 [ERR] Failed to add Forums with ID: 3 in ForumController
+2021-06-15 19:25:57.359 -04:00 [INF] App is now running
+2021-06-15 19:26:18.274 -04:00 [ERR] Failed to add Forums with ID: 0 in ForumController
+2021-06-15 19:26:47.489 -04:00 [ERR] Failed to add Forums with ID: 0 in ForumController
+2021-06-15 19:26:49.645 -04:00 [DBG] Adding Forums into the database: 4
+2021-06-15 19:26:58.691 -04:00 [DBG] Getting all Forums from the database
+2021-06-15 19:27:17.040 -04:00 [DBG] Adding Forums into the database: 5
+2021-06-15 19:27:20.930 -04:00 [DBG] Getting all Forums from the database
+2021-06-15 19:27:35.170 -04:00 [DBG] Adding Forums into the database: 6
+2021-06-15 19:27:40.951 -04:00 [DBG] Getting all Forums from the database

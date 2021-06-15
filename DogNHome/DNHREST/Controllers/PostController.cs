@@ -56,8 +56,7 @@ namespace DNHREST.Controllers
         {
             try
             {
-                await _BL.AddPost(post);
-                return NoContent();
+                return Created( "api/Post",await _BL.AddPost(post));
             }
             catch (Exception e)
             {
@@ -72,8 +71,7 @@ namespace DNHREST.Controllers
         {
             try
             {
-                await _BL.UpdatePost(post);
-                return NoContent();
+                return Ok(await _BL.UpdatePost(post));
             }
             catch (Exception e)
             {
@@ -88,8 +86,7 @@ namespace DNHREST.Controllers
         {
             try
             {
-                await _BL.RemovePost(post);
-                return NoContent();
+                return Ok(await _BL.RemovePost(post));
             }
             catch (Exception e)
             {

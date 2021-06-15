@@ -78,7 +78,7 @@ namespace DNHREST.Controllers
             catch (Exception e)
             {
                 Log.Error("Failed to update Forums with ID: " + forum.ForumID + " in ForumController", e.Message);
-                return BadRequest();
+                return BadRequest(e.Message);
             }
         }
 
@@ -94,7 +94,7 @@ namespace DNHREST.Controllers
             catch (Exception e)
             {
                 Log.Error("Failed to remove Forums with ID: " + forum.ForumID + " in ForumController", e.Message);
-                return BadRequest();
+                return BadRequest(e.Message);
             }
         }
     }
