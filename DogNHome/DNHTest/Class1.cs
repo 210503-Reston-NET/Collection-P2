@@ -252,7 +252,7 @@ namespace DNHTest
                 Assert.Equal(returnedStatus.StatusCode, StatusCodes.Status204NoContent);
             }
         }
-
+        [Fact]
         public void UpdatePostsShouldReturnNoContent()
         {
             using (var context = new DNHDBContext(options))
