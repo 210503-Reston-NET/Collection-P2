@@ -36,7 +36,7 @@ namespace DNHREST.Controllers
         }
 
         // GET api/<AlertController>/5
-        [HttpGet("{id}")]
+        [HttpGet("{userId}")]
         public async Task<IActionResult> GetAlert(string userId)
         {
             try

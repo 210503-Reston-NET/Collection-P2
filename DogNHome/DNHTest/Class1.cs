@@ -801,7 +801,145 @@ namespace DNHTest
             }
         }
 
+        // LikesController Test
 
+        [Fact]
+        public void AddLikeShouldCreateAPostAndReturnCreated()
+        {
+            using (var context = new DNHDBContext(options))
+            {
+                IRepository _repo = new RepoDB(context);
+                IBussiness _BL = new Bussiness(_repo);
+
+                var AlertCont = new Rest.Controllers.LikeController(_BL);
+
+                Like test = new Like()
+                {
+                    AlertID = 0,
+                    UserID = "Robert_20",
+                    AlertType = "default",
+                    AlertValue = "http://localhost:4200:",
+                    DogID = "512411"
+                };
+
+
+                //Act
+                var returnedValue = AlertCont.AddAlert(test);
+                var returnedStatus = returnedValue.Result as ObjectResult;
+
+                //Assert
+                Assert.NotNull(returnedValue.Result);
+                Assert.Equal(returnedStatus.StatusCode, StatusCodes.Status201Created);
+                Assert.Equal(returnedStatus.Value, returnedStatus.Value);
+            }
+        }
+
+        [Fact]
+        public void GetAllLikeShouldReturnAListOfResults()
+        {
+            using (var context = new DNHDBContext(options))
+            {
+                IRepository _repo = new RepoDB(context);
+                IBussiness _BL = new Bussiness(_repo);
+
+                var AlertCont = new Rest.Controllers.AlertController(_BL);
+
+                //Act
+                var returnedValue = AlertCont.GetAllAlerts();
+                var returnedStatus = returnedValue.Result as ObjectResult;
+
+                //Assert
+                Assert.NotNull(returnedValue.Result);
+                Assert.Equal(returnedStatus.StatusCode, StatusCodes.Status200OK);
+                Assert.IsType<List<Alert>>(returnedStatus.Value);
+            }
+        }
+
+        [Fact]
+        public void GetLikeShouldReturnACommentOfResults()
+        {
+            using (var context = new DNHDBContext(options))
+            {
+                IRepository _repo = new RepoDB(context);
+                IBussiness _BL = new Bussiness(_repo);
+
+
+                var AlertCont = new Rest.Controllers.AlertController(_BL);
+
+                Alert test = new Alert()
+                {
+                    AlertID = 0,
+                    UserID = "Robert_20",
+                    AlertType = "default",
+                    AlertValue = "http://localhost:4200:",
+                    DogID = "512311"
+                };
+
+                //Act
+                var returnedValue = AlertCont.GetAlert(test.UserID);
+                var returnedStatus = returnedValue.Result as ObjectResult;
+
+                //Assert
+                Assert.NotNull(returnedValue.Result);
+                Assert.Equal(returnedStatus.StatusCode, StatusCodes.Status200OK);
+                Assert.IsType<List<Alert>>(returnedStatus.Value);
+            }
+        }
+
+        [Fact]
+        public void DeleteLikeShouldReturnNoContent()
+        {
+            using (var context = new DNHDBContext(options))
+            {
+                IRepository _repo = new RepoDB(context);
+                IBussiness _BL = new Bussiness(_repo);
+
+                var AlertCont = new Rest.Controllers.AlertController(_BL);
+
+                Alert test = new Alert()
+                {
+                    AlertID = 0,
+                    UserID = "Robert_20",
+                    AlertType = "default",
+                    AlertValue = "http://localhost:4200:",
+                    DogID = "512311"
+                };
+
+                //Act
+                var returnedValue = AlertCont.DeleteAlert(test);
+                var returnedStatus = returnedValue.Result as NoContentResult;
+
+                //Assert
+                Assert.Equal(returnedStatus.StatusCode, StatusCodes.Status204NoContent);
+            }
+        }
+        [Fact]
+        public void UpdateLikeShouldReturnNoContent()
+        {
+            using (var context = new DNHDBContext(options))
+            {
+                IRepository _repo = new RepoDB(context);
+                IBussiness _BL = new Bussiness(_repo);
+
+                var AlertCont = new Rest.Controllers.AlertController(_BL);
+
+                Alert test = new Alert()
+                {
+                    AlertID = 0,
+                    UserID = "Robert_20",
+                    AlertType = "default",
+                    AlertValue = "http://localhost:4200:",
+                    DogID = "512411"
+                };
+
+                //Act
+                var returnedValue = AlertCont.updateAlert(test);
+                var returnedStatus = returnedValue.Result as NoContentResult;
+
+                //Assert
+                Assert.Equal(returnedStatus.StatusCode, StatusCodes.Status204NoContent);
+            }
+        }
 
         // DL Testing
 
