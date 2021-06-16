@@ -29,7 +29,7 @@
           "build/netstandard1.0/coverlet.collector.targets": {}
         }
       },
-      "coverlet.msbuild/3.0.3": {
+      "coverlet.msbuild/2.7.0": {
         "type": "package",
         "build": {
           "build/coverlet.msbuild.props": {},
@@ -943,6 +943,9 @@
         "runtime": {
           "lib/netstandard2.0/NuGet.Frameworks.dll": {}
         }
+      },
+      "OpenCover/4.7.922": {
+        "type": "package"
       },
       "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
         "type": "package",
@@ -2905,20 +2908,18 @@
         "coverlet.collector.nuspec"
       ]
     },
-    "coverlet.msbuild/3.0.3": {
-      "sha512": "fzxcn4+TZEfNEPP96mzmGWnKARCVKkEdBfhor8oTVhQWtxwZz9NuxuJxK7A2j7X20Rr8BSIK8qGclIJgTW7lsg==",
+    "coverlet.msbuild/2.7.0": {
+      "sha512": "AHs0G2xaPg9zUiyCC8yYzQLNLaRUKjN0eU8NwGA+eQJIXye1f21gmMIZXRJnkg5he46AohQZBg2TMjw9Z6Wt4A==",
       "type": "package",
-      "path": "coverlet.msbuild/3.0.3",
+      "path": "coverlet.msbuild/2.7.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "build/Microsoft.Build.Framework.dll",
         "build/Microsoft.Build.Utilities.Core.dll",
         "build/Microsoft.CSharp.dll",
-        "build/Microsoft.DotNet.PlatformAbstractions.dll",
         "build/Microsoft.Extensions.DependencyInjection.Abstractions.dll",
         "build/Microsoft.Extensions.DependencyInjection.dll",
-        "build/Microsoft.Extensions.DependencyModel.dll",
         "build/Microsoft.Extensions.FileSystemGlobbing.dll",
         "build/Mono.Cecil.Mdb.dll",
         "build/Mono.Cecil.Pdb.dll",
@@ -2941,8 +2942,10 @@
         "build/System.Reflection.Metadata.dll",
         "build/System.Reflection.TypeExtensions.dll",
         "build/System.Resources.Reader.dll",
+        "build/System.Runtime.Numerics.dll",
         "build/System.Runtime.Serialization.Primitives.dll",
         "build/System.Runtime.Serialization.Xml.dll",
+        "build/System.Security.Cryptography.Primitives.dll",
         "build/System.Text.RegularExpressions.dll",
         "build/System.Threading.Tasks.Extensions.dll",
         "build/System.Threading.Tasks.Parallel.dll",
@@ -2959,8 +2962,7 @@
         "build/coverlet.msbuild.targets",
         "build/coverlet.msbuild.tasks.dll",
         "build/coverlet.msbuild.tasks.pdb",
-        "coverlet-icon.png",
-        "coverlet.msbuild.3.0.3.nupkg.sha512",
+        "coverlet.msbuild.2.7.0.nupkg.sha512",
         "coverlet.msbuild.nuspec"
       ]
     },
@@ -4521,6 +4523,64 @@
         "lib/netstandard2.0/NuGet.Frameworks.xml",
         "nuget.frameworks.5.0.0.nupkg.sha512",
         "nuget.frameworks.nuspec"
+      ]
+    },
+    "OpenCover/4.7.922": {
+      "sha512": "Mwqq3r8cHj7qazNzWp1K9zmU15amC9bzMvFK83zM4D+ATSN/IOkJGZh6kEvXnTVJjl6LN6U/4QCdRHxulAISuA==",
+      "type": "package",
+      "path": "opencover/4.7.922",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "License.rtf",
+        "MSBuild/OpenCover.MSBuild.dll",
+        "MSBuild/OpenCover.targets",
+        "Samples/x64/OpenCover.Simple.Target.exe",
+        "Samples/x64/OpenCover.Simple.Target.pdb",
+        "Samples/x86/OpenCover.Simple.Target.exe",
+        "Samples/x86/OpenCover.Simple.Target.pdb",
+        "docs/ReleaseNotes.txt",
+        "docs/Usage.rtf",
+        "opencover.4.7.922.nupkg.sha512",
+        "opencover.nuspec",
+        "readme_with_releasenotes.txt",
+        "tools/Autofac.Configuration.dll",
+        "tools/Autofac.dll",
+        "tools/Gendarme.Framework.dll",
+        "tools/Gendarme.Rules.Maintainability.dll",
+        "tools/Microsoft.Extensions.Configuration.Abstractions.dll",
+        "tools/Microsoft.Extensions.Configuration.FileExtensions.dll",
+        "tools/Microsoft.Extensions.Configuration.Json.dll",
+        "tools/Microsoft.Extensions.Configuration.dll",
+        "tools/Microsoft.Extensions.FileProviders.Abstractions.dll",
+        "tools/Microsoft.Extensions.FileProviders.Physical.dll",
+        "tools/Microsoft.Extensions.FileSystemGlobbing.dll",
+        "tools/Microsoft.Extensions.Primitives.dll",
+        "tools/Mono.Cecil.Mdb.dll",
+        "tools/Mono.Cecil.Pdb.dll",
+        "tools/Mono.Cecil.Rocks.dll",
+        "tools/Mono.Cecil.dll",
+        "tools/Newtonsoft.Json.dll",
+        "tools/OpenCover.Console.exe",
+        "tools/OpenCover.Console.exe.config",
+        "tools/OpenCover.Console.pdb",
+        "tools/OpenCover.Extensions.dll",
+        "tools/OpenCover.Extensions.pdb",
+        "tools/OpenCover.Framework.dll",
+        "tools/OpenCover.Framework.pdb",
+        "tools/SampleSln/SampleSln.zip",
+        "tools/Sentry.PlatformAbstractions.dll",
+        "tools/Sentry.Protocol.dll",
+        "tools/Sentry.dll",
+        "tools/System.Collections.Immutable.dll",
+        "tools/autofac.json",
+        "tools/log4net.config",
+        "tools/log4net.dll",
+        "tools/x64/OpenCover.Profiler.dll",
+        "tools/x86/OpenCover.Profiler.dll",
+        "transform/simple_report.xslt",
+        "transform/transform.ps1"
       ]
     },
     "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
@@ -9343,14 +9403,14 @@
       "DNHBL >= 1.0.0",
       "DNHDL >= 1.0.0",
       "DNHModels >= 1.0.0",
-      "Microsoft.CodeCoverage >= 16.10.0",
       "Microsoft.EntityFrameworkCore >= 5.0.7",
       "Microsoft.EntityFrameworkCore.Design >= 5.0.7",
       "Microsoft.EntityFrameworkCore.Sqlite >= 5.0.7",
       "Microsoft.NET.Test.Sdk >= 16.10.0",
       "Moq >= 4.16.1",
+      "OpenCover >= 4.7.922",
       "coverlet.collector >= 3.0.3",
-      "coverlet.msbuild >= 3.0.3",
+      "coverlet.msbuild >= 2.7.0",
       "xunit >= 2.4.1",
       "xunit.runner.visualstudio >= 2.4.3"
     ]
@@ -9404,10 +9464,6 @@
       "net5.0": {
         "targetAlias": "net5.0",
         "dependencies": {
-          "Microsoft.CodeCoverage": {
-            "target": "Package",
-            "version": "[16.10.0, )"
-          },
           "Microsoft.EntityFrameworkCore": {
             "target": "Package",
             "version": "[5.0.7, )"
@@ -9430,6 +9486,10 @@
             "target": "Package",
             "version": "[4.16.1, )"
           },
+          "OpenCover": {
+            "target": "Package",
+            "version": "[4.7.922, )"
+          },
           "coverlet.collector": {
             "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
             "suppressParent": "All",
@@ -9440,7 +9500,7 @@
             "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
             "suppressParent": "All",
             "target": "Package",
-            "version": "[3.0.3, )"
+            "version": "[2.7.0, )"
           },
           "xunit": {
             "target": "Package",

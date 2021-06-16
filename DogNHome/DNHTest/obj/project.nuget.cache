@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "kxFsEcdW8dIh0zbthYLwBHb11pdsl2ql3ch3O0HsqW9rBtExrc7PdlF2NWNcmUjHsfq/xiWjbCdTqflNiF8ffQ==",
+  "dgSpecHash": "83s8p7D74uI5gfTKU9ukB5cI+iZZDNUfjh4TULYRHtJOZo2WDd2ZsoMClOq2AKjOUsLo8A4dTvuaKfh2QaKqFg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Robbie\\Revature\\Git-Clone\\DogNHome-P2\\DogNHome\\DNHTest\\DNHTest.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Robbie\\.nuget\\packages\\castle.core\\4.4.0\\castle.core.4.4.0.nupkg.sha512",
     "C:\\Users\\Robbie\\.nuget\\packages\\coverlet.collector\\3.0.3\\coverlet.collector.3.0.3.nupkg.sha512",
-    "C:\\Users\\Robbie\\.nuget\\packages\\coverlet.msbuild\\3.0.3\\coverlet.msbuild.3.0.3.nupkg.sha512",
+    "C:\\Users\\Robbie\\.nuget\\packages\\coverlet.msbuild\\2.7.0\\coverlet.msbuild.2.7.0.nupkg.sha512",
     "C:\\Users\\Robbie\\.nuget\\packages\\documentformat.openxml\\2.13.0\\documentformat.openxml.2.13.0.nupkg.sha512",
     "C:\\Users\\Robbie\\.nuget\\packages\\elasticsearch.net\\7.13.0\\elasticsearch.net.7.13.0.nupkg.sha512",
     "C:\\Users\\Robbie\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
@@ -55,6 +55,7 @@
     "C:\\Users\\Robbie\\.nuget\\packages\\npgsql\\5.0.5\\npgsql.5.0.5.nupkg.sha512",
     "C:\\Users\\Robbie\\.nuget\\packages\\npgsql.entityframeworkcore.postgresql\\5.0.6\\npgsql.entityframeworkcore.postgresql.5.0.6.nupkg.sha512",
     "C:\\Users\\Robbie\\.nuget\\packages\\nuget.frameworks\\5.0.0\\nuget.frameworks.5.0.0.nupkg.sha512",
+    "C:\\Users\\Robbie\\.nuget\\packages\\opencover\\4.7.922\\opencover.4.7.922.nupkg.sha512",
     "C:\\Users\\Robbie\\.nuget\\packages\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "C:\\Users\\Robbie\\.nuget\\packages\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "C:\\Users\\Robbie\\.nuget\\packages\\runtime.fedora.24-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.fedora.24-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
