@@ -278,6 +278,136 @@ namespace DNHTest
                 Assert.Equal(returnedStatus.StatusCode, StatusCodes.Status204NoContent);
             }
         }
+        //Comments Controller
+        [Fact]
+        public void AddCommentsShouldCreateAPostAndReturnCreated()
+        {
+            using (var context = new DNHDBContext(options))
+            {
+                IRepository _repo = new RepoDB(context);
+                IBussiness _BL = new Bussiness(_repo);
+
+                var CommCont = new Rest.Controllers.CommentController(_BL);
+
+                Comments test = new Comments()
+                {
+                    CommentID = 0,
+                    Created = DateTime.Now,
+                    Message = "Testing message",
+                    UserName = "Cesar_19",
+                    PostID = 1648
+                };
+
+                //Act
+                var returnedValue = CommCont.AddComment(test);
+                var returnedStatus = returnedValue.Result as ObjectResult;
+
+                //Assert
+                Assert.NotNull(returnedValue.Result);
+                Assert.Equal(returnedStatus.StatusCode, StatusCodes.Status201Created);
+                Assert.Equal(returnedStatus.Value, test);
+            }
+        }
+
+        [Fact]
+        public void GetAllCommentsShouldReturnAListOfResults()
+        {
+            using (var context = new DNHDBContext(options))
+            {
+                IRepository _repo = new RepoDB(context);
+                IBussiness _BL = new Bussiness(_repo);
+
+                var ForCont = new Rest.Controllers.CommentController(_BL);
+
+                //Act
+                var returnedValue = ForCont.GetAllComments();
+                var returnedStatus = returnedValue.Result as ObjectResult;
+
+                //Assert
+                Assert.NotNull(returnedValue.Result);
+                Assert.Equal(returnedStatus.StatusCode, StatusCodes.Status200OK);
+                Assert.IsType<List<Comments>>(returnedStatus.Value);
+            }
+        }
+
+        [Fact]
+        public void GetCommentShouldReturnACommentOfResults()
+        {
+            using (var context = new DNHDBContext(options))
+            {
+                IRepository _repo = new RepoDB(context);
+                IBussiness _BL = new Bussiness(_repo);
+
+                int CommentID = 753;
+
+                var CommCont = new Rest.Controllers.CommentController(_BL);
+
+                //Act
+                var returnedValue = CommCont.GetComment(CommentID);
+                var returnedStatus = returnedValue.Result as ObjectResult;
+
+                //Assert
+                Assert.NotNull(returnedValue.Result);
+                Assert.Equal(returnedStatus.StatusCode, StatusCodes.Status200OK);
+                Assert.IsType<Comments>(returnedStatus.Value);
+            }
+        }
+
+        [Fact]
+        public void DeleteCommentsShouldReturnNoContent()
+        {
+            using (var context = new DNHDBContext(options))
+            {
+                IRepository _repo = new RepoDB(context);
+                IBussiness _BL = new Bussiness(_repo);
+
+                var CommentCont = new Rest.Controllers.CommentController(_BL);
+
+                Comments test = new Comments
+                {
+                    CommentID = 753,
+                    PostID = 123,
+                    UserName = "Cesar_19",
+                    Created = new DateTime(2015, 12, 31, 5, 10, 20, DateTimeKind.Utc),
+                    Message = "I just got a new dog!"
+                };
+
+                //Act
+                var returnedValue = CommentCont.DeleteComment(test);
+                var returnedStatus = returnedValue.Result as NoContentResult;
+
+                //Assert
+                Assert.Equal(returnedStatus.StatusCode, StatusCodes.Status204NoContent);
+            }
+        }
+        [Fact]
+        public void UpdateCommentsShouldReturnNoContent()
+        {
+            using (var context = new DNHDBContext(options))
+            {
+                IRepository _repo = new RepoDB(context);
+                IBussiness _BL = new Bussiness(_repo);
+
+                var PostCont = new Rest.Controllers.CommentController(_BL);
+
+                Comments test = new Comments
+                {
+                    CommentID = 753,
+                    PostID = 123,
+                    UserName = "Cesar_19",
+                    Created = new DateTime(2015, 12, 31, 5, 10, 20, DateTimeKind.Utc),
+                    Message = "New Test Message!"
+                };
+
+                //Act
+                var returnedValue = PostCont.UpdateComment(test);
+                var returnedStatus = returnedValue.Result as NoContentResult;
+
+                //Assert
+                Assert.Equal(returnedStatus.StatusCode, StatusCodes.Status204NoContent);
+            }
+        }
+        // User Controller Tests
 
         // DL Testing
 

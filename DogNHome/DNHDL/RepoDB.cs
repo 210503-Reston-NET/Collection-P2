@@ -321,23 +321,23 @@ namespace DNHDL
         }
         public async Task<Comments> DeleteCommentsAsync(Comments comments)
         {
-            Comments toBeDeleted = _context.Comments.AsNoTracking().First(comm => comm.PostID == comments.PostID);
+            Comments toBeDeleted = _context.Comments.AsNoTracking().First(comm => comm.CommentID == comments.CommentID);
             _context.Comments.Remove(toBeDeleted);
             await _context.SaveChangesAsync();
-            Log.Debug("Removing Comment from the database: {0}", comments.PostID);
+            Log.Debug("Removing Comment from the database: {0}", comments.CommentID);
             return comments;
         }
         public async Task<Comments> UpdateCommentsAsync(Comments comments)
         {
             _context.Comments.Update(comments);
             await _context.SaveChangesAsync();
-            Log.Debug("Updating Comment from the database: {0}", comments.PostID);
+            Log.Debug("Updating Comment from the database: {0}", comments.CommentID);
             return comments;
         }
         public async Task<Comments> GetCommentsByIdAsync(int id)
         {
             Log.Debug("Getting Comment from the database by ID: {0}", id);
-            return await _context.Comments.FindAsync(id);
+            return await _context.Comments.FirstOrDefaultAsync(comm => comm.CommentID == id);
         }
         public async Task<List<Comments>> GetAllCommentsAsync()
         {

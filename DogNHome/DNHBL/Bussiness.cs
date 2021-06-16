@@ -103,9 +103,9 @@ namespace DNHBL
 
         public async Task<Comments> RemoveComments(Comments comments)
         {
-            if (await _repo.GetCommentsByIdAsync(comments.CommentID) != null)
-                return await _repo.DeleteCommentsAsync(comments);
-            else throw new Exception("This comment does not exist. We may have already processed this request.");
+
+            return await _repo.DeleteCommentsAsync(comments);
+
         }
 
         public async Task<Comments> UpdateComment(Comments comments)

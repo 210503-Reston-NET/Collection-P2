@@ -5,3 +5,17 @@
 2021-06-16 01:41:57.586 -04:00 [INF] App is now running
 2021-06-16 01:42:07.411 -04:00 [DBG] Getting all Posts from the database.
 2021-06-16 01:42:23.542 -04:00 [DBG] Removing Posts from the database: 12
+2021-06-16 10:03:15.675 -04:00 [INF] App is now running
+2021-06-16 10:32:07.048 -04:00 [INF] App is now running
+2021-06-16 10:32:22.938 -04:00 [DBG] Getting all Comments from the database
+2021-06-16 10:32:56.405 -04:00 [DBG] Adding Comment into the database: 1
+2021-06-16 10:33:17.649 -04:00 [DBG] Getting Comment from the database by ID: 1
+2021-06-16 10:33:18.276 -04:00 [ERR] Failed to Delete comments for ID: 1 In CommentController
+2021-06-16 10:39:42.894 -04:00 [INF] App is now running
+2021-06-16 10:39:50.912 -04:00 [DBG] Getting all Comments from the database
+2021-06-16 10:40:10.114 -04:00 [DBG] Removing Comment from the database: 1
+2021-06-16 10:40:15.527 -04:00 [DBG] Getting all Comments from the database
+2021-06-16 10:44:43.219 -04:00 [INF] App is now running
+2021-06-16 10:44:50.864 -04:00 [DBG] Getting all Comments from the database
+2021-06-16 10:44:58.405 -04:00 [DBG] Adding Comment into the database: 0
+2021-06-16 10:45:10.183 -04:00 [DBG] Getting Comment from the database by ID: 2

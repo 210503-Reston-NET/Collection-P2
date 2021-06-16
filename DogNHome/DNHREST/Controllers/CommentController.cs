@@ -53,12 +53,12 @@ namespace DNHREST.Controllers
 
         // PUT api/<DogController>
         [HttpPost]
-        public async Task<IActionResult> AddForum(Comments comm)
+        public async Task<IActionResult> AddComment(Comments comm)
         {
             try
             {
-                await _BL.AddComment(comm);
-                return NoContent();
+                
+                return Created("api/Comment", await _BL.AddComment(comm));
             }
             catch (Exception e)
             {
