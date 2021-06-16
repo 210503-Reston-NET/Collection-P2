@@ -21,6 +21,7 @@ steps:
     scannerMode: 'MSBuild'
     projectKey: '210503-Reston-NET_Fisher-Robert-P1'
     projectName: 'DogNHome'
+    extraProperties: 'sonar.cs.opencover.reportsPaths=$(Build.SourcesDirectory)/**/coverage.opencover.xml'
 - task: DotNetCoreCLI@2
   displayName: Restore Project deps
   inputs:
@@ -39,11 +40,13 @@ steps:
   inputs:
     command: 'test'
     projects: '**/DogNHome/DNHTest/*.csproj'
-    arguments: --configuration $(buildConfiguration) --collect "Code Coverage
+    arguments: --configuration $(buildConfiguration) --collect "Code Coverage"
 - task: PublishCodeCoverageResults@1
   inputs:
     codeCoverageTool: 'Cobertura'
     summaryFileLocation: '**/Cobertura/Configure.xml'
+    reportDirectory: '$(Build.SourcesDirectory)/App/Tests/' 
+
 - task: SonarCloudAnalyze@1
   displayName: Run Code Analysis
 - task: SonarCloudPublish@1
