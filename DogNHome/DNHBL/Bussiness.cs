@@ -58,11 +58,11 @@ namespace DNHBL
             return await _repo.GetUserByIdAsync(Username);
         }
  
-        public async Task<User> RemoveUser(string Username)
+        public async Task<User> RemoveUser(string UserID)
         {
-            User toBeDeleted = await _repo.GetUserByIdAsync(Username);
-            if (toBeDeleted != null) return await _repo.DeleteUserAsync(toBeDeleted);
-            else throw new Exception("User does not exist. You may have already processed this request, or the User may not exist");
+            User toBeDeleted = new User() { UserID = UserID};
+            return await _repo.DeleteUserAsync(toBeDeleted);
+
         }
         
         public async Task<User> UpdateUser(User user)
@@ -72,8 +72,6 @@ namespace DNHBL
 
         public async Task<User> AddUser(string uid)
         {
-            if (await this.GetUser(uid) != null)
-                return null;
             // Create favorite list for new User
             DogList favoriteList = new DogList()
             {

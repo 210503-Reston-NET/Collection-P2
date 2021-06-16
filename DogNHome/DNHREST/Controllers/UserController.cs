@@ -56,8 +56,7 @@ namespace DNHREST.Controllers
         {
             try
             {
-                await _BL.AddUser(uid);
-                return NoContent();
+                return Created("api/User", await _BL.AddUser(uid));
             }
             catch (Exception e)
             {

@@ -19,3 +19,5 @@
 2021-06-16 10:44:50.864 -04:00 [DBG] Getting all Comments from the database
 2021-06-16 10:44:58.405 -04:00 [DBG] Adding Comment into the database: 0
 2021-06-16 10:45:10.183 -04:00 [DBG] Getting Comment from the database by ID: 2
+2021-06-16 11:05:14.959 -04:00 [INF] App is now running
+2021-06-16 11:05:28.845 -04:00 [DBG] Getting all user from the database.

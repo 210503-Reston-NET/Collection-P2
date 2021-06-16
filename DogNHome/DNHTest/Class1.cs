@@ -407,7 +407,123 @@ namespace DNHTest
                 Assert.Equal(returnedStatus.StatusCode, StatusCodes.Status204NoContent);
             }
         }
+
         // User Controller Tests
+
+        [Fact]
+        public void AddUserShouldCreateAPostAndReturnCreated()
+        {
+            using (var context = new DNHDBContext(options))
+            {
+                IRepository _repo = new RepoDB(context);
+                IBussiness _BL = new Bussiness(_repo);
+
+                var UserCont = new Rest.Controllers.UserController(_BL);
+
+                string testID = "Robert_20";
+
+
+                //Act
+                var returnedValue = UserCont.AddUser(testID);
+                var persistedDataResult = UserCont.GetUser(testID).Result as ObjectResult;
+                var persistedDataObject = persistedDataResult as ObjectResult;
+                User persistedData = (User)persistedDataObject.Value;
+                var returnedStatus = returnedValue.Result as ObjectResult;
+
+                //Assert
+                Assert.NotNull(returnedValue.Result);
+                Assert.Equal(returnedStatus.StatusCode, StatusCodes.Status201Created);
+                Assert.Equal(persistedData, returnedStatus.Value);
+            }
+        }
+
+        [Fact]
+        public void GetAllUsersShouldReturnAListOfResults()
+        {
+            using (var context = new DNHDBContext(options))
+            {
+                IRepository _repo = new RepoDB(context);
+                IBussiness _BL = new Bussiness(_repo);
+
+                var UserCont = new Rest.Controllers.UserController(_BL);
+
+                //Act
+                var returnedValue = UserCont.GetUsers();
+                var returnedStatus = returnedValue.Result as ObjectResult;
+
+                //Assert
+                Assert.NotNull(returnedValue.Result);
+                Assert.Equal(returnedStatus.StatusCode, StatusCodes.Status200OK);
+                Assert.IsType<List<User>>(returnedStatus.Value);
+            }
+        }
+
+        [Fact]
+        public void GetUserShouldReturnACommentOfResults()
+        {
+            using (var context = new DNHDBContext(options))
+            {
+                IRepository _repo = new RepoDB(context);
+                IBussiness _BL = new Bussiness(_repo);
+
+                string CommentID = "Cesar_19";
+
+                var UserCont = new Rest.Controllers.UserController(_BL);
+
+                //Act
+                var returnedValue = UserCont.GetUser(CommentID);
+                var returnedStatus = returnedValue.Result as ObjectResult;
+
+                //Assert
+                Assert.NotNull(returnedValue.Result);
+                Assert.Equal(returnedStatus.StatusCode, StatusCodes.Status200OK);
+                Assert.IsType<User>(returnedStatus.Value);
+            }
+        }
+
+        [Fact]
+        public void DeleteUserShouldReturnNoContent()
+        {
+            using (var context = new DNHDBContext(options))
+            {
+                IRepository _repo = new RepoDB(context);
+                IBussiness _BL = new Bussiness(_repo);
+
+                var UserCont = new Rest.Controllers.UserController(_BL);
+
+                string test = "Cesar_19";
+
+                //Act
+                var returnedValue = UserCont.DeleteUser(test);
+                var returnedStatus = returnedValue.Result as NoContentResult;
+
+                //Assert
+                Assert.Equal(returnedStatus.StatusCode, StatusCodes.Status204NoContent);
+            }
+        }
+        [Fact]
+        public void UpdateUserShouldReturnNoContent()
+        {
+            using (var context = new DNHDBContext(options))
+            {
+                IRepository _repo = new RepoDB(context);
+                IBussiness _BL = new Bussiness(_repo);
+
+                var PostCont = new Rest.Controllers.UserController(_BL);
+
+                User test = new User
+                {
+                    UserID = "Cesar_19",
+                };
+
+                //Act
+                var returnedValue = PostCont.UpdateUser(test);
+                var returnedStatus = returnedValue.Result as NoContentResult;
+
+                //Assert
+                Assert.Equal(returnedStatus.StatusCode, StatusCodes.Status204NoContent);
+            }
+        }
 
         // DL Testing
 
