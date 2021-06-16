@@ -28,6 +28,7 @@ namespace DNHTest
         /// VALID LISTING TESTS
         /// </summary>
         /// 
+        // Controller Testing
         [Fact]
         public void GetForumsShouldGetAllForums()
         {
@@ -45,10 +46,94 @@ namespace DNHTest
                 //Assert
                 Assert.NotNull(returnedValue.Result);
                 Assert.Equal(returnedStatus.StatusCode, StatusCodes.Status200OK);
-                Console.WriteLine(returnedValue.Result.GetType());
                 Assert.IsType<List<Forum>>(returnedStatus.Value);
             }
         }
+
+        [Fact]
+        public void AddForumsShouldReturnCreated()
+        {
+            using (var context = new DNHDBContext(options))
+            {
+                IRepository _repo = new RepoDB(context);
+                IBussiness _BL = new Bussiness(_repo);
+
+                var ForCont = new Rest.Controllers.ForumController(_BL);
+
+                Forum test = new Forum()
+                {
+                    ForumID = 2,
+                    Description = "Testing",
+                    Topic = "test"
+                };
+
+                //Act
+                var returnedValue = ForCont.AddForum(test);
+                var returnedStatus = returnedValue.Result as OkObjectResult;
+
+                //Assert
+                Assert.NotNull(returnedValue.Result);
+                Assert.Equal(returnedStatus.StatusCode, StatusCodes.Status204NoContent);
+                Assert.IsType<Forum>(returnedStatus.Value);
+                Assert.Equal(returnedStatus.Value, test);
+            }
+        }
+
+        [Fact]
+        public void UpdateForumShouldReturnNoContent()
+        {
+            using (var context = new DNHDBContext(options))
+            {
+                IRepository _repo = new RepoDB(context);
+                IBussiness _BL = new Bussiness(_repo);
+
+                var ForCont = new Rest.Controllers.ForumController(_BL);
+
+                Forum test = new Forum()
+                {
+                    ForumID = 631,
+                    Description = "Testing",
+                    Topic = "test"
+                };
+
+                //Act
+                var returnedValue = ForCont.UpdateForum(test);
+                var returnedStatus = returnedValue.Result as OkObjectResult;
+
+                //Assert
+                Assert.Equal(returnedStatus.StatusCode, StatusCodes.Status204NoContent);
+                Assert.Equal(returnedStatus.Value, test);
+            }
+        }
+
+        [Fact]
+        public void RemoveForumsShouldReturnNoContent()
+        {
+            using (var context = new DNHDBContext(options))
+            {
+                IRepository _repo = new RepoDB(context);
+                IBussiness _BL = new Bussiness(_repo);
+
+                var ForCont = new Rest.Controllers.ForumController(_BL);
+
+                Forum test = new Forum()
+                {
+                    ForumID = 631,
+                    Description = "Testing",
+                    Topic = "test"
+                };
+
+                //Act
+                var returnedValue = ForCont.DeleteForum(test);
+                var returnedStatus = returnedValue.Result as OkObjectResult;
+
+                //Assert
+                Assert.Equal(returnedStatus.StatusCode, StatusCodes.Status204NoContent);
+                Assert.Equal(returnedStatus.Value, test);
+            }
+        }
+
+        // DL Testing
 
         [Fact]
         public void GetAllComments()
