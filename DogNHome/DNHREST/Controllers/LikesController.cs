@@ -84,7 +84,7 @@ namespace DNHREST.Controllers
 
         // DELETE api/<DogController>/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteForum(Like like)
+        public async Task<IActionResult> DeleteLikes(Like like)
         {
             try
             {

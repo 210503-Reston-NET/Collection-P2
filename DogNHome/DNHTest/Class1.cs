@@ -811,20 +811,17 @@ namespace DNHTest
                 IRepository _repo = new RepoDB(context);
                 IBussiness _BL = new Bussiness(_repo);
 
-                var AlertCont = new Rest.Controllers.LikeController(_BL);
+                var AlertCont = new Rest.Controllers.LikesController(_BL);
 
                 Like test = new Like()
                 {
-                    AlertID = 0,
-                    UserID = "Robert_20",
-                    AlertType = "default",
-                    AlertValue = "http://localhost:4200:",
-                    DogID = "512411"
+                 DogID = 245,
+                 UserName = "Robert_20"
                 };
 
 
                 //Act
-                var returnedValue = AlertCont.AddAlert(test);
+                var returnedValue = AlertCont.AddLike(test);
                 var returnedStatus = returnedValue.Result as ObjectResult;
 
                 //Assert
@@ -842,21 +839,21 @@ namespace DNHTest
                 IRepository _repo = new RepoDB(context);
                 IBussiness _BL = new Bussiness(_repo);
 
-                var AlertCont = new Rest.Controllers.AlertController(_BL);
+                var AlertCont = new Rest.Controllers.LikesController(_BL);
 
                 //Act
-                var returnedValue = AlertCont.GetAllAlerts();
+                var returnedValue = AlertCont.GetAllLikes();
                 var returnedStatus = returnedValue.Result as ObjectResult;
 
                 //Assert
                 Assert.NotNull(returnedValue.Result);
                 Assert.Equal(returnedStatus.StatusCode, StatusCodes.Status200OK);
-                Assert.IsType<List<Alert>>(returnedStatus.Value);
+                Assert.IsType<List<Like>>(returnedStatus.Value);
             }
         }
 
         [Fact]
-        public void GetLikeShouldReturnACommentOfResults()
+        public void GetLikeShouldReturnAOkResult()
         {
             using (var context = new DNHDBContext(options))
             {
@@ -864,25 +861,22 @@ namespace DNHTest
                 IBussiness _BL = new Bussiness(_repo);
 
 
-                var AlertCont = new Rest.Controllers.AlertController(_BL);
+                var AlertCont = new Rest.Controllers.LikesController(_BL);
 
-                Alert test = new Alert()
+                Like test = new Like()
                 {
-                    AlertID = 0,
-                    UserID = "Robert_20",
-                    AlertType = "default",
-                    AlertValue = "http://localhost:4200:",
-                    DogID = "512311"
+                    DogID = 741,
+                    UserName = "Juan_95"
                 };
 
                 //Act
-                var returnedValue = AlertCont.GetAlert(test.UserID);
+                var returnedValue = AlertCont.GetLike(test.DogID);
                 var returnedStatus = returnedValue.Result as ObjectResult;
 
                 //Assert
                 Assert.NotNull(returnedValue.Result);
                 Assert.Equal(returnedStatus.StatusCode, StatusCodes.Status200OK);
-                Assert.IsType<List<Alert>>(returnedStatus.Value);
+                Assert.IsType<List<Like>>(returnedStatus.Value);
             }
         }
 
@@ -894,19 +888,16 @@ namespace DNHTest
                 IRepository _repo = new RepoDB(context);
                 IBussiness _BL = new Bussiness(_repo);
 
-                var AlertCont = new Rest.Controllers.AlertController(_BL);
+                var AlertCont = new Rest.Controllers.LikesController(_BL);
 
-                Alert test = new Alert()
+                Like test = new Like()
                 {
-                    AlertID = 0,
-                    UserID = "Robert_20",
-                    AlertType = "default",
-                    AlertValue = "http://localhost:4200:",
-                    DogID = "512311"
+                    DogID = 741,
+                    UserName = "Juan_95"
                 };
 
                 //Act
-                var returnedValue = AlertCont.DeleteAlert(test);
+                var returnedValue = AlertCont.DeleteLikes(test);
                 var returnedStatus = returnedValue.Result as NoContentResult;
 
                 //Assert
@@ -921,19 +912,16 @@ namespace DNHTest
                 IRepository _repo = new RepoDB(context);
                 IBussiness _BL = new Bussiness(_repo);
 
-                var AlertCont = new Rest.Controllers.AlertController(_BL);
+                var AlertCont = new Rest.Controllers.LikesController(_BL);
 
-                Alert test = new Alert()
+                Like test = new Like()
                 {
-                    AlertID = 0,
-                    UserID = "Robert_20",
-                    AlertType = "default",
-                    AlertValue = "http://localhost:4200:",
-                    DogID = "512411"
+                    DogID = 741,
+                    UserName = "Juan_97"
                 };
 
                 //Act
-                var returnedValue = AlertCont.updateAlert(test);
+                var returnedValue = AlertCont.UpdateLike(test);
                 var returnedStatus = returnedValue.Result as NoContentResult;
 
                 //Assert

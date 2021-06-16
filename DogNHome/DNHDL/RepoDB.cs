@@ -128,9 +128,7 @@ namespace DNHDL
         public async Task<Like> GetLikeAsync(Like like)
         {
             Log.Debug("Getting likes from the database: {0}", like.UserName);
-            Like found = await _context.Likes.AsNoTracking().FirstOrDefaultAsync(lk => lk.DogID == like.DogID);
-            if (found == null) return null;
-            return new Like(found.UserName,found.DogID);
+            return await _context.Likes.AsNoTracking().FirstOrDefaultAsync(lk => lk.DogID == like.DogID);
         }
 
         //Done with Like functions & starting with Tags
