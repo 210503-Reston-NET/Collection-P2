@@ -21,6 +21,7 @@ steps:
     scannerMode: 'MSBuild'
     projectKey: '210503-Reston-NET_Fisher-Robert-P1'
     projectName: 'DogNHome'
+    extraProperties: 'sonar.cs.opencover.reportsPaths=$(Build.SourcesDirectory)/**/coverage.opencover.xml'
 - task: DotNetCoreCLI@2
   displayName: Restore Project deps
   inputs:
