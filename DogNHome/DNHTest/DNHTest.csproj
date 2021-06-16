@@ -35,6 +35,7 @@
     <ProjectReference Include="..\DNHBL\DNHBL.csproj" />
     <ProjectReference Include="..\DNHDL\DNHDL.csproj" />
     <ProjectReference Include="..\DNHModels\DNHModels.csproj" />
+    <ProjectReference Include="..\DNHREST\DNHREST.csproj" />
   </ItemGroup>
 
 </Project>

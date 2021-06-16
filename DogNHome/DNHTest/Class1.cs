@@ -1,10 +1,16 @@
 ﻿using System;
 using DNHModels;
+using Rest = DNHREST;
 using DNHDL;
+using DNHBL;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
 using Xunit;
+using Moq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Http;
 
 namespace DNHTest
 {
@@ -21,6 +27,28 @@ namespace DNHTest
         /// <summary>
         /// VALID LISTING TESTS
         /// </summary>
+        /// 
+        [Fact]
+        public void GetForumsShouldGetAllForums()
+        {
+            using (var context = new DNHDBContext(options))
+            {
+                IRepository _repo = new RepoDB(context);
+                IBussiness _BL = new Bussiness(_repo);
+    
+                var ForCont = new Rest.Controllers.ForumController(_BL);
+
+                //Act
+                var returnedValue = ForCont.GetForums();
+                var returnedStatus = returnedValue.Result as OkObjectResult;
+
+                //Assert
+                Assert.NotNull(returnedValue.Result);
+                Assert.Equal(returnedStatus.StatusCode, StatusCodes.Status200OK);
+                Console.WriteLine(returnedValue.Result.GetType());
+                Assert.IsType<List<Forum>>(returnedStatus.Value);
+            }
+        }
 
         [Fact]
         public void GetAllComments()
