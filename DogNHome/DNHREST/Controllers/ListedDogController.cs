@@ -37,11 +37,11 @@ namespace DNHREST.Controllers
 
         // GET api/<DogController>/5
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetListedDogForDogID(string id)
+        public async Task<IActionResult> GetListedDogForListID(int id)
         {
             try
             {
-                return Ok(await _BL.GetListedDogsForDog(id));
+                return Ok(await _BL.GetListedDogsForList(id));
             }
             catch (Exception e)
             {
