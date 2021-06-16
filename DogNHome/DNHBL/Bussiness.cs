@@ -312,12 +312,12 @@ namespace DNHBL
         {
             return await _repo.UpdateTagsAsync(tag);
         }
-
+        */
         public async Task<List<Alert>> GetAllAlerts()
         {
             return await _repo.GetAllAlertsAsync();
         }
-        */
+        
         public async Task<List<Alert>> GetAlertsForUser(string userId)
         {
             return await _repo.GetAlertsForUserAsync(userId);
