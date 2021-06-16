@@ -31,7 +31,7 @@ namespace DNHREST.Controllers
             catch (Exception e)
             {
                 Log.Error("Failed to fullfil request to get all Alerts In Alert Controller", e.Message);
-                return NotFound();
+                return BadRequest();
             }
         }
 
@@ -45,7 +45,7 @@ namespace DNHREST.Controllers
             } catch (Exception e)
             {
                 Log.Error("Failed to fullfil request to get Alert for user with ID " + userId + " In Alert Controller", e.Message);
-                return NotFound();
+                return BadRequest();
             }
            
         }

@@ -30,3 +30,4 @@
 2021-06-16 16:12:52.506 -04:00 [INF] App is now running
 2021-06-16 16:13:09.506 -04:00 [DBG] Getting DogList from the database by ID: 18
 2021-06-16 16:17:03.005 -04:00 [INF] App is now running
+2021-06-16 16:49:26.637 -04:00 [INF] App is now running

@@ -256,6 +256,9 @@ namespace DNHBL
         /// </summary>
         /// <returns></returns>
         Task<ListedDog> UpdateListedDog(ListedDog dog);
+        /*
+         * Not using this
+         * 
         /// <summary>
         /// Returns all Tags in Database
         /// </summary>
@@ -284,6 +287,7 @@ namespace DNHBL
         /// <summary>
         /// Returns all alerts stored in database
         /// </summary>
+        /// */
         Task<List<Alert>> GetAllAlerts();
         /// <summary>
         /// Returns the Alert for a given user with id
