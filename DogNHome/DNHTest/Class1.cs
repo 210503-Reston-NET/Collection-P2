@@ -525,6 +525,142 @@ namespace DNHTest
             }
         }
 
+        // DogListController
+
+        [Fact]
+        public void AddDogListShouldCreateAPostAndReturnCreated()
+        {
+            using (var context = new DNHDBContext(options))
+            {
+                IRepository _repo = new RepoDB(context);
+                IBussiness _BL = new Bussiness(_repo);
+
+                var DogListCont = new Rest.Controllers.DogListController(_BL);
+
+                DogList test = new DogList()
+                {
+                    ListID = 0,
+                    Title = "Big Dogs",
+                    Created = new DateTime(2015, 12, 31, 5, 10, 20, DateTimeKind.Utc), 
+                    UserName = "Robert_19"
+                 };
+
+
+                //Act
+                var returnedValue = DogListCont.AddDogList(test);
+                var returnedStatus = returnedValue.Result as ObjectResult;
+
+                //Assert
+                Assert.NotNull(returnedValue.Result);
+                Assert.Equal(returnedStatus.StatusCode, StatusCodes.Status201Created);
+                Assert.Equal(returnedStatus.Value, returnedStatus.Value);
+            }
+        }
+
+        [Fact]
+        public void GetAllDogListShouldReturnAListOfResults()
+        {
+            using (var context = new DNHDBContext(options))
+            {
+                IRepository _repo = new RepoDB(context);
+                IBussiness _BL = new Bussiness(_repo);
+
+                var UserCont = new Rest.Controllers.DogListController(_BL);
+
+                //Act
+                var returnedValue = UserCont.GetDogLists();
+                var returnedStatus = returnedValue.Result as ObjectResult;
+
+                //Assert
+                Assert.NotNull(returnedValue.Result);
+                Assert.Equal(returnedStatus.StatusCode, StatusCodes.Status200OK);
+                Assert.IsType<List<DogList>>(returnedStatus.Value);
+            }
+        }
+
+        [Fact]
+        public void GetDogListShouldReturnACommentOfResults()
+        {
+            using (var context = new DNHDBContext(options))
+            {
+                IRepository _repo = new RepoDB(context);
+                IBussiness _BL = new Bussiness(_repo);
+
+
+                var UserCont = new Rest.Controllers.DogListController(_BL);
+
+                DogList test = new DogList()
+                {
+                    ListID = 963,
+                    Title = "Big Dogs",
+                    Created = new DateTime(2015, 12, 31, 5, 10, 20, DateTimeKind.Utc),
+                    UserName = "Cesar_19"
+                };
+
+                //Act
+                var returnedValue = UserCont.GetDogList(test.ListID);
+                var returnedStatus = returnedValue.Result as ObjectResult;
+
+                //Assert
+                Assert.NotNull(returnedValue.Result);
+                Assert.Equal(returnedStatus.StatusCode, StatusCodes.Status200OK);
+                Assert.IsType<DogList>(returnedStatus.Value);
+            }
+        }
+
+        [Fact]
+        public void DeletedDogListShouldReturnNoContent()
+        {
+            using (var context = new DNHDBContext(options))
+            {
+                IRepository _repo = new RepoDB(context);
+                IBussiness _BL = new Bussiness(_repo);
+
+                var UserCont = new Rest.Controllers.DogListController(_BL);
+
+                DogList test = new DogList()
+                {
+                    ListID = 963,
+                    Title = "Big Dogs",
+                    Created = new DateTime(2015, 12, 31, 5, 10, 20, DateTimeKind.Utc),
+                    UserName = "Cesar_19"
+                };
+
+                //Act
+                var returnedValue = UserCont.DeleteDogList(test.ListID);
+                var returnedStatus = returnedValue.Result as NoContentResult;
+
+                //Assert
+                Assert.Equal(returnedStatus.StatusCode, StatusCodes.Status204NoContent);
+            }
+        }
+        [Fact]
+        public void UpdateDogListShouldReturnNoContent()
+        {
+            using (var context = new DNHDBContext(options))
+            {
+                IRepository _repo = new RepoDB(context);
+                IBussiness _BL = new Bussiness(_repo);
+
+                var PostCont = new Rest.Controllers.DogListController(_BL);
+
+                DogList test = new DogList()
+                {
+                    ListID = 963,
+                    Title = "Big Dogs",
+                    Created = new DateTime(2015, 12, 31, 5, 10, 20, DateTimeKind.Utc),
+                    UserName = "Cesar_19"
+                };
+
+                //Act
+                var returnedValue = PostCont.UpdateDogList(test);
+                var returnedStatus = returnedValue.Result as NoContentResult;
+
+                //Assert
+                Assert.Equal(returnedStatus.StatusCode, StatusCodes.Status204NoContent);
+            }
+        }
+
         // DL Testing
 
         [Fact]

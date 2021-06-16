@@ -21,3 +21,12 @@
 2021-06-16 10:45:10.183 -04:00 [DBG] Getting Comment from the database by ID: 2
 2021-06-16 11:05:14.959 -04:00 [INF] App is now running
 2021-06-16 11:05:28.845 -04:00 [DBG] Getting all user from the database.
+2021-06-16 16:10:28.699 -04:00 [INF] App is now running
+2021-06-16 16:11:24.506 -04:00 [DBG] Getting DogList from the database.
+2021-06-16 16:11:47.168 -04:00 [DBG] Getting DogList from the database by ID: 19
+2021-06-16 16:11:47.725 -04:00 [DBG] Removing DogList from the database: 19
+2021-06-16 16:11:52.652 -04:00 [DBG] Getting DogList from the database.
+2021-06-16 16:12:10.469 -04:00 [ERR] Failed to get DogList with ListID 18 in DogListController
+2021-06-16 16:12:52.506 -04:00 [INF] App is now running
+2021-06-16 16:13:09.506 -04:00 [DBG] Getting DogList from the database by ID: 18
+2021-06-16 16:17:03.005 -04:00 [INF] App is now running

@@ -423,8 +423,7 @@ namespace DNHDL
         }
         public async Task<DogList> DeleteDogListAsync(DogList dogList)
         {
-            DogList toBeDeleted = _context.DogLists.AsNoTracking().First(dgl => dgl.ListID == dogList.ListID);
-            _context.DogLists.Remove(toBeDeleted);
+            _context.DogLists.Remove(dogList);
             await _context.SaveChangesAsync();
             Log.Debug("Removing DogList from the database: {0}", dogList.ListID);
             return dogList;
@@ -439,7 +438,7 @@ namespace DNHDL
         public async Task<DogList> GetDogListByIdAsync(int id)
         {
             Log.Debug("Getting DogList from the database by ID: {0}", id);
-            return await _context.DogLists.FindAsync(id);
+            return await _context.DogLists.FirstAsync(list => list.ListID == id);
         }
         public async Task<List<DogList>> GetAllDogListsAsync()
         {

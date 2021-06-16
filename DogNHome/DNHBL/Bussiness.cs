@@ -277,11 +277,7 @@ namespace DNHBL
 
         public async Task<ListedDog> RemoveListedDog(ListedDog dog)
         {
-            if (_repo.GetListedDogAsync(dog) != null)
-            {
-                return await _repo.DeleteListedDogAsync(dog);
-            }
-            throw new Exception("ListedDog does not exist. We may have already processed this reques!");
+         return await _repo.DeleteListedDogAsync(dog);
         }
 
         public async Task<ListedDog> UpdateListedDog(ListedDog dog)
