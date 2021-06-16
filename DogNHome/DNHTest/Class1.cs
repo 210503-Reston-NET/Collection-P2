@@ -102,6 +102,32 @@ namespace DNHTest
         }
 
         [Fact]
+        public void AddForumsShouldReturnBadRequestIfExists()
+        {
+            using (var context = new DNHDBContext(options))
+            {
+                IRepository _repo = new RepoDB(context);
+                IBussiness _BL = new Bussiness(_repo);
+
+                var ForCont = new Rest.Controllers.ForumController(_BL);
+
+                Forum test = new Forum
+                {
+                    ForumID = 631,
+                    Topic = "Found dogs",
+                    Description = "Used for people to post about finding dogs"
+                };
+
+                //Act
+                var returnedValue = ForCont.AddForum(test);
+                var returnedStatus = returnedValue.Result as BadRequestResult;
+
+                //Assert
+                Assert.Equal(returnedStatus.StatusCode, StatusCodes.Status400BadRequest);
+            }
+        }
+
+        [Fact]
         public void UpdateForumShouldReturnNoContent()
         {
             using (var context = new DNHDBContext(options))
@@ -310,6 +336,35 @@ namespace DNHTest
         }
 
         [Fact]
+        public void AddCommentsShouldReturnBadRequestIfExists()
+        {
+            using (var context = new DNHDBContext(options))
+            {
+                IRepository _repo = new RepoDB(context);
+                IBussiness _BL = new Bussiness(_repo);
+
+                var CommCont = new Rest.Controllers.CommentController(_BL);
+
+                Comments test = new Comments
+                {
+                    CommentID = 753,
+                    PostID = 123,
+                    UserName = "Cesar_19",
+                    Created = new DateTime(2015, 12, 31, 5, 10, 20, DateTimeKind.Utc),
+                    Message = "I just got a new dog!"
+                };
+
+                //Act
+                var returnedValue = CommCont.AddComment(test);
+                var returnedStatus = returnedValue.Result as BadRequestResult;
+
+                //Assert
+               Assert.Equal(returnedStatus.StatusCode, StatusCodes.Status400BadRequest);
+
+            }
+        }
+
+        [Fact]
         public void GetAllCommentsShouldReturnAListOfResults()
         {
             using (var context = new DNHDBContext(options))
@@ -434,6 +489,27 @@ namespace DNHTest
                 Assert.NotNull(returnedValue.Result);
                 Assert.Equal(returnedStatus.StatusCode, StatusCodes.Status201Created);
                 Assert.Equal(persistedData, returnedStatus.Value);
+            }
+        }
+        [Fact]
+        public void AddUserShouldCreateReturnBadRequestIfExists()
+        {
+            using (var context = new DNHDBContext(options))
+            {
+                IRepository _repo = new RepoDB(context);
+                IBussiness _BL = new Bussiness(_repo);
+
+                var UserCont = new Rest.Controllers.UserController(_BL);
+
+                string testID = "Cesar_19";
+
+
+                //Act
+                var returnedValue = UserCont.AddUser(testID);
+                var returnedStatus = returnedValue.Result as BadRequestResult;
+
+                //Assert
+                Assert.Equal(returnedStatus.StatusCode, StatusCodes.Status400BadRequest);
             }
         }
 

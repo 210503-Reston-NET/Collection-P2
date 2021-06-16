@@ -36,3 +36,4 @@
 2021-06-16 18:59:51.011 -04:00 [INF] App is now running
 2021-06-16 19:00:46.024 -04:00 [DBG] Getting DogList from the database.
 2021-06-16 19:00:58.647 -04:00 [DBG] Getting all ListedDogs from the database.
+2021-06-16 19:15:44.160 -04:00 [INF] App is now running
