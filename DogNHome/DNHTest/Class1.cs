@@ -51,6 +51,30 @@ namespace DNHTest
         }
 
         [Fact]
+        public void GetForumShouldReturnAForum()
+        {
+            using (var context = new DNHDBContext(options))
+            {
+                IRepository _repo = new RepoDB(context);
+                IBussiness _BL = new Bussiness(_repo);
+
+                int forumID = 631;
+
+                var ForCont = new Rest.Controllers.ForumController(_BL);
+
+                //Act
+                var returnedValue = ForCont.GetForum(forumID);
+                var returnedStatus = returnedValue.Result as OkObjectResult;
+
+                //Assert
+                Assert.NotNull(returnedValue.Result);
+                Assert.Equal(returnedStatus.StatusCode, StatusCodes.Status200OK);
+                Assert.IsType<Forum>(returnedStatus.Value);
+            }
+
+        }
+
+        [Fact]
         public void AddForumsShouldReturnCreated()
         {
             using (var context = new DNHDBContext(options))
@@ -69,13 +93,11 @@ namespace DNHTest
 
                 //Act
                 var returnedValue = ForCont.AddForum(test);
-                var returnedStatus = returnedValue.Result as OkObjectResult;
+                var returnedStatus = returnedValue.Result as NoContentResult;
 
                 //Assert
                 Assert.NotNull(returnedValue.Result);
                 Assert.Equal(returnedStatus.StatusCode, StatusCodes.Status204NoContent);
-                Assert.IsType<Forum>(returnedStatus.Value);
-                Assert.Equal(returnedStatus.Value, test);
             }
         }
 
@@ -98,11 +120,10 @@ namespace DNHTest
 
                 //Act
                 var returnedValue = ForCont.UpdateForum(test);
-                var returnedStatus = returnedValue.Result as OkObjectResult;
+                var returnedStatus = returnedValue.Result as NoContentResult;
 
                 //Assert
                 Assert.Equal(returnedStatus.StatusCode, StatusCodes.Status204NoContent);
-                Assert.Equal(returnedStatus.Value, test);
             }
         }
 
@@ -119,17 +140,16 @@ namespace DNHTest
                 Forum test = new Forum()
                 {
                     ForumID = 631,
-                    Description = "Testing",
-                    Topic = "test"
+                    Topic = "Found dogs",
+                    Description = "Used for people to post about finding dogs"
                 };
 
                 //Act
                 var returnedValue = ForCont.DeleteForum(test);
-                var returnedStatus = returnedValue.Result as OkObjectResult;
+                var returnedStatus = returnedValue.Result as NoContentResult;
 
                 //Assert
                 Assert.Equal(returnedStatus.StatusCode, StatusCodes.Status204NoContent);
-                Assert.Equal(returnedStatus.Value, test);
             }
         }
 
