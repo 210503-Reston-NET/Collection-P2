@@ -37,14 +37,14 @@ namespace DNHREST.Controllers
 
         // GET api/<AlertController>/5
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetAlert(string id)
+        public async Task<IActionResult> GetAlert(string userId)
         {
             try
             {
-                return Ok(await _BL.GetAlertsForUser(id));
+                return Ok(await _BL.GetAlertsForUser(userId));
             } catch (Exception e)
             {
-                Log.Error("Failed to fullfil request to get Alert for user with ID " + id + " In Alert Controller", e.Message);
+                Log.Error("Failed to fullfil request to get Alert for user with ID " + userId + " In Alert Controller", e.Message);
                 return NotFound();
             }
            
