@@ -194,7 +194,8 @@ namespace DNHBL
         {
             return await _repo.UpdateLikeAsync(like);
         }
-
+        /*
+         * Not currently implemented
         public async Task<List<Preference>> GetAllPreferences()
         {
             return await _repo.GetAllPreferencesAsync();
@@ -229,7 +230,7 @@ namespace DNHBL
         {
             return await _repo.UpdatePreferenceAsync(preference);
         }
-
+        */
         public async Task<List<ListedDog>> GetAllListedDogs()
         {
             return await _repo.GetAllListedDogsAsync();
@@ -284,7 +285,9 @@ namespace DNHBL
         {
             return await _repo.UpdateListedDogAsync(dog);
         }
-
+        /*
+         * Not currently implemented
+         * 
         public async Task<List<Tags>> GetAllTags()
         {
             return await _repo.GetAllTagsAsync();
@@ -314,7 +317,7 @@ namespace DNHBL
         {
             return await _repo.GetAllAlertsAsync();
         }
-
+        */
         public async Task<List<Alert>> GetAlertsForUser(string userId)
         {
             return await _repo.GetAlertsForUserAsync(userId);

@@ -190,6 +190,8 @@ namespace DNHBL
         /// Returns all preferences in Database
         /// </summary>
         /// <returns></returns>
+        /*
+        /// Removed because unused/
         Task<List<Preference>> GetAllPreferences();
         /// <summary>
         /// Returns all preferences in Database for the given userName
@@ -225,6 +227,7 @@ namespace DNHBL
         /// Returns all dogs that are referenced in a list and also in the Database
         /// </summary>
         /// <returns></returns>
+        /// */
         Task<List<ListedDog>> GetAllListedDogs();
         /// <summary>
         /// Returns all dogs with a given dogID that is also referenced in both a list and the Database
