@@ -40,7 +40,7 @@ steps:
   inputs:
     command: 'test'
     projects: '**/DogNHome/DNHTest/*.csproj'
-    arguments: --configuration $(buildConfiguration) --collect "Code Coverage"
+    arguments: '--configuration $(buildConfiguration) /p:CollectCoverage=true "/p:CoverletOutputFormat=\"opencover,Cobertura\""'
 - task: PublishCodeCoverageResults@1
   inputs:
     codeCoverageTool: 'Cobertura'
