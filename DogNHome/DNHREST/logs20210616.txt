@@ -1,0 +1,7 @@
+2021-06-16 01:39:21.024 -04:00 [INF] App is now running
+2021-06-16 01:39:48.099 -04:00 [DBG] Getting all Posts from the database.
+2021-06-16 01:40:20.184 -04:00 [DBG] Getting Posts from the database by ID: 12
+2021-06-16 01:40:20.751 -04:00 [ERR] Failed to Delete post with ID: 12 in PostController
+2021-06-16 01:41:57.586 -04:00 [INF] App is now running
+2021-06-16 01:42:07.411 -04:00 [DBG] Getting all Posts from the database.
+2021-06-16 01:42:23.542 -04:00 [DBG] Removing Posts from the database: 12

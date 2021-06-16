@@ -71,7 +71,8 @@ namespace DNHREST.Controllers
         {
             try
             {
-                return Ok(await _BL.UpdatePost(post));
+                await _BL.UpdatePost(post);
+                return NoContent();
             }
             catch (Exception e)
             {
@@ -86,7 +87,8 @@ namespace DNHREST.Controllers
         {
             try
             {
-                return Ok(await _BL.RemovePost(post));
+                await _BL.RemovePost(post);
+                return NoContent();
             }
             catch (Exception e)
             {

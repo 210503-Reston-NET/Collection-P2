@@ -64,7 +64,7 @@ namespace DNHTest
 
                 //Act
                 var returnedValue = ForCont.GetForum(forumID);
-                var returnedStatus = returnedValue.Result as OkObjectResult;
+                var returnedStatus = returnedValue.Result as ObjectResult;
 
                 //Assert
                 Assert.NotNull(returnedValue.Result);
@@ -146,6 +146,132 @@ namespace DNHTest
 
                 //Act
                 var returnedValue = ForCont.DeleteForum(test);
+                var returnedStatus = returnedValue.Result as NoContentResult;
+
+                //Assert
+                Assert.Equal(returnedStatus.StatusCode, StatusCodes.Status204NoContent);
+            }
+        }
+
+        [Fact]
+        public void AddPostShouldCreateAPostAndReturnCreated()
+        {
+            using (var context = new DNHDBContext(options))
+            {
+                IRepository _repo = new RepoDB(context);
+                IBussiness _BL = new Bussiness(_repo);
+
+                var PostCont = new Rest.Controllers.PostController(_BL);
+
+                Posts test = new Posts()
+                {
+                    PostID = 1,
+                    ForumID = 631,
+                    Topic = "test",
+                    UserCreator = "Cesar_19"
+                };
+
+                //Act
+                var returnedValue = PostCont.AddPost(test);
+                var returnedStatus = returnedValue.Result as ObjectResult;
+
+                //Assert
+                Assert.NotNull(returnedValue.Result);
+                Assert.Equal(returnedStatus.StatusCode, StatusCodes.Status201Created);
+                Assert.Equal(returnedStatus.Value, test);
+            }
+        }
+
+        [Fact]
+        public void GetAllPostsShouldReturnAListOfResults()
+        {
+            using (var context = new DNHDBContext(options))
+            {
+                IRepository _repo = new RepoDB(context);
+                IBussiness _BL = new Bussiness(_repo);
+
+                var ForCont = new Rest.Controllers.PostController(_BL);
+
+                //Act
+                var returnedValue = ForCont.GetPosts();
+                var returnedStatus = returnedValue.Result as ObjectResult;
+
+                //Assert
+                Assert.NotNull(returnedValue.Result);
+                Assert.Equal(returnedStatus.StatusCode, StatusCodes.Status200OK);
+                Assert.IsType<List<Posts>>(returnedStatus.Value);
+            }
+        }
+
+        [Fact]
+        public void GetPostsShouldReturnAForumOfResults()
+        {
+            using (var context = new DNHDBContext(options))
+            {
+                IRepository _repo = new RepoDB(context);
+                IBussiness _BL = new Bussiness(_repo);
+
+                int ForumID = 631;
+
+                var ForCont = new Rest.Controllers.PostController(_BL);
+
+                //Act
+                var returnedValue = ForCont.GetPost(ForumID);
+                var returnedStatus = returnedValue.Result as ObjectResult;
+
+                //Assert
+                Assert.NotNull(returnedValue.Result);
+                Assert.Equal(returnedStatus.StatusCode, StatusCodes.Status200OK);
+                Assert.IsType<List<Posts>>(returnedStatus.Value);
+            }
+        }
+
+        [Fact]
+        public void DeletePostsShouldReturnNoContent()
+        {
+            using (var context = new DNHDBContext(options))
+            {
+                IRepository _repo = new RepoDB(context);
+                IBussiness _BL = new Bussiness(_repo);
+
+                var PostCont = new Rest.Controllers.PostController(_BL);
+
+                Posts test = new Posts()
+                {
+                    PostID = 7771,
+                    Topic = "Lost Dogs",
+                    UserCreator = "Cesar_19",
+                    ForumID = 631
+                };
+
+                //Act
+                var returnedValue = PostCont.DeletePost(test);
+                var returnedStatus = returnedValue.Result as NoContentResult;
+
+                //Assert
+                Assert.Equal(returnedStatus.StatusCode, StatusCodes.Status204NoContent);
+            }
+        }
+
+        public void UpdatePostsShouldReturnNoContent()
+        {
+            using (var context = new DNHDBContext(options))
+            {
+                IRepository _repo = new RepoDB(context);
+                IBussiness _BL = new Bussiness(_repo);
+
+                var PostCont = new Rest.Controllers.PostController(_BL);
+
+                Posts test = new Posts()
+                {
+                    PostID = 1648,
+                    Topic = "Found Dog",
+                    UserCreator = "Cesar_19",
+                    ForumID = 631
+                };
+
+                //Act
+                var returnedValue = PostCont.UpdatePost(test);
                 var returnedStatus = returnedValue.Result as NoContentResult;
 
                 //Assert
@@ -746,14 +872,14 @@ namespace DNHTest
                             PostID= 7771,
                             Topic = "Lost Dogs",
                             UserCreator = "Cesar_19",
-                            ForumID = 456
+                            ForumID = 631
                         },
                         new Posts
                         {
                             PostID = 1648,
                             Topic = "Found Dogs",
                             UserCreator = "Cesar_19",
-                            ForumID = 456
+                            ForumID = 631
                         }
 
                     );

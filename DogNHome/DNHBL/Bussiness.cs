@@ -135,9 +135,9 @@ namespace DNHBL
 
         public async Task<Posts> RemovePost(Posts post)
         {
-            if (await _repo.GetPostsByIdAsync(post.PostID) != null)
-                return await _repo.DeletePostsAsync(post);
-            else throw new Exception("Looks like this post doesn't exist. We may have already processed this request.");
+ 
+           return await _repo.DeletePostsAsync(post);
+           //throw new Exception("Looks like this post doesn't exist. We may have already processed this request.");
         }
 
         public async Task<Posts> UpdatePost(Posts post)
