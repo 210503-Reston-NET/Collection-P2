@@ -50,7 +50,7 @@ namespace DNHDL
         Task<Comments> AddCommentsAsync(Comments comments);
         Task<Comments> DeleteCommentsAsync(Comments comments);
         Task<Comments> UpdateCommentsAsync(Comments comments);
-        Task<Comments> GetCommentsByIdAsync(int id);
+        Task<List<Comments>> GetCommentsByIdAsync(int id);
         Task<List<Comments>> GetAllCommentsAsync();
         Task<Comments> GetCommentsAsync(Comments comments);
         //Preference

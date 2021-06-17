@@ -332,10 +332,12 @@ namespace DNHDL
             Log.Debug("Updating Comment from the database: {0}", comments.CommentID);
             return comments;
         }
-        public async Task<Comments> GetCommentsByIdAsync(int id)
+        public async Task<List<Comments>> GetCommentsByIdAsync(int id)
         {
             Log.Debug("Getting Comment from the database by ID: {0}", id);
-            return await _context.Comments.FirstOrDefaultAsync(comm => comm.CommentID == id);
+            return await _context.Comments.Select(comm => comm)
+                .Where(comm => comm.PostID == id)
+                .ToListAsync();
         }
         public async Task<List<Comments>> GetAllCommentsAsync()
         {

@@ -84,7 +84,7 @@ namespace DNHBL
         /// Returns a Comment Object with the given commentID
         /// </summary>
         /// <returns></returns>
-        Task<Comments> GetComment(int commentID);
+        Task<List<Comments>> GetComment(int commentID);
         /// <summary>
         /// Creates a Comment in the Database, based off of the Comment object passed
         /// </summary>

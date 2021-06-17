@@ -89,7 +89,7 @@ namespace DNHBL
             return await _repo.GetAllCommentsAsync();
         }
 
-        public async Task<Comments> GetComment(int commentID)
+        public async Task<List<Comments>> GetComment(int commentID)
         {
             return await _repo.GetCommentsByIdAsync(commentID);
         }
