@@ -55,11 +55,11 @@ namespace DNHREST.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetDogList(int id)
+        public async Task<IActionResult> GetDogList(string id)
         {
             try
             {
-                return Ok(await _BL.GetDogListByID(id));
+                return Ok(await _BL.GetDogListsFor(id));
             }
             catch (Exception e)
             {

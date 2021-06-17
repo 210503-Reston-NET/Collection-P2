@@ -674,13 +674,13 @@ namespace DNHTest
                 };
 
                 //Act
-                var returnedValue = UserCont.GetDogList(test.ListID);
+                var returnedValue = UserCont.GetDogList(test.UserName);
                 var returnedStatus = returnedValue.Result as ObjectResult;
 
                 //Assert
                 Assert.NotNull(returnedValue.Result);
                 Assert.Equal(returnedStatus.StatusCode, StatusCodes.Status200OK);
-                Assert.IsType<DogList>(returnedStatus.Value);
+                Assert.IsType<List<DogList>>(returnedStatus.Value);
             }
         }
 

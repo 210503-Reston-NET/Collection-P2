@@ -72,16 +72,22 @@ namespace DNHBL
 
         public async Task<User> AddUser(string uid)
         {
-            // Create favorite list for new User
-            DogList favoriteList = new DogList()
+            DogList favoriteList;
+            User result = await _repo.AddUserAsync(uid);
+            if (result != null)
             {
-                ListID = 0,
-                Created = DateTime.Now,
-                Title = "Favorite Dogs",
-                UserName = uid
-            };
-            await AddNewDogList(favoriteList);
-            return await _repo.AddUserAsync(uid);
+                // Create favorite list for new User
+                favoriteList = new DogList()
+                {
+                    ListID = 0,
+                    Created = DateTime.Now,
+                    Title = "Favorite Dogs",
+                    UserName = uid
+                };
+                await AddNewDogList(favoriteList);
+                return result;
+            }
+            return null;
         }
 
         public async Task<List<Comments>> GetAllComments()
