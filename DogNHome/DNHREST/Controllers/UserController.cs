@@ -51,7 +51,7 @@ namespace DNHREST.Controllers
         }
 
         // PUT api/<DogController>
-        [HttpPost]
+        [HttpPost("{uid}")]
         public async Task<IActionResult> AddUser(string uid)
         {
             try

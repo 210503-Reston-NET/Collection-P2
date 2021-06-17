@@ -1,3 +1,30 @@
 2021-06-17 17:40:45.368 -04:00 [INF] App is now running
 2021-06-17 17:42:01.152 -04:00 [DBG] Getting DogList from the database.
 2021-06-17 17:42:56.574 -04:00 [DBG] Getting all user from the database.
+2021-06-17 17:50:16.532 -04:00 [INF] App is now running
+2021-06-17 17:50:37.757 -04:00 [DBG] Adding Cesar_19 to the database.
+2021-06-17 17:50:37.949 -04:00 [DBG] Adding DogList into the database: 159
+2021-06-17 17:50:46.458 -04:00 [DBG] Getting DogList from the database.
+2021-06-17 17:52:43.128 -04:00 [DBG] Getting all user from the database.
+2021-06-17 17:52:47.844 -04:00 [ERR] Failed to add user with userID: Cesar_19 in UserController
+2021-06-17 17:52:57.755 -04:00 [DBG] Getting DogList from the database.
+2021-06-17 17:53:07.642 -04:00 [DBG] Getting DogList from the database.
+2021-06-17 17:53:09.441 -04:00 [DBG] Getting DogList from the database.
+2021-06-17 17:58:40.681 -04:00 [INF] App is now running
+2021-06-17 17:58:59.242 -04:00 [DBG] Getting all user from the database.
+2021-06-17 18:12:05.863 -04:00 [DBG] Getting all user from the database.
+2021-06-17 18:12:51.978 -04:00 [DBG] Getting DogList from the database.
+2021-06-17 18:52:50.035 -04:00 [DBG] Getting all user from the database.
+2021-06-17 19:02:43.794 -04:00 [DBG] Getting all user from the database.
+2021-06-17 19:03:45.625 -04:00 [DBG] Getting all user from the database.
+2021-06-17 19:05:58.142 -04:00 [DBG] Getting all user from the database.
+2021-06-17 19:13:24.846 -04:00 [DBG] Getting all user from the database.
+2021-06-17 19:13:26.795 -04:00 [DBG] Getting all user from the database.
+2021-06-17 19:13:29.223 -04:00 [DBG] Getting all user from the database.
+2021-06-17 19:15:56.354 -04:00 [DBG] Adding Robert_20 to the database.
+2021-06-17 19:15:56.532 -04:00 [DBG] Adding DogList into the database: 160
+2021-06-17 19:16:06.174 -04:00 [DBG] Getting all user from the database.
+2021-06-17 19:16:21.353 -04:00 [DBG] Getting all user from the database.
+2021-06-17 19:16:28.965 -04:00 [DBG] Adding Voyzmka9PbV0ZGvMAlcLKPgRnmX3 to the database.
+2021-06-17 19:16:29.035 -04:00 [DBG] Adding DogList into the database: 161
+2021-06-17 19:16:33.821 -04:00 [DBG] Getting all user from the database.
