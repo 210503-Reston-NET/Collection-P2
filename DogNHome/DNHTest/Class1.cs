@@ -880,7 +880,7 @@ namespace DNHTest
         // LikesController Test
 
         [Fact]
-        public void AddLikeShouldCreateAPostAndReturnCreated()
+        public void AddListedDogShouldCreateAPostAndReturnCreated()
         {
             using (var context = new DNHDBContext(options))
             {
@@ -998,6 +998,130 @@ namespace DNHTest
 
                 //Act
                 var returnedValue = AlertCont.UpdateLike(test);
+                var returnedStatus = returnedValue.Result as NoContentResult;
+
+                //Assert
+                Assert.Equal(returnedStatus.StatusCode, StatusCodes.Status204NoContent);
+            }
+        }
+
+        // ListDog
+
+        [Fact]
+        public void AddLikeShouldCreateAPostAndReturnCreated()
+        {
+            using (var context = new DNHDBContext(options))
+            {
+                IRepository _repo = new RepoDB(context);
+                IBussiness _BL = new Bussiness(_repo);
+
+                var AlertCont = new Rest.Controllers.ListedDogController(_BL);
+
+                ListedDog test = new ListedDog()
+                {
+                    APIID = "233",
+                    ListID = 964,
+                };
+
+
+                //Act
+                var returnedValue = AlertCont.AddListedDog(test);
+                var returnedStatus = returnedValue.Result as ObjectResult;
+
+                //Assert
+                Assert.NotNull(returnedValue.Result);
+                Assert.Equal(returnedStatus.StatusCode, StatusCodes.Status201Created);
+                Assert.Equal(returnedStatus.Value, returnedStatus.Value);
+            }
+        }
+
+        [Fact]
+        public void GetListedDogShouldReturnAListOfResults()
+        {
+            using (var context = new DNHDBContext(options))
+            {
+                IRepository _repo = new RepoDB(context);
+                IBussiness _BL = new Bussiness(_repo);
+
+                var AlertCont = new Rest.Controllers.ListedDogController(_BL);
+                int list = 963;
+
+                //Act
+                var returnedValue = AlertCont.GetListedDogForListID(list);
+                var returnedStatus = returnedValue.Result as ObjectResult;
+
+                //Assert
+                Assert.NotNull(returnedValue.Result);
+                Assert.Equal(returnedStatus.StatusCode, StatusCodes.Status200OK);
+                Assert.IsType<List<ListedDog>>(returnedStatus.Value);
+            }
+        }
+
+        [Fact]
+        public void GetAllListedDogShouldReturnAOkResult()
+        {
+            using (var context = new DNHDBContext(options))
+            {
+                IRepository _repo = new RepoDB(context);
+                IBussiness _BL = new Bussiness(_repo);
+
+
+                var AlertCont = new Rest.Controllers.ListedDogController(_BL);
+
+                //Act
+                var returnedValue = AlertCont.GetDogLists();
+                var returnedStatus = returnedValue.Result as ObjectResult;
+
+                //Assert
+                Assert.NotNull(returnedValue.Result);
+                Assert.Equal(returnedStatus.StatusCode, StatusCodes.Status200OK);
+                Assert.IsType<List<ListedDog>>(returnedStatus.Value);
+            }
+        }
+
+        [Fact]
+        public void DeleteListedDogShouldReturnNoContent()
+        {
+            using (var context = new DNHDBContext(options))
+            {
+                IRepository _repo = new RepoDB(context);
+                IBussiness _BL = new Bussiness(_repo);
+
+                var AlertCont = new Rest.Controllers.ListedDogController(_BL);
+
+                ListedDog test = new ListedDog()
+                {
+                    APIID = "123",
+                    ListID = 963,
+                };
+
+                //Act
+                var returnedValue = AlertCont.DeleteListedDog(test);
+                var returnedStatus = returnedValue.Result as NoContentResult;
+
+                //Assert
+                Assert.Equal(returnedStatus.StatusCode, StatusCodes.Status204NoContent);
+            }
+        }
+        [Fact]
+        public void UpdateListedDogShouldReturnNoContent()
+        {
+            using (var context = new DNHDBContext(options))
+            {
+                IRepository _repo = new RepoDB(context);
+                IBussiness _BL = new Bussiness(_repo);
+
+                var AlertCont = new Rest.Controllers.ListedDogController(_BL);
+
+                ListedDog test = new ListedDog()
+                {
+                    APIID = "133",
+                    ListID = 963,
+
+                };
+
+                //Act
+                var returnedValue = AlertCont.UpdateListedDog(test);
                 var returnedStatus = returnedValue.Result as NoContentResult;
 
                 //Assert

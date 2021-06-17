@@ -109,11 +109,6 @@ namespace DNHBL
         /// <returns></returns>
         Task<List<Posts>> GetAllPosts();
         /// <summary>
-        /// Returns a Post Object with the given PostID
-        /// </summary>
-        /// <returns></returns>
-        Task<Posts> GetPost(int postID);
-        /// <summary>
         /// Creates a Post in the Database, based off of the Post object passed
         /// </summary>
         /// <returns></returns>
