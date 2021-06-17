@@ -233,7 +233,7 @@ namespace DNHBL
         /// Returns all dogs for a given list based off of given listID in Database
         /// </summary>
         /// <returns></returns>
-        Task<List<ListedDog>> GetListedDogsForList(int listID);
+        Task<List<string>> GetListedDogsForList(int listID);
         /// <summary>
         /// Returns a Dog that is referenced in a list with the given dogID and listID
         /// </summary>

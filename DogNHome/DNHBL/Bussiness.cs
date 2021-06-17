@@ -236,7 +236,7 @@ namespace DNHBL
             return await _repo.GetListedDogByDogIdAsync(dogID);
         }
 
-        public async Task<List<ListedDog>> GetListedDogsForList(int listID)
+        public async Task<List<string>> GetListedDogsForList(int listID)
         {
             return await _repo.GetListedDogByListIdAsync(listID); 
         }
