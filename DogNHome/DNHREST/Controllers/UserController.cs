@@ -52,7 +52,7 @@ namespace DNHREST.Controllers
 
         // PUT api/<DogController>
         [HttpPost]
-        public async Task<IActionResult> AddUser(string uid)
+        public async Task<IActionResult> AddUser([FromBody]string uid)
         {
             try
             {
@@ -61,7 +61,7 @@ namespace DNHREST.Controllers
             catch (Exception e)
             {
                 Log.Error("Failed to add user with userID: " + uid + " in UserController", e.Message);
-                return BadRequest();
+                return BadRequest(e.Message);
             }
         }
 
