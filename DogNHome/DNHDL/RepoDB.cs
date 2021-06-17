@@ -501,12 +501,19 @@ namespace DNHDL
                 .Where(dog => dog.APIID == id)
                 .ToListAsync();
         }
-        public async Task<List<ListedDog>> GetListedDogByListIdAsync(int id)
+        public async Task<List<string>> GetListedDogByListIdAsync(int id)
         {
             Log.Debug("Removing ListedDog from the database by ID: {0}", id);
-            return await _context.ListedDogs.Select(dog => dog)
+            List<string> result = new List<string>();
+            Task<List<ListedDog>> newlist = _context.ListedDogs.Select(dog => dog)
                 .Where(dog => dog.ListID == id)
                 .ToListAsync();
+            foreach(ListedDog listeddog in await newlist)
+            {
+                    
+                    result.Add(listeddog.APIID);
+            }
+            return result;
         }
         public async Task<List<ListedDog>> GetAllListedDogsAsync()
         {

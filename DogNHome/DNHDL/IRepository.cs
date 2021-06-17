@@ -75,7 +75,7 @@ namespace DNHDL
         Task<ListedDog> DeleteListedDogAsync(ListedDog listedDog);
         Task<ListedDog> UpdateListedDogAsync(ListedDog listedDog);
         Task<List<ListedDog>> GetListedDogByDogIdAsync(string id);
-        Task<List<ListedDog>> GetListedDogByListIdAsync(int id);
+        Task<List<string>> GetListedDogByListIdAsync(int id);
         Task<List<ListedDog>> GetAllListedDogsAsync();  
         Task<ListedDog> GetListedDogAsync(ListedDog listedDog);
 
