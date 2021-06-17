@@ -40,3 +40,5 @@
 2021-06-16 23:19:53.358 -04:00 [INF] App is now running
 2021-06-16 23:20:03.340 -04:00 [DBG] Getting all Comments from the database
 2021-06-16 23:21:04.048 -04:00 [DBG] Getting Comment from the database by ID: 1
+2021-06-16 23:27:26.221 -04:00 [INF] App is now running
+2021-06-16 23:27:39.137 -04:00 [DBG] Getting Comment from the database by ID: 1

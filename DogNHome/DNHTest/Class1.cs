@@ -404,7 +404,7 @@ namespace DNHTest
                 //Assert
                 Assert.NotNull(returnedValue.Result);
                 Assert.Equal(returnedStatus.StatusCode, StatusCodes.Status200OK);
-                Assert.IsType<Comments>(returnedStatus.Value);
+                Assert.IsType<List<Comments>>(returnedStatus.Value);
             }
         }
 
@@ -1053,7 +1053,7 @@ namespace DNHTest
                 //Assert
                 Assert.NotNull(returnedValue.Result);
                 Assert.Equal(returnedStatus.StatusCode, StatusCodes.Status200OK);
-                Assert.IsType<List<ListedDog>>(returnedStatus.Value);
+                Assert.IsType<List<string>>(returnedStatus.Value);
             }
         }
 
