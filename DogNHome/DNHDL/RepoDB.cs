@@ -111,10 +111,12 @@ namespace DNHDL
             Log.Debug("Updating likes from the database: {0}", like.UserName);
             return like;
         }
-        public async Task<Like> GetLikeByIdAsync(int id)
+        public async Task<List<Like>> GetLikeByIdAsync(string id)
         {
             Log.Debug("Getting likes from the database by ID: {0}", id);
-            return await _context.Likes.FindAsync(id);
+            return await _context.Likes.Select(like => like)
+                .Where(like => like.UserName == id)
+                .ToListAsync();
         }
         public async Task<List<Like>> GetAllLikesAsync()
         {

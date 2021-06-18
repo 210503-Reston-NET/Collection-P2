@@ -21,7 +21,7 @@ namespace DNHDL
         Task<Like> AddLikesAsync(Like like);
         Task<Like> DeleteLikeAsync(Like like);
         Task<Like> UpdateLikeAsync(Like like);
-        Task<Like> GetLikeByIdAsync(int id);
+        Task<List<Like>> GetLikeByIdAsync(string id);
         Task<List<Like>> GetAllLikesAsync();
         Task<Like> GetLikeAsync(Like like);
         //Tags

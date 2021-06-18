@@ -163,7 +163,7 @@ namespace DNHBL
         /// Returns a Like Object with the given LikeID
         /// </summary>
         /// <returns></returns>
-        Task<Like> GetLike(int likeID);
+        Task<List<Like>> GetLike(string userID);
         /// <summary>
         /// Creates a Like in the Database, based off of the Like object passed
         /// </summary>

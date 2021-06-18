@@ -37,15 +37,15 @@ namespace DNHREST.Controllers
 
         // GET api/<DogController>/5
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetLike(int Id)
+        public async Task<IActionResult> GetLike(int id)
         {
             try
             {
-                return Ok(await _BL.GetLike(Id));
+                return Ok(await _BL.GetLike(id + ""));
             }
             catch (Exception e)
             {
-                Log.Error("Failed to get Like object with id: " + Id + " in LikeController", e.Message);
+                Log.Error("Failed to get Like object with id: " + id + " in LikeController", e.Message);
                 return NotFound();
             }
         }

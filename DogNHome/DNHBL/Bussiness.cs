@@ -176,7 +176,7 @@ namespace DNHBL
             return await _repo.GetAllLikesAsync();
         }
 
-        public async Task<Like> GetLike(int likeID)
+        public async Task<List<Like>> GetLike(string likeID)
         {
             return await _repo.GetLikeByIdAsync(likeID);
         }
