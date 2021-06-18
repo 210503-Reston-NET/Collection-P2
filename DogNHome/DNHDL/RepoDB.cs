@@ -608,5 +608,27 @@ namespace DNHDL
             }
         }
 
+        public async Task<DogList> GetFavoriteDogsForAsync(string user)
+        {
+            try
+            {
+                return await _context.DogLists.FirstOrDefaultAsync(list => list.UserName == user && list.Title.Equals("Favorite Dogs"));
+            } catch (Exception e)
+            {
+                Log.Error("Failed to grab favorite list for: " + user);
+                return null;
+            }
+        }
+
+        public async Task<ListedDog> getListedDogbyID(ListedDog lDog)
+        {
+            try
+            {
+                return await _context.ListedDogs.FirstOrDefaultAsync(dog => dog.APIID == lDog.APIID && dog.ListID == lDog.ListID);
+            } catch (Exception e)
+            {
+                return null;
+            }
+        }
     }
 }

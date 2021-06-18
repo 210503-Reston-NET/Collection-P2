@@ -183,11 +183,27 @@ namespace DNHBL
 
         public async Task<Like> AddLike(Like like)
         {
+            DogList list = _repo.GetFavoriteDogsForAsync(like.UserName).Result;
+            ListedDog dog = new ListedDog()
+            {
+                ListID = list.ListID,
+                APIID = like.DogID.ToString()
+            };
+            await AddListedDog(dog);
             return await _repo.AddLikesAsync(like);
         }
 
         public async Task<Like> RemoveLike(Like like)
         {
+            Task<DogList> listAsync = _repo.GetFavoriteDogsForAsync(like.UserName);
+            DogList list = listAsync.Result;
+            ListedDog dog = new ListedDog()
+            {
+                ListID = list.ListID,
+                APIID = like.DogID.ToString()
+            };
+
+            await RemoveListedDog(dog);
             return await _repo.DeleteLikeAsync(like);
         }
 

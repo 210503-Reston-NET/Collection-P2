@@ -28,3 +28,15 @@
 2021-06-17 19:16:28.965 -04:00 [DBG] Adding Voyzmka9PbV0ZGvMAlcLKPgRnmX3 to the database.
 2021-06-17 19:16:29.035 -04:00 [DBG] Adding DogList into the database: 161
 2021-06-17 19:16:33.821 -04:00 [DBG] Getting all user from the database.
+2021-06-17 20:25:19.956 -04:00 [INF] App is now running
+2021-06-17 20:25:37.178 -04:00 [DBG] Getting all user from the database.
+2021-06-17 20:26:36.560 -04:00 [DBG] Getting DogList from the database.
+2021-06-17 20:42:50.237 -04:00 [INF] App is now running
+2021-06-17 20:53:32.887 -04:00 [INF] App is now running
+2021-06-17 20:53:57.170 -04:00 [DBG] Adding likes to the database: Cesar_19
+2021-06-17 20:54:04.414 -04:00 [DBG] Getting all likes from the database.
+2021-06-17 20:54:12.116 -04:00 [DBG] Getting all ListedDogs from the database.
+2021-06-17 20:54:40.745 -04:00 [DBG] Getting DogList from the database.
+2021-06-17 20:54:46.718 -04:00 [DBG] Getting DogList from the database.
+2021-06-17 20:57:24.464 -04:00 [INF] App is now running
+2021-06-17 20:57:33.084 -04:00 [DBG] Getting DogList from the database.
