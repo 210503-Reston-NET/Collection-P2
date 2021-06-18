@@ -57,9 +57,13 @@ namespace DNHREST.Controllers
             try
             {
                 await _BL.AddLike(like);
-                string result = _BL.GetFavoriteDogsForAsync(like.UserName).Result.ListID + "";
+                Task<DogList> result = _BL.GetFavoriteDogsForAsync(like.UserName);
 
-                await _BL.AddListedDog(new ListedDog(result + "", like.DogID));
+                result.Wait();
+
+                DogList list = result.Result;
+               
+                await _BL.AddListedDog(new ListedDog(list.ListID + "", like.DogID));
                 return NoContent();
             }
             catch (Exception e)

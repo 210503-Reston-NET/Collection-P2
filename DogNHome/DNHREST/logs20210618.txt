@@ -13,3 +13,13 @@
 2021-06-18 01:03:25.460 -04:00 [DBG] Getting all user from the database.
 2021-06-18 01:03:34.073 -04:00 [DBG] Adding likes to the database: Cesar_19
 2021-06-18 01:03:38.654 -04:00 [DBG] Getting all likes from the database.
+2021-06-18 01:20:14.321 -04:00 [INF] App is now running
+2021-06-18 01:25:47.521 -04:00 [DBG] Getting DogList from the database.
+2021-06-18 01:54:37.832 -04:00 [INF] App is now running
+2021-06-18 01:54:46.654 -04:00 [DBG] Getting all likes from the database.
+2021-06-18 02:00:37.136 -04:00 [INF] App is now running
+2021-06-18 02:00:55.734 -04:00 [ERR] Failed to Add Like object with userID: Cesar_19 in LikeController
+2021-06-18 02:01:05.573 -04:00 [DBG] Getting all likes from the database.
+2021-06-18 02:01:12.961 -04:00 [DBG] Adding likes to the database: Cesar_19
+2021-06-18 02:01:17.573 -04:00 [DBG] Getting all likes from the database.
+2021-06-18 02:01:38.001 -04:00 [DBG] Getting all ListedDogs from the database.
