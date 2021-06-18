@@ -975,8 +975,8 @@ namespace DNHTest
 
                 Like test = new Like()
                 {
-                    DogID = 741,
-                    UserName = "Juan_95"
+                    DogID = 123,
+                    UserName = "Cesar_19"
                 };
 
                 //Act
@@ -984,7 +984,7 @@ namespace DNHTest
                 var returnedStatus = returnedValue.Result as NoContentResult;
 
                 //Assert
-                //Assert.Equal(returnedStatus.StatusCode, StatusCodes.Status204NoContent);
+                Assert.Equal(returnedStatus.StatusCode, StatusCodes.Status204NoContent);
             }
         }
         [Fact]
@@ -1158,7 +1158,7 @@ namespace DNHTest
             {
                 IRepository _repo = new RepoDB(context);
                 var results = _repo.GetAllDogListsAsync();
-                Assert.Equal(2, results.Result.Count);
+                Assert.Equal(3, results.Result.Count);
             }
         }
         [Fact]
@@ -1191,7 +1191,7 @@ namespace DNHTest
             {
                 IRepository _repo = new RepoDB(context);
                 var results = _repo.GetAllListedDogsAsync();
-                Assert.Equal(1, results.Result.Count);
+                Assert.Equal(2, results.Result.Count);
             }
         }
         [Fact]
@@ -1680,6 +1680,13 @@ namespace DNHTest
                             Title = "Small Dogs",
                             Created = new DateTime(2005, 2, 1, 5, 40, 40, DateTimeKind.Utc),
                             UserName = "Pepe_Rios"
+                        },
+                        new DogList
+                        {
+                            ListID = 1002,
+                            Title = "Favorite Dogs",
+                            Created = new DateTime(2005, 2, 1, 5, 40, 40, DateTimeKind.Utc),
+                            UserName = "Cesar_19"
                         }
 
 
@@ -1719,6 +1726,12 @@ namespace DNHTest
                             APIID = "123",
                             ListID = 963,
                             
+                        },
+                        new ListedDog
+                        {
+                            APIID = "123",
+                            ListID = 1002,
+
                         }
 
                     );
