@@ -311,6 +311,7 @@ namespace DNHBL
         /// <param name="alert"></param>
         /// <returns></returns>
         Task<Alert> RemoveAlert(Alert alert);
+        Task<DogList> GetFavoriteDogsForAsync(string user);
 
     }
 }

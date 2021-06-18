@@ -40,3 +40,10 @@
 2021-06-17 20:54:46.718 -04:00 [DBG] Getting DogList from the database.
 2021-06-17 20:57:24.464 -04:00 [INF] App is now running
 2021-06-17 20:57:33.084 -04:00 [DBG] Getting DogList from the database.
+2021-06-17 21:08:01.984 -04:00 [INF] App is now running
+2021-06-17 21:08:13.398 -04:00 [DBG] Getting all likes from the database.
+2021-06-17 21:09:30.944 -04:00 [INF] App is now running
+2021-06-17 21:09:58.198 -04:00 [DBG] Getting all likes from the database.
+2021-06-17 21:10:19.581 -04:00 [DBG] Removing ListedDog from the database: 159
+2021-06-17 21:10:19.683 -04:00 [DBG] Removing likes from the database: Cesar_19
+2021-06-17 21:10:33.693 -04:00 [DBG] Getting all ListedDogs from the database.

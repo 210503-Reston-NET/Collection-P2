@@ -1,0 +1,15 @@
+2021-06-18 00:44:38.389 -04:00 [INF] App is now running
+2021-06-18 00:44:51.415 -04:00 [DBG] Getting all likes from the database.
+2021-06-18 00:47:59.103 -04:00 [INF] App is now running
+2021-06-18 00:52:48.013 -04:00 [INF] App is now running
+2021-06-18 00:53:47.168 -04:00 [INF] App is now running
+2021-06-18 00:54:05.218 -04:00 [DBG] Getting all ListedDogs from the database.
+2021-06-18 00:56:20.831 -04:00 [INF] App is now running
+2021-06-18 00:58:36.063 -04:00 [INF] App is now running
+2021-06-18 01:02:02.024 -04:00 [INF] App is now running
+2021-06-18 01:02:13.688 -04:00 [DBG] Adding likes to the database: string
+2021-06-18 01:03:00.104 -04:00 [INF] App is now running
+2021-06-18 01:03:12.606 -04:00 [ERR] Failed to Add Like object with userID: string in LikeController
+2021-06-18 01:03:25.460 -04:00 [DBG] Getting all user from the database.
+2021-06-18 01:03:34.073 -04:00 [DBG] Adding likes to the database: Cesar_19
+2021-06-18 01:03:38.654 -04:00 [DBG] Getting all likes from the database.

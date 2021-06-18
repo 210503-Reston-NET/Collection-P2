@@ -461,13 +461,15 @@ namespace DNHDL
             return new DogList(found.ListID, found.Title, found.Created, found.UserName);
         }
 
-        public async Task<List<DogList>> GetDogListForAsync(string Username) //Check my logic here please
+        public async Task<List<DogList>> GetDogListForAsync(string Username) 
         {
             Log.Debug("Getting all DogLists from the database by username: {0}", Username);
             return await _context.DogLists.AsNoTracking()
             .Select(
                 Username => Username
-            ).ToListAsync();
+            )
+            .Where(user => user.UserName == Username)
+            .ToListAsync();
         }
 
         //Finished with DogList and Continuing with ListedDog

@@ -57,6 +57,9 @@ namespace DNHREST.Controllers
             try
             {
                 await _BL.AddLike(like);
+                string result = _BL.GetFavoriteDogsForAsync(like.UserName).Result.ListID + "";
+
+                await _BL.AddListedDog(new ListedDog(result + "", like.DogID));
                 return NoContent();
             }
             catch (Exception e)
@@ -83,7 +86,7 @@ namespace DNHREST.Controllers
         }
 
         // DELETE api/<DogController>/5
-        [HttpDelete("{id}")]
+        [HttpDelete]
         public async Task<IActionResult> DeleteLikes(Like like)
         {
             try
