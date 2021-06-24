@@ -45,4 +45,7 @@ This website is made to help Dog Lovers meet and socialize their dogs with other
  - Bootstrap
  - Sonarcloud
 
-
+### How to access
+You can access this app through two methods;
+1: git clone https://github.com/210503-Reston-NET/DogNHome-P2.git : in your CLI for the backend
+2: use https://DogNHome.azurewebsite.net for API access
