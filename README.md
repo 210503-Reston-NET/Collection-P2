@@ -2,7 +2,7 @@
 
 ## Collection P-2 - DogNHome 
 ### Overview 
-This website is made to help Dog Lovers meet and socialize their dogs with other similar dog lovers as well as find dogs in need of adoption. Users can browse through a selection of adoptable dogs, and find a future pet that is close to home. They can create lists to organize their options, as well as take surveys to create customized lists for their perfect pet.
+This website is made to help dogs in need get adopted. All dog lovers alike can socialize on our forums. Users can browse through a selection of adoptable dogs, and find a future pet that is close to home. They can create lists to organize their options, as well as take surveys to create customized lists for their perfect pet.
 
 ### Tables 
   - Dog data, to keep track of reference to adoptable dogs
